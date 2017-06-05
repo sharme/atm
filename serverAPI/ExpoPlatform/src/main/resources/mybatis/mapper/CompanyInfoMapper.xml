@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 数据访问层 -->
+<mapper namespace="com.atongmu.mvc.dao.CompanyInfoMapper">
+
+
+
+    <!-- 根据id查询style信息 -->
+    <select id="selectInfo" resultType="com.atongmu.mvc.model.CompanyInfo">
+        select * from company_design
+    </select>
+
+    <!--<select id="getAllStyleCategoryInfo" resultType="StyleCategory" >-->
+
+        <!--select * from STYLE_CATEGORY-->
+
+    <!--</select>-->
+
+    <!--<delete id="deleteStyleCategory" parameterType="int">-->
+        <!--delete from STYLE_CATEGORY where styleId =#{styleId}-->
+    <!--</delete>-->
+
+    <!--<update id="updateStyleCategory" parameterType="StyleCategory">-->
+        <!--update STYLE_CATEGORY set styleName=#{styleName} where styleId=#{styleId}-->
+    <!--</update>-->
+
+    <!--<insert id="addStyleCategory" parameterType="StyleCategory" keyProperty="styleId" >-->
+        <!--&lt;!&ndash; <selectKey resultType="int" order="BEFORE" keyProperty="styleId">-->
+             <!--select SEQUENCE_STYLECATEGORY.nextval as STYLEID from dual;-->
+             <!--select nextval('dual')-->
+        <!--</selectKey> &ndash;&gt;-->
+        <!--insert into STYLE_CATEGORY(styleName) values(#{styleName})-->
+    <!--</insert>-->
+
+
+</mapper>

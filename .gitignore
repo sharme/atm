@@ -27,6 +27,7 @@ ios/LSViewComponentLib/Products/*
 ios/Podfile.lock
 .idea
 out
+target
 
 
 # Android/IJ
