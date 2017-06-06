@@ -14,6 +14,7 @@
     <mvc:resources location="/assets/css/" mapping="/assets/css/**"/>
     <mvc:resources location="/assets/fonts/" mapping="/assets/fonts/**"/>
     <mvc:resources location="/assets/i/" mapping="/assets/i/**"/>
+    <mvc:resources location="/assets/img/" mapping="/assets/img/**"/>
 
     <!--扫描包注解-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
