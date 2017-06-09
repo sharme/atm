@@ -55,4 +55,9 @@
         <property name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
+    <bean id="companyHistoryMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.atongmu.mvc.dao.CompanyHistoryMapper"/>
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+
 </beans>

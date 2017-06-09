@@ -9,6 +9,9 @@
         <typeAlias type="com.atongmu.mvc.model.CompanyInfo" alias="CompanyInfo"/>
     </typeAliases>
 
+    <typeAliases>
+        <typeAlias type="com.atongmu.mvc.model.CompanyHistory" alias="CompanyHistory"/>
+    </typeAliases>
 
     <!-- 数据库配置 -->
 
@@ -30,5 +33,8 @@
     </mappers>
 
 
+    <mappers>
+        <mapper resource="mybatis/mapper/CompanyHistoryMapper.xml"/>
+    </mappers>
 
 </configuration>
