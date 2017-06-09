@@ -2,7 +2,7 @@
 <%@ page isELIgnored ="false" %>
 <html>
 <head>
-	<%@include file="./commonhome.jsp" %>
+	<%@include file="./common.jsp" %>
   <title>产品展示</title>
 
 </head>
