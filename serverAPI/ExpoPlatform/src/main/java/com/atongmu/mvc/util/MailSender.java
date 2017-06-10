@@ -25,7 +25,7 @@ import java.io.InputStreamReader;
 public class MailSender{
 
 
-
+    // Read any html templates
     public static String readTemplate(String template){
 
         StringBuffer buff = new StringBuffer();
@@ -64,16 +64,7 @@ public class MailSender{
 
         return buff.toString();
     }
-
-
-    public static void main(String args[] ) throws Exception {
-
-        send("miwangyao@unity3d.com", "欢迎加入！ 58阿童木", readTemplate("welcome.html"));
-
-
-    }
-
-
+    // Mail sending
     public static void send(String to, String subject, String mailTemplate) throws MessagingException, UnsupportedEncodingException {
 
         Properties props = new Properties();
@@ -101,8 +92,75 @@ public class MailSender{
         transport.close();
 
     }
+    // reset html template
+    public static String resetHTML(String resetLink){
 
+        return "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>Title</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<p></p>\n" +
+                "<br>\n" +
+                "您发起了重置邮箱密码请求, 如果是您本人操作. 请点击一下链接完成重置密码操作.\n" +
+                "<br>\n" +
+                resetLink +
+                "<p></p>\n" +
+                "<br>\n" +
+                "如果这不是您本人操作, 请忽略该邮箱. 如有问题请发信admin@fmyoutu.com 谢谢\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "58阿童木团队\n" +
+                "\n" +
+                "</body>\n" +
+                "</html>";
 
+    }
+
+    public static String welcomeHTML(String username, String welLink){
+
+        return "<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <title>Title</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "\n" +
+                "Hey,\n" + username +
+                "<br>\n" +
+                "<br>\n" +
+                "欢迎您注册成为58阿童木用户, 您的账号需要邮箱认证, 点击下面链接进行认证：\n" +
+                "\n" +
+                "<br>\n" +
+                "<br>\n" +
+                welLink +
+                "<br>\n" +
+                "<br>\n" +
+                "\n" +
+                "如果链接无法点击，请完整拷贝到浏览器地址栏里直接访问\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "如果这不是您本人操作, 请忽略这封邮件. 如有问题请联系 admin@fmyoutu.com\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "<br>\n" +
+                "58阿童木团队\n" +
+                "\n" +
+                "</body>\n" +
+                "</html>";
+
+    }
+
+    public static void main(String args[] ) throws Exception {
+
+        send("yaomiwang@qq.com", "重置密码！ 58阿童木", welcomeHTML("miwang", "http://www.d7w.net/index.php?g=Member&a=verifyemail&key=18d3m07bgzHDCOkL1Tr3hYhGxa6RkBLx%2Fa0wykOroR1ghHNdriAgujUlsl2zR3TZfa1oc%2Fdu8tnHi6ZbqHY\n"));
+    }
 
 
 }
