@@ -7,9 +7,6 @@
     <!-- 别名 -->
     <typeAliases>
         <typeAlias type="com.atongmu.mvc.model.CompanyInfo" alias="CompanyInfo"/>
-    </typeAliases>
-
-    <typeAliases>
         <typeAlias type="com.atongmu.mvc.model.CompanyHistory" alias="CompanyHistory"/>
     </typeAliases>
 
@@ -30,11 +27,9 @@
     <!-- 配置sql映射文件 -->
     <mappers>
         <mapper resource="mybatis/mapper/CompanyInfoMapper.xml"/>
-    </mappers>
-
-
-    <mappers>
         <mapper resource="mybatis/mapper/CompanyHistoryMapper.xml"/>
     </mappers>
+
+
 
 </configuration>
