@@ -29,13 +29,13 @@
 
             <div class=" am-topbar-left am-form-inline am-topbar-right" role="search">
                 <ul class="am-nav am-nav-pills am-topbar-nav hw-menu">
-                    <li class="hw-menu-active"><a href="./index">首页</a></li>
-                    <li ><a href="./solutions">解决方案</a></li>
-                    <li><a href="./product-show">产品展示 </a></li>
-                    <li><a href="./customer-case">客户案例</a></li>
-                    <li><a href="./service-center">服务中心 </a></li>
-                    <li><a href="./news">新闻动态 </a></li>
-                    <li><a href="./login">登录/注册</a></li>
+                    <li class="hw-menu-active" id="header_0"><a href="./index">首页</a></li>
+                    <li  id="header_1"><a href="./solutions">展览/设计公司</a></li>
+                    <li id="header_2"><a href="./product-show">设计师 </a></li>
+                    <li id="header_3"><a href="./customer-case">展会活动</a></li>
+                    <li id="header_4"><a href="./news">最新动态 </a></li>
+                    <li id="header_5"><a href="./service-center">服务中心 </a></li>
+                    <li id="header_6"><a href="./login">登录/注册</a></li>
                 </ul>
             </div>
 

@@ -17,7 +17,7 @@
             <div class="part-title">
                 <a href="../news.jsp">
                     <i class="am-icon-newspaper-o part-title-i"></i>
-                    <span class="part-title-span">新闻动态</span>
+                    <span class="part-title-span">展览动态</span>
                     <p>Hengwang News</p>
                 </a>
             </div>
