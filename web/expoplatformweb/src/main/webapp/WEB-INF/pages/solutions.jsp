@@ -10,10 +10,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  
-  <link rel="alternate icon" type="img/hengwang-1.png" href="img/hengwang-1.png">
-  <link rel="stylesheet" href="css/amazeui.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -50,7 +47,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="solutions-inform.jsp">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app1.png" />
+            			<img src="./assets/img/app1.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -61,7 +58,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app2.png" />
+            			<img src="./assets/img/app2.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -78,7 +75,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app1.png" />
+            			<img src="./assets/img/app1.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -89,7 +86,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app2.png" />
+            			<img src="./assets/img/app2.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -101,7 +98,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12  am-u-end">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app2.png" />
+            			<img src="./assets/img/app2.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -116,7 +113,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app1.png" />
+            			<img src="./assets/img/app1.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -127,7 +124,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app2.png" />
+            			<img src="./assets/img/app2.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -142,7 +139,7 @@
             	<a href="#">
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app1.png" />
+            			<img src="./assets/img/app1.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>
@@ -153,7 +150,7 @@
             	<li class="am-u-sm-12 am-u-md-6 am-u-lg-12">
             		<a href="#">
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-3 solution-tabs-img">
-            			<img src="img/app2.png" />
+            			<img src="./assets/img/app2.png" />
             		</div>
             		<div class="am-u-sm-12 am-u-md-12 am-u-lg-9 solution-tabs-words">
             			<h5>优悦解决方案</h5>

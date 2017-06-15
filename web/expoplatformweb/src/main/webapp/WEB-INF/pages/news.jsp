@@ -10,10 +10,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
-  
-  <link rel="alternate icon" type="img/hengwang-1.png" href="img/hengwang-1.png">
-  <link rel="stylesheet" href="css/amazeui.css"/>
-  <link rel="stylesheet" href="css/style.css"/>
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -40,7 +37,7 @@
 	  	<li class="am-u-sm-12 am-u-md-6 am-u-lg-4 ">
 	  		<a href="news-inform.jsp">
 	  		<div class="news-ul-liall">
-	  		  	<img class="news-ul-liimg" src="img/news.png"/>		  	  		  	 
+	  		  	<img class="news-ul-liimg" src="./assets/img/news.png"/>
 	  		  <div class="inform-list">
 		  		  	<div class="inform-list-date"><i class="am-icon-arrow-circle-right"></i>2015-6-11</div>
 		  		  	<div class="inform-list-label"><i class="am-icon-arrow-circle-right"></i>互联网 开发</div>
@@ -55,7 +52,7 @@
 	  	<li class="am-u-sm-12 am-u-md-6 am-u-lg-4 ">
 	  		<a href="#">
 	  		<div class="news-ul-liall">
-	  		  	<img class="news-ul-liimg" src="img/news1.png"/>		  	  		  	 
+	  		  	<img class="news-ul-liimg" src="./assets/img/news1.png"/>
 	  		  <div class="inform-list">
 		  		  	<div class="inform-list-date"><i class="am-icon-arrow-circle-right"></i>2015-6-11</div>
 		  		  	<div class="inform-list-label"><i class="am-icon-arrow-circle-right"></i>互联网 开发</div>
@@ -70,7 +67,7 @@
 	  	<li class="am-u-sm-12 am-u-md-6 am-u-lg-4 ">
 	  		<a href="#">
 	  		<div class="news-ul-liall">
-	  		  	<img class="news-ul-liimg" src="img/news2.png"/>		  	  		  	 
+	  		  	<img class="news-ul-liimg" src="./assets/img/news2.png"/>
 	  		  <div class="inform-list">
 		  		  	<div class="inform-list-date"><i class="am-icon-arrow-circle-right"></i>2015-6-11</div>
 		  		  	<div class="inform-list-label"><i class="am-icon-arrow-circle-right"></i>互联网 开发</div>
@@ -85,7 +82,7 @@
 	  	<li class="am-u-sm-12 am-u-md-6 am-u-lg-4 ">
 	  		<a href="#">
 	  		<div class="news-ul-liall">
-	  		  	<img class="news-ul-liimg" src="img/news.png"/>		  	  		  	 
+	  		  	<img class="news-ul-liimg" src="./assets/img/news.png"/>
 	  		  <div class="inform-list">
 		  		  	<div class="inform-list-date"><i class="am-icon-arrow-circle-right"></i>2015-6-11</div>
 		  		  	<div class="inform-list-label"><i class="am-icon-arrow-circle-right"></i>互联网 开发</div>
@@ -100,7 +97,7 @@
 	  	<li class="am-u-sm-12 am-u-md-6 am-u-lg-4 ">
 	  		<a href="#">
 	  		<div class="news-ul-liall">
-	  		  	<img class="news-ul-liimg" src="img/news1.png"/>		  	  		  	 
+	  		  	<img class="news-ul-liimg" src="./assets/img/news1.png"/>
 	  		  <div class="inform-list">
 		  		  	<div class="inform-list-date"><i class="am-icon-arrow-circle-right"></i>2015-6-11</div>
 		  		  	<div class="inform-list-label"><i class="am-icon-arrow-circle-right"></i>互联网 开发</div>
@@ -115,7 +112,7 @@
 	  	<li class="am-u-sm-12 am-u-md-6 am-u-lg-4 ">
 	  		<a href="#">
 	  		<div class="news-ul-liall">
-	  		  	<img class="news-ul-liimg" src="img/news2.png"/>		  	  		  	 
+	  		  	<img class="news-ul-liimg" src="./assets/img/news2.png"/>
 	  		  <div class="inform-list">
 		  		  	<div class="inform-list-date"><i class="am-icon-arrow-circle-right"></i>2015-6-11</div>
 		  		  	<div class="inform-list-label"><i class="am-icon-arrow-circle-right"></i>互联网 开发</div>

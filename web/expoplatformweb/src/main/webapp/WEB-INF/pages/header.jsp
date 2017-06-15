@@ -18,7 +18,7 @@
         <div class="left hw-logo">
             <img class="logo" src="./assets/img/atm-logo.jpg"/>
             <%--<img class="word" src="./assets/img/hw-word.png"/>--%>
-            阿童木展览信息平台
+            阿童木
         </div>
         <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
                 data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span

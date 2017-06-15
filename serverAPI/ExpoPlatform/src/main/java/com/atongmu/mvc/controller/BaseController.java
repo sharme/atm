@@ -1,6 +1,7 @@
 package com.atongmu.mvc.controller;
 
 import java.io.*;
+import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONObject;
@@ -12,7 +13,7 @@ public class BaseController {
     /**
      *
      * @param request 请求对象
-     * @return 获取请求参数
+     * @return 获取请求Body参数
      */
     public static String getRequestBodyParam(HttpServletRequest request){
         StringBuffer sb=new StringBuffer();
@@ -31,6 +32,29 @@ public class BaseController {
         }
 
         return sb.toString();
+    }
+
+
+    /**
+     *
+     * @param request 请求对象
+     * @return 获取请求Parameter参数
+     */
+    public static String getRequestParam(HttpServletRequest request){
+
+        Enumeration<String> enumeration = request.getParameterNames();
+
+        if(!enumeration.hasMoreElements()){
+            return "";
+        }
+
+        JSONObject jsonObject = new JSONObject();
+        while (enumeration.hasMoreElements()){
+            String name = enumeration.nextElement();
+
+            jsonObject.put(name,request.getParameter(name));
+        }
+        return jsonObject.toString();
     }
 
     /**

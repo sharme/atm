@@ -21,4 +21,11 @@ public class UserController extends BaseController{
 //        JSONObject
         sendResult(response,"aa","200","登录成功");
     }
+
+    @RequestMapping(value="/getMessageCode",method = RequestMethod.GET)
+    public void sendMessageCode(HttpServletRequest request, HttpServletResponse response){
+
+
+
+    }
 }
