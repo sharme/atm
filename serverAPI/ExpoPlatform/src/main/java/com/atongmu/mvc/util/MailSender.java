@@ -1,8 +1,7 @@
 package com.atongmu.mvc.util;
 
 import javax.mail.Session;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
+import javax.mail.internet.*;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.Transport;
@@ -12,8 +11,6 @@ import java.util.Date;
 import javax.mail.BodyPart;
 import javax.mail.MessagingException;
 import javax.mail.Multipart;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMultipart;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -76,7 +73,7 @@ public class MailSender{
         Session session = Session.getInstance(props);
         Message msg = new MimeMessage(session);
         msg.setSentDate(new Date());
-        msg.setSubject(subject);
+        msg.setSubject(MimeUtility.encodeText(subject, "utf-8", "B"));
         //Multipart will compatible HTML contents
         Multipart mainPart = new MimeMultipart();
         BodyPart body=new MimeBodyPart();
