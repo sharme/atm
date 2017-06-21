@@ -38,8 +38,8 @@
 
     <link rel="stylesheet" href="./assets/css/amazeui.min.css">
     <link rel="stylesheet" href="./assets/css/amazeui.css">
-    <link rel="stylesheet" href="./assets/css/app.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <%--<link rel="stylesheet" href="./assets/css/app.css">--%>
+    <%--<link rel="stylesheet" href="./assets/css/style.css">--%>
 </head>
 <body>
 
@@ -57,5 +57,7 @@
 <script src="./assets/js/amazeui.ie8polyfill.min.js"></script>
 <script src="./assets/js/amazeui.widgets.helper.js"></script>
 <script src="./assets/js/amazeui.widgets.helper.min.js"></script>
+
+
 </body>
 </html>
