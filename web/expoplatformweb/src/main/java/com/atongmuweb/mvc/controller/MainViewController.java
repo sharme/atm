@@ -53,5 +53,8 @@ public class MainViewController extends BaseController{
     public String servicecenter(){
         return "service-center";
     }
-
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String index(){
+        return "index";
+    }
 }
