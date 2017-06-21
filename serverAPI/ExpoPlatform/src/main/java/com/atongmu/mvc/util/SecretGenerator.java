@@ -29,7 +29,6 @@ public class SecretGenerator {
         }
     }
 
-:
     /**
      * 加密 (逻辑: 1. 将要加密的字符串转换为字节数组(byte array)<br/>
      *            2. 将第一步的字节数组作为输入使用加密器(Cipher)的doFinal方法进行加密, 返回字节数组<br/>
