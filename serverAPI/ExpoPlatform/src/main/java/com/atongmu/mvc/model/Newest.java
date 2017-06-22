@@ -7,76 +7,76 @@ import java.util.Date;
  */
 public class Newest {
 
-    private int nID;
-    private int nFrom;
-    private int nTo;
-    private String nMessage;
-    private String nCreatedBy;
-    private Date nCreatedTime;
-    private String nUpdatedBy;
-    private Date nUpdatedTime;
+    private int n_id;
+    private int n_from;
+    private int n_to;
+    private String n_message;
+    private String n_created_by;
+    private Date n_created_time;
+    private String n_updated_by;
+    private Date n_updated_time;
 
-    public int getnID() {
-        return nID;
+    public int getN_id() {
+        return n_id;
     }
 
-    public void setnID(int nID) {
-        this.nID = nID;
+    public void setN_id(int n_id) {
+        this.n_id = n_id;
     }
 
-    public int getnFrom() {
-        return nFrom;
+    public int getN_from() {
+        return n_from;
     }
 
-    public void setnFrom(int nFrom) {
-        this.nFrom = nFrom;
+    public void setN_from(int n_from) {
+        this.n_from = n_from;
     }
 
-    public int getnTo() {
-        return nTo;
+    public int getN_to() {
+        return n_to;
     }
 
-    public void setnTo(int nTo) {
-        this.nTo = nTo;
+    public void setN_to(int n_to) {
+        this.n_to = n_to;
     }
 
-    public String getnMessage() {
-        return nMessage;
+    public String getN_message() {
+        return n_message;
     }
 
-    public void setnMessage(String nMessage) {
-        this.nMessage = nMessage;
+    public void setN_message(String n_message) {
+        this.n_message = n_message;
     }
 
-    public String getnCreatedBy() {
-        return nCreatedBy;
+    public String getN_created_by() {
+        return n_created_by;
     }
 
-    public void setnCreatedBy(String nCreatedBy) {
-        this.nCreatedBy = nCreatedBy;
+    public void setN_created_by(String n_created_by) {
+        this.n_created_by = n_created_by;
     }
 
-    public Date getnCreatedTime() {
-        return nCreatedTime;
+    public Date getN_created_time() {
+        return n_created_time;
     }
 
-    public void setnCreatedTime(Date nCreatedTime) {
-        this.nCreatedTime = nCreatedTime;
+    public void setN_created_time(Date n_created_time) {
+        this.n_created_time = n_created_time;
     }
 
-    public String getnUpdatedBy() {
-        return nUpdatedBy;
+    public String getN_updated_by() {
+        return n_updated_by;
     }
 
-    public void setnUpdatedBy(String nUpdatedBy) {
-        this.nUpdatedBy = nUpdatedBy;
+    public void setN_updated_by(String n_updated_by) {
+        this.n_updated_by = n_updated_by;
     }
 
-    public Date getnUpdatedTime() {
-        return nUpdatedTime;
+    public Date getN_updated_time() {
+        return n_updated_time;
     }
 
-    public void setnUpdatedTime(Date nUpdatedTime) {
-        this.nUpdatedTime = nUpdatedTime;
+    public void setN_updated_time(Date n_updated_time) {
+        this.n_updated_time = n_updated_time;
     }
 }

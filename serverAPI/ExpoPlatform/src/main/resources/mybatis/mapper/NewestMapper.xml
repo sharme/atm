@@ -6,7 +6,7 @@
 <mapper namespace="com.atongmu.mvc.dao.NewestMapper">
 
     <select id="getNewest" resultType="com.atongmu.mvc.model.Newest">
-        select n_id, n_from, n_to, n_message, n_created_time, n_updated_time from atm_newest
+        select * from atm_newest;
     </select>
 
 
