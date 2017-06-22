@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.atongmu.mvc.dao.NewestMapper">
+
+    <select id="getNewest" resultType="com.atongmu.mvc.model.Newest">
+        select n_id, n_from, n_to, n_message, n_created_time, n_updated_time from atm_newest
+    </select>
+
+
+
+</mapper>
