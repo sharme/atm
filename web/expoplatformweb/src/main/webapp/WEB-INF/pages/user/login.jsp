@@ -10,105 +10,138 @@
 <html>
 <head>
     <%@include file="../common.jsp" %>
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link href="./css/dlstyle.css" rel="stylesheet" type="text/css">
+    <style>
+        .am-icon-user{
+            padding-top: 10px;
+        }
+        .am-icon-lock{
+            padding-top: 10px;
+        }
+        .am-icon-code-fork{
+            padding-top: 10px;
+        }
+        .am-icon-mobile-phone{
+            padding-top: 4px;
+        }
+        form label{
+            padding-top: 2px;
+        }
+    </style>
     <title>登录阿童木</title>
 </head>
 <body>
-<jsp:include page="../header.jsp"/>
-<div class="am-g am-g-fixed">
-    <div class="am-u-lg-8 am-padding-horizontal-xs">
-        <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
-            <ul class="am-slides">
-                <li><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></li>
-                <li><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></li>
-                <li><img src="http://s.amazeui.org/media/i/demos/bing-3.jpg" /></li>
-
-            </ul>
-        </div>
-    </div>
-    <div class="am-u-lg-4 am-padding-horizontal-xs">
-        <!--登录注册tab-->
-        <div class="am-tabs" data-am-tabs>
-            <ul class="am-tabs-nav am-nav am-nav-tabs">
-                <li class="am-active"><a href="#tab1">登录</a></li>
-                <li><a href="#tab2">注册</a></li>
-            </ul>
-            <div class="am-tabs-bd">
-                <!--登录tab-->
-                <div class="am-tab-panel am-fade am-in am-active" id="tab1">
-                    <form class="am-form">
-                        <fieldset>
-                            <%--<legend>登录</legend>--%>
-
-                            <div class="am-form-group">
-                                <label for="doc-ipt-email-1">手机号/邮箱</label>
-                                <input type="email" class="" id="doc-ipt-email-1" placeholder="输入手机号或电子邮件">
-                            </div>
-
-                            <div class="am-form-group">
-                                <label for="doc-ipt-pwd-1">密码</label>
-                                <input type="password" class="" id="doc-ipt-pwd-1" placeholder="输入密码">
-                            </div>
-
-
-                            <p><button type="submit" class="am-btn am-btn-default" style="width: 120px;">登录</button></p>
-                        </fieldset>
-                    </form>
-                </div>
-                <!--注册tab-->
-                <div class="am-tab-panel am-fade" id="tab2">
-                    <form class="am-form">
-                        <fieldset>
-                            <%--<legend>登录</legend>--%>
-
-                            <div class="am-form-group">
-                                <label for="doc-ipt-email-1">手机号</label>
-                                <input type="email" class="" id="doc-ipt-mobile-1" placeholder="输入手机号">
-                            </div>
-
-                            <div class="am-form-group">
-                                <label for="doc-ipt-pwd-1">验证码</label>
-                                <input type="number" class="" id="doc-ipt-code-1" placeholder="验证码">
-                            </div>
-
-                            <div class="am-form-group">
-                                <label for="doc-ipt-pwd-2">密码</label>
-                                <input type="password" class="" id="doc-ipt-pwd-2" placeholder="输入密码">
-                            </div>
-                            <div class="am-form-group">
-                                <label for="doc-ipt-pwd-2">你是</label>
-                                &nbsp;<select class="" data-am-selected="{btnWidth: '40%', btnSize: 'sm', btnStyle: 'secondary'}" id="doc-ipt-role-1">
-                                    <option value="1">设计师</option>
-                                    <option value="2">展览/设计公司</option>
-                                    <option value="3">主办方</option>
-                                    <option value="4">普通</option>
-                                </select>
-                            </div>
-
-                                <label class="am-checkbox">
-                                    <div class="am-form-group">
-                                        <input type="checkbox" checked="checked" value="" data-am-ucheck checked>
-                                        阅读并接受《阿童木用户协议》
-                                    </div>
-                                </label>
-
-                            <p><button type="submit" class="am-btn am-btn-default" style="width: 120px;">注册</button></p>
-                            <p>&nbsp;<br/><br/><br/></p>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="login-boxtitle">
+    <a href="home/demo.html"><img alt="" src="./images/logobig.png" /></a>
 </div>
 
-<jsp:include page="../news-model.jsp"/>
-<jsp:include page="../footer-model.jsp"/>
-${message}
+<div class="res-banner">
+    <div class="res-main">
+        <div class="login-banner-bg"><span></span><img src="./images/big.jpg" /></div>
+        <div class="login-box">
 
-<!--在这里编写你的代码-->
+            <div class="am-tabs" id="doc-my-tabs">
+                <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+                    <li class="am-active"><a href="">账号登录</a></li>
+                    <li><a href="">密码登录</a></li>
+                </ul>
 
-<script src="./assets/js/login.js"></script>
+                <div class="am-tabs-bd">
+                    <div class="am-tab-panel am-active">
+                        <form method="post">
+
+                            <div class="user-name">
+                                <label for="user"><i class="am-icon-user"></i></label>
+                                <input type="text" name="" id="user" placeholder="邮箱/手机/用户名">
+                            </div>
+                            <div class="user-pass">
+                                <label for="password"><i class="am-icon-lock"></i></label>
+                                <input type="password" name="" id="password" placeholder="请输入密码">
+                            </div>
+
+
+                        </form>
+
+                        <div class="login-links">
+                            <label for="reader-me">
+                                <input id="reader-me" type="checkbox"> 点击表示您同意阿童木《服务协议》
+                            </label>
+                        </div>
+                        <div class="am-cf">
+                            <input type="submit" name="" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">
+                        </div>
+
+                    </div>
+
+                    <div class="am-tab-panel">
+                        <form method="post">
+                            <div class="user-phone">
+                                <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
+                                <input type="tel" name="" id="phone" placeholder="手机号">
+                            </div>
+                            <div class="verification">
+                                <label for="code"><i class="am-icon-code-fork"></i></label>
+                                <input type="tel" name="" id="code" placeholder="请输入验证码">
+                                <a class="btn" href="javascript:void(0);" onclick="sendMobileCode();" id="sendMobileCode">
+                                    <span id="dyMobileButton">获取</span></a>
+                            </div>
+                            <%--<div class="user-pass">--%>
+                                <%--<label for="password"><i class="am-icon-lock"></i></label>--%>
+                                <%--<input type="password" name="" id="password" placeholder="设置密码">--%>
+                            <%--</div>--%>
+                            <%--<div class="user-pass">--%>
+                                <%--<label for="passwordRepeat"><i class="am-icon-lock"></i></label>--%>
+                                <%--<input type="password" name="" id="passwordRepeat" placeholder="确认密码">--%>
+                            <%--</div>--%>
+                        </form>
+                        <div class="login-links">
+                            <label for="reader-me">
+                                <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
+                            </label>
+                        </div>
+                        <div class="am-cf">
+                            <input type="submit" name="" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">
+                        </div>
+
+                        <hr>
+                    </div>
+
+                    <script>
+                        $(function() {
+                            $('#doc-my-tabs').tabs();
+                        })
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer ">
+        <div class="footer-hd ">
+            <p>
+                <a href="# ">恒望科技</a>
+                <b>|</b>
+                <a href="# ">商城首页</a>
+                <b>|</b>
+                <a href="# ">支付宝</a>
+                <b>|</b>
+                <a href="# ">物流</a>
+            </p>
+        </div>
+        <div class="footer-bd ">
+            <p>
+                <a href="# ">关于恒望</a>
+                <a href="# ">合作伙伴</a>
+                <a href="# ">联系我们</a>
+                <a href="# ">网站地图</a>
+                <em>© 2015-2025 Hengwang.com 版权所有</em>
+            </p>
+        </div>
+    </div>
+</body>
+
 
 </body>
 </html>
