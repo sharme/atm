@@ -57,4 +57,9 @@ public class MainViewController extends BaseController{
     public String index(){
         return "home";
     }
+
+    @RequestMapping(value = "/exhibition-activities",method = RequestMethod.GET)
+    public String exactivity(){
+        return "exhibition-activities";
+    }
 }

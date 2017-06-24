@@ -23,53 +23,7 @@
 </head>
 
 <body>
-<div class="hmtop">
-    <!--顶部导航条 -->
-    <div class="am-container header">
-        <ul class="message-l">
-            <div class="topMessage">
-                <div class="menu-hd">
-                    <a href="./login" target="_top" class="h">亲，请登录</a>
-                    <a href="#" target="_top">免费注册</a>
-                </div>
-            </div>
-        </ul>
-        <ul class="message-r">
-            <div class="topMessage home">
-                <div class="menu-hd"><a href="#" target="_top" class="h">首页</a></div>
-            </div>
-            <div class="topMessage my-shangcheng">
-                <div class="menu-hd MyShangcheng"><a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a></div>
-            </div>
-            <div class="topMessage mini-cart">
-                <div class="menu-hd"><a id="mc-menu-hd" href="#" target="_top"><i class="am-icon-shopping-cart  am-icon-fw"></i><span>QQ群:</span><strong id="J_MiniCartNum" class="h">0</strong></a></div>
-            </div>
-            <%--<div class="topMessage favorite">--%>
-                <%--<div class="menu-hd"><a href="#" target="_top"><i class="am-icon-heart am-icon-fw"></i><span>收藏夹</span></a></div>--%>
-        </ul>
-    </div>
-
-    <!--悬浮搜索框-->
-
-    <div class="nav white">
-        <div class="logo"><img src="./assets/img/atm-logo.jpg" /></div>
-        <div class="logoBig">
-            <li>阿童木</li>
-
-        </div>
-
-        <div class="search-bar pr">
-            <a name="index_none_header_sysc" href="#"></a>
-            <form>
-                <input id="searchInput" name="index_none_header_sysc" type="text" placeholder="搜索" autocomplete="off">
-                <input id="ai-topsearch" class="submit am-btn" value="搜索" index="1" type="submit">
-            </form>
-        </div>
-    </div>
-
-    <div class="clear"></div>
-</div>
-<b class="line"></b>
+<jsp:include page="./home-top.jsp"></jsp:include>
 <div class="shopNav">
     <div class="slideall" style="height: auto;">
 
@@ -77,15 +31,15 @@
         <div class="nav-cont">
             <ul>
                 <li class="index"><a href="#">首页</a></li>
-                <li class="qc"><a href="#">展会活动</a></li>
+                <li class="qc"><a href="./exhibition-activities">展会活动</a></li>
                 <li class="qc"><a href="#">参展商</a></li>
                 <li class="qc"><a href="#">展台搭建/设计</a></li>
                 <li class="qc last"><a href="#">设计师</a></li>
             </ul>
-            <div class="nav-extra">
-                <i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
-                <i class="am-icon-angle-right" style="padding-left: 10px;"></i>
-            </div>
+            <%--<div class="nav-extra">--%>
+                <%--<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利--%>
+                <%--<i class="am-icon-angle-right" style="padding-left: 10px;"></i>--%>
+            <%--</div>--%>
         </div>
 
         <div class="bannerTwo">
@@ -221,7 +175,7 @@
                             </li>
                             <li >
                                 <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="./images/meat.png"></i><a class="ml-22" title="熟食、肉类">熟食/肉类</a></h3>
+                                    <h3 class="category-name b-category-name"><i><img src="./images/meat.png"></i><a class="ml-22" title="设计公司">设计公司</a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
                                     <div class="area-in">
@@ -274,7 +228,7 @@
                             </li>
                             <li >
                                 <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="./images/bamboo.png"></i><a class="ml-22" title="素食、卤味">素食/卤味</a></h3>
+                                    <h3 class="category-name b-category-name"><i><img src="./images/bamboo.png"></i><a class="ml-22" title="设计师">设计师</a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
                                     <div class="area-in">
@@ -324,7 +278,7 @@
                             </li>
                             <li >
                                 <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="./images/nut.png"></i><a class="ml-22" title="坚果、炒货">坚果/炒货</a></h3>
+                                    <h3 class="category-name b-category-name"><i><img src="./images/nut.png"></i><a class="ml-22" title="搭建工人">搭建工人</a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
                                     <div class="area-in">
@@ -376,7 +330,7 @@
                             </li>
                             <li >
                                 <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="./images/candy.png"></i><a class="ml-22" title="糖果、蜜饯">糖果/蜜饯</a></h3>
+                                    <h3 class="category-name b-category-name"><i><img src="./images/candy.png"></i><a class="ml-22" title="展览活动">展览活动</a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
                                     <div class="area-in">
@@ -426,7 +380,7 @@
                             </li>
                             <li >
                                 <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="./images/chocolate.png"></i><a class="ml-22" title="巧克力">巧克力</a></h3>
+                                    <h3 class="category-name b-category-name"><i><img src="./images/chocolate.png"></i><a class="ml-22" title="巧克力">展览活动/家居</a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
                                     <div class="area-in">
@@ -478,7 +432,7 @@
                             </li>
                             <li >
                                 <div class="category-info">
-                                    <h3 class="category-name b-category-name"><i><img src="./images/fish.png"></i><a class="ml-22" title="海味、河鲜">海味/河鲜</a></h3>
+                                    <h3 class="category-name b-category-name"><i><img src="./images/fish.png"></i><a class="ml-22" title="海味、河鲜">展览活动/房地产</a></h3>
                                     <em>&gt;</em></div>
                                 <div class="menu-item menu-in top">
                                     <div class="area-in">
