@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface NewestService {
 
-    public List<Newest> getNewest();
+    public List<Newest> getNewest(int count);
 
     public int insertNewest(Newest newest);
 

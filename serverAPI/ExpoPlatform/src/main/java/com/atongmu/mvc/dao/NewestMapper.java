@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface NewestMapper {
 
-    public List<Newest> getNewest();
+    public List<Newest> getNewest(int count);
 
     public int insertNewest(Newest newest);
 

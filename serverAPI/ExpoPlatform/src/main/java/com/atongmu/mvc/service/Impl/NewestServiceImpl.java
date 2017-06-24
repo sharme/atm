@@ -17,11 +17,11 @@ public class NewestServiceImpl implements NewestService{
     @Autowired
     NewestMapper newestMapper;
 
-    public List<Newest> getNewest() {
+    public List<Newest> getNewest(int count) {
 
-        System.out.println("testing service: " + newestMapper.getNewest());
+        System.out.println("testing service: " + newestMapper.getNewest(count));
 
-        return newestMapper.getNewest();
+        return newestMapper.getNewest(count);
     }
 
     public int insertNewest(Newest newest) {

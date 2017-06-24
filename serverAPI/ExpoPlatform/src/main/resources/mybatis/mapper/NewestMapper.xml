@@ -5,8 +5,8 @@
 
 <mapper namespace="com.atongmu.mvc.dao.NewestMapper">
 
-    <select id="getNewest" resultType="com.atongmu.mvc.model.Newest">
-        select * from atm_newest;
+    <select id="getNewest" resultType="com.atongmu.mvc.model.Newest" parameterType="map">
+        select * from atm_newest order by n_created_time limit #{count};
     </select>
 
     <insert id="insertNewest" parameterType="newest" useGeneratedKeys="true" keyProperty="n_id">

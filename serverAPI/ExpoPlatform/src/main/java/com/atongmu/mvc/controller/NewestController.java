@@ -27,7 +27,7 @@ public class NewestController extends BaseController{
     public void getNewest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
-            List<Newest> lll = newestService.getNewest();
+            List<Newest> lll = newestService.getNewest(new Integer(httpServletRequest.getParameter("count")));
             sendResult(httpServletResponse, JSONArray.fromObject(lll).toString());
         } catch (Exception e) {
             sendResult(httpServletResponse, "{code: 500, success: false}");
