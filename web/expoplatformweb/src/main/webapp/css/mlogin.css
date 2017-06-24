@@ -1,0 +1,48 @@
+.am-icon-user{
+    padding-top: 10px;
+
+}
+.am-icon-lock{
+    padding-top: 10px;
+}
+.am-icon-code-fork{
+    padding-top: 10px;
+}
+.am-icon-mobile-phone{
+    padding-top: 4px;
+}
+form label{
+    padding-top: 2px;
+    background-color: transparent;
+}
+.forget-right{
+    float: right;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+.login-box{
+    height: 380px;
+    margin-top: 44px;
+}
+
+#thirdreglogin p{
+    font-size: 13px;
+}
+#thirdreglogin a{
+    font-size: 13px;
+}
+#thirdreglogin button{
+    font-size: 13px;
+    text-align:center;
+    padding:0px;
+    vertical-align:middle ;
+    margin:0px;
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+.bottom-m-line{
+    margin-right: 0px;border-bottom: 1px solid #0e90d2;border-radius: 0px;
+}

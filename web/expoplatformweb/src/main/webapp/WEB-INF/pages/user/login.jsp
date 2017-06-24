@@ -11,23 +11,8 @@
 <head>
     <%@include file="../common.jsp" %>
     <link href="./css/dlstyle.css" rel="stylesheet" type="text/css">
-    <style>
-        .am-icon-user{
-            padding-top: 10px;
-        }
-        .am-icon-lock{
-            padding-top: 10px;
-        }
-        .am-icon-code-fork{
-            padding-top: 10px;
-        }
-        .am-icon-mobile-phone{
-            padding-top: 4px;
-        }
-        form label{
-            padding-top: 2px;
-        }
-    </style>
+    <!--登录自定义UI-->
+    <link href="./css/mlogin.css" rel="stylesheet" type="text/css">
     <title>登录阿童木</title>
 </head>
 <body>
@@ -42,8 +27,8 @@
 
             <div class="am-tabs" id="doc-my-tabs">
                 <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
-                    <li class="am-active"><a href="">账号登录</a></li>
-                    <li><a href="">密码登录</a></li>
+                    <li class="am-active"><a href="">账号密码登录</a></li>
+                    <li><a href="">手机动态登录</a></li>
                 </ul>
 
                 <div class="am-tabs-bd">
@@ -58,18 +43,21 @@
                                 <label for="password"><i class="am-icon-lock"></i></label>
                                 <input type="password" name="" id="password" placeholder="请输入密码">
                             </div>
+                            <br/>
+                            <div class="forget-right">
+                                <a href="#"> 忘记密码？</a>
+                            </div>
 
 
                         </form>
 
-                        <div class="login-links">
-                            <label for="reader-me">
-                                <input id="reader-me" type="checkbox"> 点击表示您同意阿童木《服务协议》
-                            </label>
-                        </div>
+
                         <div class="am-cf">
                             <input type="submit" name="" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">
                         </div>
+                        <hr>
+
+
 
                     </div>
 
@@ -94,14 +82,11 @@
                                 <%--<input type="password" name="" id="passwordRepeat" placeholder="确认密码">--%>
                             <%--</div>--%>
                         </form>
-                        <div class="login-links">
-                            <label for="reader-me">
-                                <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
-                            </label>
-                        </div>
                         <div class="am-cf">
                             <input type="submit" name="" value="登录" class="am-btn am-btn-primary am-btn-sm am-fl">
                         </div>
+
+
 
                         <hr>
                     </div>
@@ -113,6 +98,17 @@
                     </script>
 
                 </div>
+                <div id="thirdreglogin">
+                    <div style="float: left" >
+                        <p>使用第三方账户登录</p>
+                        <button type="button" id="weixinlogin" class="am-btn am-btn-success">微信</button>
+                    </div>
+
+                    <div style="float: right">
+                        <a href="./register"> 没有账号？注册</a>
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -121,7 +117,7 @@
     <div class="footer ">
         <div class="footer-hd ">
             <p>
-                <a href="# ">恒望科技</a>
+                <a href="# ">阿童木</a>
                 <b>|</b>
                 <a href="# ">商城首页</a>
                 <b>|</b>
@@ -132,11 +128,11 @@
         </div>
         <div class="footer-bd ">
             <p>
-                <a href="# ">关于恒望</a>
+                <a href="# ">关于阿童木</a>
                 <a href="# ">合作伙伴</a>
                 <a href="# ">联系我们</a>
                 <a href="# ">网站地图</a>
-                <em>© 2015-2025 Hengwang.com 版权所有</em>
+                <em>© 2017-2025 atm.com 版权所有</em>
             </p>
         </div>
     </div>

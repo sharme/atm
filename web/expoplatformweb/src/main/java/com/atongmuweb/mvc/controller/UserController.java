@@ -17,7 +17,7 @@ public class UserController extends BaseController{
 
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public ModelAndView test(HttpServletResponse response, HttpServletRequest request){
+    public ModelAndView login(HttpServletResponse response, HttpServletRequest request){
 
         StringBuffer url1 = request.getRequestURL();
         String tempContextUrl1 = url1.delete(request.getRequestURL().length() - request.getRequestURI().length(), url1.length()).append(request.getServletContext().getContextPath()).append("/").toString();
@@ -31,6 +31,22 @@ public class UserController extends BaseController{
         return mv;
     }
 
+    //register
+
+    @RequestMapping(value = "/register",method = RequestMethod.GET)
+    public ModelAndView register(HttpServletResponse response, HttpServletRequest request){
+
+        StringBuffer url1 = request.getRequestURL();
+        String tempContextUrl1 = url1.delete(request.getRequestURL().length() - request.getRequestURI().length(), url1.length()).append(request.getServletContext().getContextPath()).append("/").toString();
+        ModelAndView mv = new ModelAndView();
+        //添加模型数据，可以是任意的POJO对象的
+        mv.addObject("contentUrl",tempContextUrl1);
+        //设置逻辑视图名，视图解析器会根据改名字解析到具体的视图页面
+        mv.setViewName("user/register");
+
+
+        return mv;
+    }
 
 
 }

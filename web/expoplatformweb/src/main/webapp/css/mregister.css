@@ -1,0 +1,15 @@
+.login-box{
+    height: 440px;
+    margin-top: 15px;
+}
+.am-selected-btn{
+    font-size: 14px;
+    height: 38px;
+}
+.am-selected-text{
+    font-size: 14px;
+}
+.am-icon-check{
+    width:16px;
+    height: 16px;
+}
