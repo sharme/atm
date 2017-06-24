@@ -11,4 +11,6 @@ public interface NewestService {
 
     public List<Newest> getNewest();
 
+    public int insertNewest(Newest newest);
+
 }

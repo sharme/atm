@@ -24,5 +24,11 @@ public class NewestServiceImpl implements NewestService{
         return newestMapper.getNewest();
     }
 
+    public int insertNewest(Newest newest) {
+
+        return newestMapper.insertNewest(newest);
+
+    }
+
 
 }

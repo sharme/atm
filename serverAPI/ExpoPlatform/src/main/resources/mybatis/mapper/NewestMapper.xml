@@ -9,6 +9,11 @@
         select * from atm_newest;
     </select>
 
+    <insert id="insertNewest" parameterType="newest" useGeneratedKeys="true" keyProperty="n_id">
+        insert into atm_newest(n_from, n_to, n_message, n_created_by, n_created_time, n_updated_by, n_updated_time)
+        values (#{n_from}, #{n_to}, #{n_message}, NULL, DEFAULT, NULL, DEFAULT );
+    </insert>
+
 
 
 </mapper>

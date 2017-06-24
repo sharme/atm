@@ -1,5 +1,7 @@
 package com.atongmu.mvc.model;
 
+import com.atongmu.mvc.util.DateUtil;
+
 import java.util.Date;
 
 /**
@@ -56,8 +58,8 @@ public class Newest {
         this.n_created_by = n_created_by;
     }
 
-    public Date getN_created_time() {
-        return n_created_time;
+    public String getN_created_time() {
+        return new DateUtil().formatDateToString(n_created_time, DateUtil.DATE_FORMAT_YMDHMS_TIME);
     }
 
     public void setN_created_time(Date n_created_time) {
@@ -72,8 +74,8 @@ public class Newest {
         this.n_updated_by = n_updated_by;
     }
 
-    public Date getN_updated_time() {
-        return n_updated_time;
+    public String getN_updated_time() {
+        return new DateUtil().formatDateToString(n_updated_time, DateUtil.DATE_FORMAT_YMDHMS_TIME);
     }
 
     public void setN_updated_time(Date n_updated_time) {

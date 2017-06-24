@@ -13,6 +13,8 @@ public interface NewestMapper {
 
     public List<Newest> getNewest();
 
+    public int insertNewest(Newest newest);
+
 
 }
 
