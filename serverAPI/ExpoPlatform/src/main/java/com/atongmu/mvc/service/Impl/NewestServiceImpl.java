@@ -18,16 +18,12 @@ public class NewestServiceImpl implements NewestService{
     NewestMapper newestMapper;
 
     public List<Newest> getNewest(int count) {
-
         System.out.println("testing service: " + newestMapper.getNewest(count));
-
         return newestMapper.getNewest(count);
     }
 
     public int insertNewest(Newest newest) {
-
         return newestMapper.insertNewest(newest);
-
     }
 
 

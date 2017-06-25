@@ -55,7 +55,7 @@ public class NewestController extends BaseController{
             sendResult(httpServletResponse, "{success: true, n_id: " + newest.getN_id() + "}");
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
 
     }
