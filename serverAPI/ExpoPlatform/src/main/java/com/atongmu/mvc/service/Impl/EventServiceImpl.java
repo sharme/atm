@@ -19,8 +19,8 @@ public class EventServiceImpl implements EventService{
 
 
     @Override
-    public List<Event> getEvents(int count, String type) {
-        return eventMapper.getEvents(count, type);
+    public List<Event> getEvents(int count, String type, String city) {
+        return eventMapper.getEvents(count, type, city);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package com.atongmu.mvc.controller;
 
 import com.atongmu.mvc.model.Event;
-import com.atongmu.mvc.service.Impl.EventServiceImpl;
-import com.fasterxml.jackson.databind.ser.Serializers;
+import com.atongmu.mvc.model.Exhibitor;
+import com.atongmu.mvc.service.Impl.ExhibitorServiceImpl;
 import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * Created by yao on 6/25/17.
+ * Created by yao on 6/26/17.
  */
 @Controller
-public class EventController extends BaseController{
+public class ExhibitorController extends BaseController{
+
 
     @Autowired
-    EventServiceImpl eventService;
+    ExhibitorServiceImpl exhibitorService;
 
-
-    @RequestMapping(value = "/getEvents", method = RequestMethod.GET)
+    @RequestMapping(value = "/getExhibitors", method = RequestMethod.GET)
     public void getEvents(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
@@ -36,8 +36,8 @@ public class EventController extends BaseController{
             if(httpServletRequest.getParameter("city") != null)
                 city = new String(httpServletRequest.getParameter("city").getBytes("iso-8859-1"), "utf-8");
 
-            List<Event> events = eventService.getEvents(count, type, city);
-            sendResult(httpServletResponse, JSONArray.fromObject(events).toString());
+            List<Exhibitor> exhibitors = exhibitorService.getExhibitors(count, type, city);
+            sendResult(httpServletResponse, JSONArray.fromObject(exhibitors).toString());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,27 +46,18 @@ public class EventController extends BaseController{
     }
 
 
-    @RequestMapping(value = "/getEventById", method = RequestMethod.GET)
+    @RequestMapping(value = "/getExhibitorById", method = RequestMethod.GET)
     public void getEventById(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
-            Event event = eventService.getEventById(new Integer(httpServletRequest.getParameter("id")));
-            sendResult(httpServletResponse, JSONArray.fromObject(event).toString());
+            Exhibitor exhibitor = exhibitorService.getExhibitorById(new Integer(httpServletRequest.getParameter("id")));
+            sendResult(httpServletResponse, JSONArray.fromObject(exhibitor).toString());
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
-
-
-
-
-
-
-
-
 
 
 }
