@@ -13,4 +13,6 @@ public interface ExhibitorService {
 
     public Exhibitor getExhibitorById(int id);
 
+    public Exhibitor getExhibitorByUId(int u_id);
+
 }

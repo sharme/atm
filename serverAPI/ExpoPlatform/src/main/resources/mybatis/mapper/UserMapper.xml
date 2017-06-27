@@ -9,5 +9,4 @@
         select * from atm_users where u_id = #{id};
     </select>
 
-
 </mapper>

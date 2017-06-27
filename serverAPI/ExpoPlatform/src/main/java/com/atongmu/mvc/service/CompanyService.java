@@ -14,4 +14,6 @@ public interface CompanyService {
 
     public Company getCompanyById(int id);
 
+    public Company getCompanyByUId(int u_id);
+
 }

@@ -61,4 +61,18 @@ public class CompanyController extends BaseController{
     }
 
 
+    @RequestMapping(value = "/getCompanyByUId", method = RequestMethod.GET)
+    public void getEventByUId(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        try {
+            Company company = companyService.getCompanyByUId(new Integer(httpServletRequest.getParameter("u_id")));
+            sendResult(httpServletResponse, JSONArray.fromObject(company).toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

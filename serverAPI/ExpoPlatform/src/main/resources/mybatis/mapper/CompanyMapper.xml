@@ -34,5 +34,9 @@
         select * from atm_company where c_id = #{id};
     </select>
 
+    <select id="getCompanyByUId" resultType="com.atongmu.mvc.model.Company" parameterType="map">
+        select * from atm_company where u_id = #{u_id};
+    </select>
+
 
 </mapper>

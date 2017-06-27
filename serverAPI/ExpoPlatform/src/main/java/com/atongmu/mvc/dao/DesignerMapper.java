@@ -17,5 +17,7 @@ public interface DesignerMapper {
 
     public Designer getDesignerById(int id);
 
+    public Designer getDesignerByUId(int u_id);
+
 
 }

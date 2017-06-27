@@ -60,5 +60,18 @@ public class DesignerController extends BaseController{
 
     }
 
+    @RequestMapping(value = "/getDesignerByUId", method = RequestMethod.GET)
+    public void getEventByUId(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        try {
+            Designer designer = designerService.getDesignerByUId(new Integer(httpServletRequest.getParameter("u_id")));
+            sendResult(httpServletResponse, JSONArray.fromObject(designer).toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 }

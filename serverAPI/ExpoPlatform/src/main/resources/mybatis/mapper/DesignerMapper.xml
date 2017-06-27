@@ -59,5 +59,9 @@
         select * from atm_designers where d_id = #{id};
     </select>
 
+    <select id="getDesignerByUId" resultType="com.atongmu.mvc.model.Designer" parameterType="map">
+        select * from atm_designers where u_id = #{u_id};
+    </select>
+
 
 </mapper>

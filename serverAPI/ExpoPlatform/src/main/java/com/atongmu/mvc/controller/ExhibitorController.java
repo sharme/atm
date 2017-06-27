@@ -60,4 +60,18 @@ public class ExhibitorController extends BaseController{
     }
 
 
+    @RequestMapping(value = "/getExhibitorByUId", method = RequestMethod.GET)
+    public void getEventByUId(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        try {
+            Exhibitor exhibitor = exhibitorService.getExhibitorByUId(new Integer(httpServletRequest.getParameter("u_id")));
+            sendResult(httpServletResponse, JSONArray.fromObject(exhibitor).toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 }

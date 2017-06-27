@@ -26,4 +26,12 @@ public class ExhibitorServiceImpl implements ExhibitorService {
     public Exhibitor getExhibitorById(int id) {
         return exhibitorMapper.getExhibitorById(id);
     }
+
+    @Override
+    public Exhibitor getExhibitorByUId(int u_id) {
+        return exhibitorMapper.getExhibitorByUId(u_id);
+    }
+
+
+
 }

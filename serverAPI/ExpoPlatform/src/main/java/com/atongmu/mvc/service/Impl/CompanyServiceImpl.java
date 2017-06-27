@@ -29,4 +29,11 @@ public class CompanyServiceImpl implements CompanyService {
     public Company getCompanyById(int id) {
         return companyMapper.getCompanyById(id);
     }
+
+    @Override
+    public Company getCompanyByUId(int u_id) {
+        return companyMapper.getCompanyByUId(u_id);
+    }
+
+
 }

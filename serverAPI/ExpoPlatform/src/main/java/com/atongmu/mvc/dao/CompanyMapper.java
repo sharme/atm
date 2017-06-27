@@ -17,5 +17,7 @@ public interface CompanyMapper {
 
     public Company getCompanyById(int id);
 
+    public Company getCompanyByUId(int u_id);
+
 
 }

@@ -29,4 +29,12 @@ public class DesignerServiceImpl implements DesignerService {
     public Designer getDesignerById(int id) {
         return designerMapper.getDesignerById(id);
     }
+
+    @Override
+    public Designer getDesignerByUId(int u_id) {
+        return designerMapper.getDesignerByUId(u_id);
+    }
+
+
+
 }

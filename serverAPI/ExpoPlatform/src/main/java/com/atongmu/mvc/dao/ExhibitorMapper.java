@@ -16,5 +16,7 @@ public interface ExhibitorMapper {
 
     public Exhibitor getExhibitorById(int id);
 
+    public Exhibitor getExhibitorByUId(int u_id);
+
 
 }
