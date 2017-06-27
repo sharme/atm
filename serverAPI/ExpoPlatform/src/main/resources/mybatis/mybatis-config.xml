@@ -11,6 +11,7 @@
         <typeAlias type="com.atongmu.mvc.model.Newest" alias="Newest"/>
         <typeAlias type="com.atongmu.mvc.model.Event" alias="Event"/>
         <typeAlias type="com.atongmu.mvc.model.Exhibitor" alias="Exhibitor"/>
+        <typeAlias type="com.atongmu.mvc.model.Designer" alias="Designer"/>
     </typeAliases>
 
     <!-- 数据库配置 -->
@@ -33,7 +34,8 @@
         <mapper resource="mybatis/mapper/CompanyHistoryMapper.xml"/>
         <mapper resource="mybatis/mapper/NewestMapper.xml"/>
         <mapper resource="mybatis/mapper/EventMapper.xml"/>
-        <mapper resource="mybatis/mapper/ExhibitorMapper.xml"></mapper>
+        <mapper resource="mybatis/mapper/ExhibitorMapper.xml"/>
+        <mapper resource="mybatis/mapper/DesignerMapper.xml"/>
     </mappers>
 
 

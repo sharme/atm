@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.atongmu.mvc.dao.DesignerMapper">
+
+    <select id="getDesigners" resultType="com.atongmu.mvc.model.Designer" parameterType="java.util.Map">
+
+        select d_id, u_id, d_name, d_pic, d_type, d_address, d_city, d_created_time, d_updated_time from atm_designers
+
+
+
+        <if test=" type != null or city !=null ">
+          where
+            <if test=" type != null">
+                d_type = #{type}
+            </if>
+
+            <if test=" city != null">
+                and d_city = #{city}
+            </if>
+
+        </if>
+
+        order by d_created_time limit #{count};
+
+
+
+    </select>
+
+    <select id="getDesignerById" resultType="com.atongmu.mvc.model.Designer" parameterType="map">
+        select * from atm_designers where d_id = #{id};
+    </select>
+
+
+</mapper>
