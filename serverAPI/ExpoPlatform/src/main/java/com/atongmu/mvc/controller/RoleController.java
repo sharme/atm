@@ -1,8 +1,8 @@
 package com.atongmu.mvc.controller;
 
-import com.atongmu.mvc.model.Company;
+import com.atongmu.mvc.model.Role;
 import com.atongmu.mvc.model.User;
-import com.atongmu.mvc.service.Impl.CompanyServiceImpl;
+import com.atongmu.mvc.service.Impl.RoleServiceImpl;
 import com.atongmu.mvc.service.Impl.UserServiceImpl;
 import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,32 +18,19 @@ import java.util.List;
  * Created by yao on 6/26/17.
  */
 @Controller
-public class UserController extends BaseController{
+public class RoleController extends BaseController{
 
 
     @Autowired
-    UserServiceImpl userService;
+    RoleServiceImpl roleService;
 
-    @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
+    @RequestMapping(value = "/getRoles", method = RequestMethod.GET)
     public void getEvents(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
 
-            int id = new Integer(httpServletRequest.getParameter("id"));
-            User user = userService.getUserById(id);
-            sendResult(httpServletResponse, JSONArray.fromObject(user).toString());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public void getEventById(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
-
-        try {
+            List<Role> roles = roleService.getRoles();
+            sendResult(httpServletResponse, JSONArray.fromObject(roles).toString());
 
         } catch (Exception e) {
             e.printStackTrace();

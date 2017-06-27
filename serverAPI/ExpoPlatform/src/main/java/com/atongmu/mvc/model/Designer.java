@@ -12,37 +12,12 @@ public class Designer {
     private int d_id;
     private int u_id;
     private String d_name;
-    private String d_age;
+    private int d_age;
     private String d_type;
     private String d_desc;
-    private String country;
-    private String province;
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    private String city;
+    private String d_country;
+    private String d_province;
+    private String d_city;
     private String d_pic;
     private String d_pic2;
     private String d_pic3;
@@ -50,6 +25,30 @@ public class Designer {
     private Date d_created_time;
     private String d_updated_by;
     private Date d_updated_time;
+
+    public String getD_country() {
+        return d_country;
+    }
+
+    public void setD_country(String d_country) {
+        this.d_country = d_country;
+    }
+
+    public String getD_province() {
+        return d_province;
+    }
+
+    public void setD_province(String d_province) {
+        this.d_province = d_province;
+    }
+
+    public String getD_city() {
+        return d_city;
+    }
+
+    public void setD_city(String d_city) {
+        this.d_city = d_city;
+    }
 
     public int getD_id() {
         return d_id;
@@ -75,11 +74,11 @@ public class Designer {
         this.d_name = d_name;
     }
 
-    public String getD_age() {
+    public int getD_age() {
         return d_age;
     }
 
-    public void setD_age(String d_age) {
+    public void setD_age(int d_age) {
         this.d_age = d_age;
     }
 

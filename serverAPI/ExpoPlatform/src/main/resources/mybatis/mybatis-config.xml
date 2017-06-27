@@ -13,6 +13,8 @@
         <typeAlias type="com.atongmu.mvc.model.Exhibitor" alias="Exhibitor"/>
         <typeAlias type="com.atongmu.mvc.model.Designer" alias="Designer"/>
         <typeAlias type="com.atongmu.mvc.model.Company" alias="Company"/>
+        <typeAlias type="com.atongmu.mvc.model.User" alias="User"/>
+        <typeAlias type="com.atongmu.mvc.model.Role" alias="Role"/>
     </typeAliases>
 
     <!-- 数据库配置 -->
@@ -38,6 +40,8 @@
         <mapper resource="mybatis/mapper/ExhibitorMapper.xml"/>
         <mapper resource="mybatis/mapper/DesignerMapper.xml"/>
         <mapper resource="mybatis/mapper/CompanyMapper.xml"/>
+        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <mapper resource="mybatis/mapper/RoleMapper.xml"/>
     </mappers>
 
 

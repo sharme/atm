@@ -9,19 +9,19 @@
 
         select e_id, e_logo, e_type, e_address, e_city, e_people, e_website, e_created_time, e_updated_time from atm_exhibitors
 
+        <choose>
 
+            <when test=" type != null and city != null">
+                where e_type = #{type} and e_city = #{city}
+            </when>
+            <when test=" type != null and city == null">
+                where e_type = #{type}
+            </when>
+            <when test=" type == null and city != null">
+                where e_city = #{city}
+            </when>
 
-        <if test=" type != null or city !=null ">
-          where
-            <if test=" type != null">
-                e_type = #{type}
-            </if>
-
-            <if test=" city != null">
-                and e_city = #{city}
-            </if>
-
-        </if>
+        </choose>
 
         order by e_created_time limit #{count};
 

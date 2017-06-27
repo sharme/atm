@@ -20,10 +20,10 @@ public class Company {
     private int c_people;
     private String c_desc;
     private String c_logo;
-    private int c_mobile_phone;
-    private int c_qq;
+    private String c_mobile_phone;
+    private String c_qq;
     private String c_owner;
-    private int c_phone;
+    private String c_phone;
     private String c_website;
     private int c_limit;
     private String c_pic;
@@ -122,19 +122,19 @@ public class Company {
         this.c_logo = c_logo;
     }
 
-    public int getC_mobile_phone() {
+    public String getC_mobile_phone() {
         return c_mobile_phone;
     }
 
-    public void setC_mobile_phone(int c_mobile_phone) {
+    public void setC_mobile_phone(String c_mobile_phone) {
         this.c_mobile_phone = c_mobile_phone;
     }
 
-    public int getC_qq() {
+    public String getC_qq() {
         return c_qq;
     }
 
-    public void setC_qq(int c_qq) {
+    public void setC_qq(String c_qq) {
         this.c_qq = c_qq;
     }
 
@@ -146,11 +146,11 @@ public class Company {
         this.c_owner = c_owner;
     }
 
-    public int getC_phone() {
+    public String getC_phone() {
         return c_phone;
     }
 
-    public void setC_phone(int c_phone) {
+    public void setC_phone(String c_phone) {
         this.c_phone = c_phone;
     }
 

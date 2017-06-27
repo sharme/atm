@@ -7,21 +7,47 @@
 
     <select id="getDesigners" resultType="com.atongmu.mvc.model.Designer" parameterType="java.util.Map">
 
-        select d_id, u_id, d_name, d_pic, d_type, d_address, d_city, d_created_time, d_updated_time from atm_designers
+        select d_id, d_name, d_age, d_pic, d_type, d_address, d_city, d_created_time, d_updated_time from atm_designers
 
 
+        <choose>
 
-        <if test=" type != null or city !=null ">
-          where
-            <if test=" type != null">
-                d_type = #{type}
-            </if>
+            <when test=" type != null and city != null">
+                where d_type = #{type} and d_city = #{city}
+            </when>
+            <when test=" type != null and city == null">
+                where d_type = #{type}
+            </when>
+            <when test=" type == null and city != null">
+                where d_city = #{city}
+            </when>
 
-            <if test=" city != null">
-                and d_city = #{city}
-            </if>
+        </choose>
 
-        </if>
+
+        <!---->
+
+        <!--<if test=" type != null or city !=null ">-->
+          <!--where-->
+            <!--<if test=" type != null">-->
+                <!--d_type = #{type}-->
+
+                <!--<if test=" city != null">-->
+                    <!--and d_city = #{city}-->
+                <!--</if>-->
+                <!---->
+            <!--</if>-->
+
+            <!--<if test=" city != null">-->
+                 <!--d_city = #{city}-->
+
+                <!--<if test=" type != null">-->
+                    <!--and d_type = #{type}-->
+                <!--</if>-->
+            <!--</>-->
+            <!---->
+
+        <!--</if>-->
 
         order by d_created_time limit #{count};
 

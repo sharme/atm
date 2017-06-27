@@ -7,21 +7,22 @@
 
     <select id="getCompanies" resultType="com.atongmu.mvc.model.Company" parameterType="java.util.Map">
 
-        select c_id, u_id, c_name, c_logo, c_type, c_address, c_city, c_people, c_created_time, c_updated_time from atm_company
+        select c_id, c_name, c_logo, c_type, c_address, c_city, c_people, c_created_time, c_updated_time from atm_company
 
 
+        <choose>
 
-        <if test=" type != null or city !=null ">
-          where
-            <if test=" type != null">
-                c_type = #{type}
-            </if>
+            <when test=" type != null and city != null">
+                where c_type = #{type} and c_city = #{city}
+            </when>
+            <when test=" type != null and city == null">
+                where c_type = #{type}
+            </when>
+            <when test=" type == null and city != null">
+                where c_city = #{city}
+            </when>
 
-            <if test=" city != null">
-                and c_city = #{city}
-            </if>
-
-        </if>
+        </choose>
 
         order by c_created_time limit #{count};
 

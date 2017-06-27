@@ -16,9 +16,9 @@ public class Exhibitor {
     private String e_desc;
     private int e_people;
     private String e_logo;
-    private int e_mobile_phone;
-    private int e_qq;
-    private int e_phone;
+    private String e_mobile_phone;
+    private String  e_qq;
+    private String e_phone;
     private String e_owner;
     private String e_website;
     private String e_address;
@@ -86,27 +86,27 @@ public class Exhibitor {
         this.e_logo = e_logo;
     }
 
-    public int getE_mobile_phone() {
+    public String getE_mobile_phone() {
         return e_mobile_phone;
     }
 
-    public void setE_mobile_phone(int e_mobile_phone) {
+    public void setE_mobile_phone(String e_mobile_phone) {
         this.e_mobile_phone = e_mobile_phone;
     }
 
-    public int getE_qq() {
+    public String getE_qq() {
         return e_qq;
     }
 
-    public void setE_qq(int e_qq) {
+    public void setE_qq(String e_qq) {
         this.e_qq = e_qq;
     }
 
-    public int getE_phone() {
+    public String getE_phone() {
         return e_phone;
     }
 
-    public void setE_phone(int e_phone) {
+    public void setE_phone(String e_phone) {
         this.e_phone = e_phone;
     }
 

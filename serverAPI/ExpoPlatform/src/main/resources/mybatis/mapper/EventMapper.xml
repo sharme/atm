@@ -7,21 +7,24 @@
 
     <select id="getEvents" resultType="com.atongmu.mvc.model.Event" parameterType="java.util.Map">
 
-        select * from atm_events
+        select e_id, e_logo, e_name, e_type, e_address, e_start_date, e_end_date, e_created_time, e_updated_time from atm_events
 
 
 
-        <if test=" type != null or city !=null ">
-          where
-            <if test=" type != null">
-                e_type = #{type}
-            </if>
 
-            <if test=" city != null">
-                and e_city = #{city}
-            </if>
+        <choose>
 
-        </if>
+            <when test=" type != null and city != null">
+                where e_type = #{type} and e_city = #{city}
+            </when>
+            <when test=" type != null and city == null">
+                where e_type = #{type}
+            </when>
+            <when test=" type == null and city != null">
+                where e_city = #{city}
+            </when>
+
+        </choose>
 
         order by e_created_time limit #{count};
 
