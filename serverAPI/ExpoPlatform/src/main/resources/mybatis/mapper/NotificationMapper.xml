@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.atongmu.mvc.dao.NotificationMapper">
+
+    <select id="getNotificationsByUId" resultType="com.atongmu.mvc.model.Notification" parameterType="map">
+        select * from atm_notifications where u_id = #{u_id};
+    </select>
+
+
+</mapper>
