@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.atongmu.mvc.dao.CompanyMapper">
+
+    <select id="getCompanies" resultType="com.atongmu.mvc.model.Company" parameterType="java.util.Map">
+
+        select c_id, u_id, c_name, c_logo, c_type, c_address, c_city, c_people, c_created_time, c_updated_time from atm_company
+
+
+
+        <if test=" type != null or city !=null ">
+          where
+            <if test=" type != null">
+                c_type = #{type}
+            </if>
+
+            <if test=" city != null">
+                and c_city = #{city}
+            </if>
+
+        </if>
+
+        order by c_created_time limit #{count};
+
+
+
+    </select>
+
+    <select id="getCompanyById" resultType="com.atongmu.mvc.model.Company" parameterType="map">
+        select * from atm_company where c_id = #{id};
+    </select>
+
+
+</mapper>
