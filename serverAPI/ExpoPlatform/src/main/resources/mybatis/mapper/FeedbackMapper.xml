@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.atongmu.mvc.dao.FeedbackMapper">
+
+    <select id="getAllFeedback" resultType="com.atongmu.mvc.model.Feedback" parameterType="map">
+        select * from atm_feedbacks;
+    </select>
+
+    <insert id="addFeedback" parameterType="feedback" useGeneratedKeys="true" keyProperty="f_id">
+        insert into atm_feedbacks(u_id, f_msg, f_created_by, f_created_time, f_updated_by, f_updated_time)
+        values (#{u_id}, #{f_msg}, NULL, DEFAULT, NULL, DEFAULT );
+    </insert>
+
+
+
+</mapper>
