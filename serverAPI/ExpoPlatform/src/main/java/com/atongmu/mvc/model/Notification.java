@@ -71,7 +71,7 @@ public class Notification {
     public String getN_created_time() {
         return new DateUtil().formatDateToString(n_created_time, DateUtil.DATE_FORMAT_YMDHMS_TIME);
     }
-git
+
     public void setN_created_time(Date n_created_time) {
         this.n_created_time = n_created_time;
     }
