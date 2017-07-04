@@ -25,11 +25,12 @@ public class DesignerController extends BaseController{
     DesignerServiceImpl designerService;
 
     @RequestMapping(value = "/getDesigners", method = RequestMethod.GET)
-    public void getEvents(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public void getDesigners(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
 
             int count = new Integer(httpServletRequest.getParameter("count"));
+            int start = new Integer(httpServletRequest.getParameter("start"));
             String type = null;
             if(httpServletRequest.getParameter("type") != null)
                 type = new String(httpServletRequest.getParameter("type").getBytes("iso-8859-1"), "utf-8");
@@ -37,7 +38,7 @@ public class DesignerController extends BaseController{
             if(httpServletRequest.getParameter("city") != null)
                 city = new String(httpServletRequest.getParameter("city").getBytes("iso-8859-1"), "utf-8");
 
-            List<Designer> designers = designerService.getDesigners(count, type, city);
+            List<Designer> designers = designerService.getDesigners(start, count, type, city);
             sendResult(httpServletResponse, JSONArray.fromObject(designers).toString());
 
         } catch (Exception e) {
@@ -48,7 +49,7 @@ public class DesignerController extends BaseController{
 
 
     @RequestMapping(value = "/getDesignerById", method = RequestMethod.GET)
-    public void getEventById(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public void getDesignerById(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
             Designer designer = designerService.getDesignerById(new Integer(httpServletRequest.getParameter("id")));
@@ -61,7 +62,7 @@ public class DesignerController extends BaseController{
     }
 
     @RequestMapping(value = "/getDesignerByUId", method = RequestMethod.GET)
-    public void getEventByUId(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public void getDesignerByUId(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         try {
             Designer designer = designerService.getDesignerByUId(new Integer(httpServletRequest.getParameter("u_id")));
@@ -70,8 +71,18 @@ public class DesignerController extends BaseController{
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
+    @RequestMapping(value = "/getDesignerNumber", method = RequestMethod.GET)
+    public void getDesignerNumber(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+
+        try {
+            int total = designerService.getDesignerNumber();
+            sendResult(httpServletResponse, "[{total: "+ total +"}]");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }

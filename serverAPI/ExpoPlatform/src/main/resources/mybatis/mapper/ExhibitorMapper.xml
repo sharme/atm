@@ -23,7 +23,7 @@
 
         </choose>
 
-        order by e_created_time limit #{count};
+        order by e_created_time limit #{start}, #{count};
 
 
 
@@ -35,6 +35,10 @@
 
     <select id="getExhibitorByUId" resultType="com.atongmu.mvc.model.Exhibitor" parameterType="map">
         select * from atm_exhibitors where u_id = #{u_id};
+    </select>
+
+    <select id="getExhibitorNumber" resultType="java.lang.Integer" parameterType="map">
+        select count(*) from atm_exhibitors;
     </select>
 
 

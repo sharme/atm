@@ -21,8 +21,13 @@ public class CompanyServiceImpl implements CompanyService {
     CompanyMapper companyMapper;
 
     @Override
-    public List<Company> getCompanies(int count, String type, String city) {
-        return companyMapper.getCompanies(count, type, city);
+    public List<Company> getCompanies(int start, int count, String type, String city) {
+        return companyMapper.getCompanies(start, count, type, city);
+    }
+
+    @Override
+    public int getCompanyNumber() {
+        return companyMapper.getCompanyNumber();
     }
 
     @Override

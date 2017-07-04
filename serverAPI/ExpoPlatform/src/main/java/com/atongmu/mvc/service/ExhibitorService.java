@@ -9,7 +9,9 @@ import java.util.List;
  */
 public interface ExhibitorService {
 
-    public List<Exhibitor> getExhibitors(int count, String type, String city);
+    public List<Exhibitor> getExhibitors(int start, int count, String type, String city);
+
+    public int getExhibitorNumber();
 
     public Exhibitor getExhibitorById(int id);
 

@@ -18,8 +18,13 @@ public class ExhibitorServiceImpl implements ExhibitorService {
     ExhibitorMapper exhibitorMapper;
 
     @Override
-    public List<Exhibitor> getExhibitors(int count, String type, String city) {
-        return exhibitorMapper.getExhibitors(count, type, city);
+    public List<Exhibitor> getExhibitors(int start, int count, String type, String city) {
+        return exhibitorMapper.getExhibitors(start, count, type, city);
+    }
+
+    @Override
+    public int getExhibitorNumber() {
+        return exhibitorMapper.getExhibitorNumber();
     }
 
     @Override

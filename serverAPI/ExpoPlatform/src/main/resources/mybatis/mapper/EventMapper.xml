@@ -7,7 +7,7 @@
 
     <select id="getEvents" resultType="com.atongmu.mvc.model.Event" parameterType="java.util.Map">
 
-        select e_id, e_logo, e_name, e_type, e_address, e_start_date, e_end_date, e_created_time, e_updated_time from atm_events
+        select e_id, e_logo, e_name, e_city, e_type, e_address, e_start_date, e_end_date, e_created_time, e_updated_time from atm_events
 
 
 
@@ -26,7 +26,7 @@
 
         </choose>
 
-        order by e_created_time limit #{count};
+        order by e_created_time limit #{start}, #{count};
 
 
 
@@ -35,6 +35,13 @@
     <select id="getEventById" resultType="com.atongmu.mvc.model.Event" parameterType="map">
         select * from atm_events where e_id = #{id};
     </select>
+
+
+    <select id="getEventNumber" resultType="java.lang.Integer" parameterType="map">
+        select count(e_id) from atm_events;
+    </select>
+
+
 
 
 </mapper>

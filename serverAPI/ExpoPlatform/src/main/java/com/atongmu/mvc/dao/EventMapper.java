@@ -13,8 +13,10 @@ import java.util.List;
 @Repository
 public interface EventMapper {
 
-    public List<Event> getEvents(@Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+    public List<Event> getEvents(@Param(value = "start") int start, @Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
 
     public Event getEventById(int id);
+
+    public int getEventNumber();
 
 }

@@ -21,9 +21,15 @@ public class DesignerServiceImpl implements DesignerService {
     DesignerMapper designerMapper;
 
     @Override
-    public List<Designer> getDesigners(int count, String type, String city) {
-        return designerMapper.getDesigners(count, type, city);
+    public List<Designer> getDesigners(int start, int count, String type, String city) {
+        return designerMapper.getDesigners(start, count, type, city);
     }
+
+    @Override
+    public int getDesignerNumber() {
+        return designerMapper.getDesignerNumber();
+    }
+
 
     @Override
     public Designer getDesignerById(int id) {

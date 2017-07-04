@@ -19,12 +19,17 @@ public class EventServiceImpl implements EventService{
 
 
     @Override
-    public List<Event> getEvents(int count, String type, String city) {
-        return eventMapper.getEvents(count, type, city);
+    public List<Event> getEvents(int start, int count, String type, String city) {
+        return eventMapper.getEvents(start, count, type, city);
     }
 
     @Override
     public Event getEventById(int id) {
         return eventMapper.getEventById(id);
+    }
+
+    @Override
+    public int getEventNumber() {
+        return eventMapper.getEventNumber();
     }
 }

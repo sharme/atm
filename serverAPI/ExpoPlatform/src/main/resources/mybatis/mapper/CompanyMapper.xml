@@ -24,7 +24,7 @@
 
         </choose>
 
-        order by c_created_time limit #{count};
+        order by c_created_time limit #{start}, #{count};
 
 
 
@@ -36,6 +36,10 @@
 
     <select id="getCompanyByUId" resultType="com.atongmu.mvc.model.Company" parameterType="map">
         select * from atm_company where u_id = #{u_id};
+    </select>
+
+    <select id="getCompanyNumber" resultType="java.lang.Integer" parameterType="map">
+        select count(*) from atm_company;
     </select>
 
 

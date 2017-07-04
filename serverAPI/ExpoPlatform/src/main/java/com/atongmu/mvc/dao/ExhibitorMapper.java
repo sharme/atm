@@ -12,7 +12,9 @@ import java.util.List;
 @Repository
 public interface ExhibitorMapper {
 
-    public List<Exhibitor> getExhibitors(@Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+    public List<Exhibitor> getExhibitors(@Param(value = "start") int start, @Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+
+    public int getExhibitorNumber();
 
     public Exhibitor getExhibitorById(int id);
 

@@ -10,7 +10,9 @@ import java.util.List;
  */
 public interface CompanyService {
 
-    public List<Company> getCompanies(int count, String type, String city);
+    public List<Company> getCompanies(int start, int count, String type, String city);
+
+    public int getCompanyNumber();
 
     public Company getCompanyById(int id);
 

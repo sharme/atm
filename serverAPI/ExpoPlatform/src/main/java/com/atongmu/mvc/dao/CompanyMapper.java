@@ -13,7 +13,9 @@ import java.util.List;
 @Repository
 public interface CompanyMapper {
 
-    public List<Company> getCompanies(@Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+    public List<Company> getCompanies(@Param(value = "start") int start, @Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+
+    public int getCompanyNumber();
 
     public Company getCompanyById(int id);
 

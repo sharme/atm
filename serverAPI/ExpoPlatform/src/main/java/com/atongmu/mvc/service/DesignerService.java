@@ -10,7 +10,9 @@ import java.util.List;
  */
 public interface DesignerService {
 
-    public List<Designer> getDesigners(int count, String type, String city);
+    public List<Designer> getDesigners(int start, int count, String type, String city);
+
+    public int getDesignerNumber();
 
     public Designer getDesignerById(int id);
 

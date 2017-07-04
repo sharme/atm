@@ -13,7 +13,9 @@ import java.util.List;
 @Repository
 public interface DesignerMapper {
 
-    public List<Designer> getDesigners(@Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+    public List<Designer> getDesigners(@Param(value = "start") int start, @Param(value = "count") int count, @Param(value = "type") String type, @Param(value = "city") String city);
+
+    public int getDesignerNumber();
 
     public Designer getDesignerById(int id);
 
