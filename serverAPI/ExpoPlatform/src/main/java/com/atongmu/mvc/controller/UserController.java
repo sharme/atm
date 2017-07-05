@@ -1,6 +1,7 @@
 package com.atongmu.mvc.controller;
 
 import com.atongmu.mvc.model.Company;
+import com.atongmu.mvc.model.Newest;
 import com.atongmu.mvc.model.User;
 import com.atongmu.mvc.service.Impl.CompanyServiceImpl;
 import com.atongmu.mvc.service.Impl.UserServiceImpl;
@@ -48,8 +49,34 @@ public class UserController extends BaseController{
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    @RequestMapping(value = "/updateUserById", method = RequestMethod.POST)
+    public void updateUserById(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+
+        try {
+            User user = new User();
+
+            user.setU_avatar(new String(httpServletRequest.getParameter("u_avatar")));
+            user.setU_desc(new String(httpServletRequest.getParameter("u_desc")));
+            user.setU_address(httpServletRequest.getParameter("u_address"));
+            user.setU_updated_by("admin");
+            user.setU_id(new Integer(httpServletRequest.getParameter("u_id")));
+            //Insert into table
+            userService.updateUserById(user);
+
+            sendResult(httpServletResponse, "{success: true, n_id: " + user.getU_id() + "}");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
+
+
+
+
 
 
 }

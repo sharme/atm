@@ -15,5 +15,7 @@ public interface UserMapper {
 
     public User getUserById(int id);
 
+    public int updateUserById(User user);
+
 
 }

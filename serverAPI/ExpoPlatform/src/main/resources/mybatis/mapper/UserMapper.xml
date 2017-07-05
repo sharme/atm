@@ -9,4 +9,13 @@
         select * from atm_users where u_id = #{id};
     </select>
 
+    <update id="updateUserById" parameterType="user" useGeneratedKeys="true" keyProperty="u_id">
+
+        update atm_users set u_avatar = #{u_avatar}, u_desc = #{u_desc}, u_address = #{u_address}, u_updated_time = DEFAULT where u_id = #{u_id};
+
+    </update>
+
+
+
+
 </mapper>
