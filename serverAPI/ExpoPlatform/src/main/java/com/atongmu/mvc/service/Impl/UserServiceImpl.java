@@ -30,4 +30,14 @@ public class UserServiceImpl implements UserService {
         return userMapper.updateUserById(user);
     }
 
+    @Override
+    public int insertUser(User user) {
+        return userMapper.insertUser(user);
+    }
+
+    @Override
+    public User login(String u_phone_num, String u_name, String u_email, String u_pwd) {
+        return userMapper.login(u_phone_num, u_name, u_email, u_pwd);
+    }
+
 }

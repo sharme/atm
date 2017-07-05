@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by yao on 6/26/17.
@@ -66,7 +67,7 @@ public class UserController extends BaseController{
             //Insert into table
             userService.updateUserById(user);
 
-            sendResult(httpServletResponse, "{success: true, n_id: " + user.getU_id() + "}");
+            sendResult(httpServletResponse, "[{success: true, n_id: " + user.getU_id() + "}]");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -75,6 +76,47 @@ public class UserController extends BaseController{
     }
 
 
+    @RequestMapping(value = "/insertUser", method = RequestMethod.POST)
+    public void insertUser(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+
+        try {
+            User user = new User();
+
+            user.setU_name("atm" + 1);
+            user.setU_phone_num(new String(httpServletRequest.getParameter("u_phone_num")));
+            user.setU_pwd(new String(httpServletRequest.getParameter("u_pwd")));
+            user.setU_role(new Integer(httpServletRequest.getParameter("u_role")));
+            //Insert into table
+            userService.insertUser(user);
+
+            sendResult(httpServletResponse, "[{success: true, n_id: " + user.getU_id() + "}]");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public void login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+
+        try {
+            User user = new User();
+
+            String key = httpServletRequest.getParameter("key");
+            String u_pwd = httpServletRequest.getParameter("u_pwd");
+
+            //Insert into table
+            user = userService.login(key, key, key, u_pwd);
+
+            sendResult(httpServletResponse, JSONArray.fromObject(user).toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
 

@@ -13,6 +13,16 @@ public class User {
     private String u_name;
     private String u_phone_num;
     private String u_email;
+    private String u_pwd;
+
+    public String getU_pwd() {
+        return u_pwd;
+    }
+
+    public void setU_pwd(String u_pwd) {
+        this.u_pwd = u_pwd;
+    }
+
     private int u_status;
     private String u_avatar;
     private String u_desc;

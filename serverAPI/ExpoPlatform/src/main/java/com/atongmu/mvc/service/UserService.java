@@ -14,4 +14,8 @@ public interface UserService {
 
     public int updateUserById(User user);
 
+    public int insertUser(User user);
+
+    public User login(String u_phone_num, String u_name, String u_email, String u_pwd);
+
 }

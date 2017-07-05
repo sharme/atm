@@ -15,6 +15,21 @@
 
     </update>
 
+    <insert id="insertUser" parameterType="user" useGeneratedKeys="true" keyProperty="u_id">
+
+        insert into atm_users(u_name, u_phone_num, u_email, u_pwd, u_status, u_avatar, u_desc, u_address
+        , u_role, u_created_by, u_created_time, u_updated_by, u_updated_time) values(
+        #{u_name}, #{u_phone_num}, NULL, #{u_pwd}, 1, null, null, null, #{u_role}, null, default, null, default
+        );
+
+    </insert>
+
+    <select id="login" resultType="com.atongmu.mvc.model.User" parameterType="map">
+
+        select * from atm_users where u_pwd = #{u_pwd} and (u_phone_num = #{u_phone_num} || u_name = #{u_name} || u_email = #{u_email});
+
+    </select>
+
 
 
 
