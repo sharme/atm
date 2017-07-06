@@ -110,13 +110,19 @@ public class SecretGenerator {
      */
     public static void main(String[] args) {
         try {
-            long secretValue = new Date().getTime() + 60000; //
-            SecretGenerator des = new SecretGenerator("qwert123qwe"); // Server secret key
-            System.out.println("Access Token：" + des.encrypt("" + secretValue));
-            System.out.println("secret Value：" + des.decrypt("4bf88a363d6c9b39c3f3ee7552fcb473"));
-            Long seconds = new Date().getTime() - new Long(des.decrypt("4bf88a363d6c9b39c3f3ee7552fcb473"));
-            System.out.println(seconds);
-            System.out.println(seconds > 1000*60*30);  // true when the access token is exceeded 30 minutes.
+//            long secretValue = new Date().getTime() + 60000; //
+//            SecretGenerator des = new SecretGenerator("qwert123qwe"); // Server secret key
+//            System.out.println("secretValue = " + secretValue);//1499335563394
+//            System.out.println("Access Token：" + des.encrypt("" + secretValue));//33bb95f9861679e0f05c1c5ffdc5a568
+//            System.out.println("secret Value：" + des.decrypt("33bb95f9861679e0df05c1c5ffdc5a568"));
+//            Long seconds = new Date().getTime() - new Long(des.decrypt("4bf88a363d6c9b39c3f3ee7552fcb473"));
+//            System.out.println(seconds);
+//            System.out.println(seconds > 1000*60*30);  // true when the access token is exceeded 30 minutes.
+
+            SecretGenerator des = new SecretGenerator("qwert123qwe");
+            System.out.println("secret token: " + des.encrypt("atm"));
+            System.out.println("key: " + des.decrypt("ed4c4e0b2b525c24"));
+
 
         } catch (Exception e) {
             e.printStackTrace();
