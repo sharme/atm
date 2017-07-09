@@ -1,10 +1,9 @@
 package com.crawler.controller;
 
-import com.crawler.m.services.CompanyInfoService;
-import net.sf.json.JSON;
+import com.crawler.m.CompanyInfo;
+import com.crawler.services.CompanyInfoService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import net.sf.json.JsonConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

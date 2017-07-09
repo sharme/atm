@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.crawler.m.dao;
+package com.crawler.dao;
 
 import org.springframework.core.NestedRuntimeException;
 

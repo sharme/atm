@@ -1,18 +1,12 @@
-package com.crawler.m.services;
+package com.crawler.services;
 
 import com.crawler.controller.AreaInfo;
-import com.crawler.controller.CompanyInfo;
-import com.crawler.m.dao.BaseDaoImpl;
+import com.crawler.m.CompanyInfo;
+import com.crawler.dao.BaseDaoImpl;
 import com.crawler.util.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 interface CompanyInfoServiceI{

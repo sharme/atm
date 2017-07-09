@@ -1,7 +1,7 @@
 package com.crawler.controller;
 
+import com.crawler.m.CompanyInfo;
 import com.crawler.util.StringUtil;
-import net.sf.json.JSONArray;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Node;
@@ -9,12 +9,8 @@ import org.jsoup.select.Elements;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Created by lzy on 17/5/22.

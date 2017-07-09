@@ -1,4 +1,4 @@
-package com.crawler.m.dao;
+package com.crawler.dao;
 
 import com.crawler.util.LoggerUtil;
 import org.apache.log4j.Logger;
@@ -7,7 +7,6 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;

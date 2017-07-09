@@ -1,4 +1,4 @@
-package com.crawler.controller;
+package com.crawler.m;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
