@@ -1,0 +1,30 @@
+
+inhibit_all_warnings!
+# Uncomment this line to define a global platform for your project
+platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+#use_frameworks!
+
+target 'Atongmu' do
+
+    pod 'Yoga', :path => './../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
+    pod 'React', :path => './../node_modules/react-native', :subspecs => [#pod的路径
+    'Core',
+    'RCTText',
+    'RCTNetwork',
+    'RCTActionSheet',
+    'RCTGeolocation',
+    'RCTImage',
+    'RCTLinkingIOS',
+    'RCTSettings',
+    'RCTVibration',
+    'RCTWebSocket',
+    ]
+
+end
+
+
+target 'AtongmuTests' do
+
+end
+
