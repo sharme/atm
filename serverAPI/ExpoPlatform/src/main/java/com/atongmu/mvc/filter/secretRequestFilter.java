@@ -24,8 +24,9 @@ public class secretRequestFilter extends HttpServlet implements Filter {
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-
-        String secret = new String(httpServletRequest.getParameter("secret").getBytes("iso-8859-1"), "utf-8");
+        String secret = "";
+        if(httpServletRequest.getParameter("secret") != null)
+             secret = new String(httpServletRequest.getParameter("secret").getBytes("iso-8859-1"), "utf-8");
 
         SecretGenerator des = new SecretGenerator("qwert123qwe");
 
