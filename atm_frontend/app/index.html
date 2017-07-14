@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="front-css/index.css">
+  <link rel="stylesheet" href="front-css/company/company.css">
   <script type="text/javascript" src="front-js/common/jquery.min.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
@@ -43,7 +44,10 @@
           </div>
         </div>
         <div class="header_main_right">
-          <div class="header_main_right_search">Search</div>
+          <div class="header_main_right_search">
+
+            <input type="text" size="50" value = "Search">
+          </div>
           <div class="header_main_right_nav">
             <ul>
               <li class="home"><a href="#!/index">首页</a></li>
@@ -77,8 +81,6 @@
   </div>
 
 
-
-
   <script>
 
     $().ready(function () {
@@ -97,6 +99,9 @@
 
   </script>
 
+  <div class="foot" style="height: 200px; width: 100%; border-top: solid 1px lightgray;">
+    Foot
+  </div>
 
 
 </body>

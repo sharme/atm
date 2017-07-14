@@ -1,5 +1,5 @@
 .header {
-  height: 300px;
+  height: 250px;
 }
 .header .header_title {
   height: 35px;
@@ -50,10 +50,23 @@
   text-align: center;
   line-height: 60px;
 }
+.header .header_main .header_main_right .header_main_right_search input {
+  height: 35px;
+  margin-top: 40px;
+  color: darkgray;
+  text-align: center;
+}
 .header .header_main .header_main_right .header_main_right_nav li {
   min-width: 115px;
   float: left;
   list-style: none;
   text-align: center;
   cursor: pointer;
+}
+.foot {
+  height: 200px;
+  width: 100%;
+  border-top: solid 1px lightgray;
+  float: left;
+  margin-top: 100px;
 }
