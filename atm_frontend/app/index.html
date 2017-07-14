@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>阿童木平台</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="front-css/index.css">
+  <script type="text/javascript" src="front-js/common/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="event_view/view1.js"></script>
+  <script src="exhibitor_view/view2.js"></script>
+  <script src="company_view/view3.js"></script>
+  <script src="designer_view/view4.js"></script>
+  <script src="personal_view/view5.js"></script>
+  <script src="account_view/account.js"></script>
+
+
+  <div class="header">
+
+    <!-- Header title -->
+    <div class="header_title">
+      <div class="header_title_left">嘿！欢迎&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="http://localhost:8000/account_view/login.html">登陆</a></span>&nbsp;|&nbsp;<span><a href="http://localhost:8000/account_view/register.html">注册</a></span></div>
+      <div class="header_title_right"><a href="#!/personal">个人中心</a></div>
+    </div>
+
+    <!-- Header main -->
+    <div class="header_main">
+        <div class="header_main_left">
+          <div class="header_main_left_logo">Logo</div>
+          <div class="header_main_left_desc">
+            <div class="header_main_left_desc_name">阿童木</div>
+            <div class="header_main_left_desc_slogan">链接 租凭 服务</div>
+          </div>
+        </div>
+        <div class="header_main_right">
+          <div class="header_main_right_search">Search</div>
+          <div class="header_main_right_nav">
+            <ul>
+              <li class="home"><a href="#!/index">首页</a></li>
+              <li><a href="#!/events">展会活动</a></li>
+              <li><a href="#!/exhibitors">参展商</a></li>
+              <li><a href="#!/companies">展台搭建/设计</a></li>
+              <li><a href="#!/designers">设计师</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</head>
+<body>
+  <!--<ul class="menu">-->
+    <!--<li><a href="#!/event_view">event_view</a></li>-->
+    <!--<li><a href="#!/exhibitor_view">exhibitor_view</a></li>-->
+  <!--</ul>-->
+
+  <div ng-view>
+
+
+
+  </div>
+
+
+
+
+  <script>
+
+    $().ready(function () {
+
+      // Navigation
+      $("li").click(function () {
+        $("li").css("border-bottom", "none");
+        $(this).css("border-bottom", "solid 2px darkgrey");
+      });
+
+
+
+
+    });
+
+
+  </script>
+
+
+
+</body>
+</html>
