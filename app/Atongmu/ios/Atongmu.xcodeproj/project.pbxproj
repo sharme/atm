@@ -14,6 +14,18 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3CE301B98C0F8B7BBF3F71AE /* libPods-Atongmu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549139EFF3696B28441BD15B /* libPods-Atongmu.a */; };
 		445CCEDDF224AF1027415DA0 /* libPods-AtongmuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E50DF253761E8903EFAA70 /* libPods-AtongmuTests.a */; };
+		801BD54E1F1B461600659039 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD5441F1B461600659039 /* Entypo.ttf */; };
+		801BD54F1F1B461600659039 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD5451F1B461600659039 /* EvilIcons.ttf */; };
+		801BD5501F1B461600659039 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD5461F1B461600659039 /* FontAwesome.ttf */; };
+		801BD5511F1B461600659039 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD5471F1B461600659039 /* Foundation.ttf */; };
+		801BD5521F1B461600659039 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD5481F1B461600659039 /* Ionicons.ttf */; };
+		801BD5531F1B461600659039 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD5491F1B461600659039 /* MaterialCommunityIcons.ttf */; };
+		801BD5541F1B461600659039 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD54A1F1B461600659039 /* MaterialIcons.ttf */; };
+		801BD5551F1B461600659039 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD54B1F1B461600659039 /* Octicons.ttf */; };
+		801BD5561F1B461600659039 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD54C1F1B461600659039 /* SimpleLineIcons.ttf */; };
+		801BD5571F1B461600659039 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 801BD54D1F1B461600659039 /* Zocial.ttf */; };
+		801BD5621F1B4E6B00659039 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 801BD5601F1B4E6B00659039 /* libReact.a */; };
+		801BD5631F1B4E6B00659039 /* libYoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 801BD5611F1B4E6B00659039 /* libYoga.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +55,18 @@
 		549139EFF3696B28441BD15B /* libPods-Atongmu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Atongmu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E50DF253761E8903EFAA70 /* libPods-AtongmuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AtongmuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		748C7ED7493D7A472289C879 /* Pods-Atongmu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atongmu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Atongmu/Pods-Atongmu.debug.xcconfig"; sourceTree = "<group>"; };
+		801BD5441F1B461600659039 /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		801BD5451F1B461600659039 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		801BD5461F1B461600659039 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		801BD5471F1B461600659039 /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		801BD5481F1B461600659039 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		801BD5491F1B461600659039 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		801BD54A1F1B461600659039 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		801BD54B1F1B461600659039 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		801BD54C1F1B461600659039 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		801BD54D1F1B461600659039 /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		801BD5601F1B4E6B00659039 /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/Atongmu-bwmmkhksaltbxqcubigmecxkcrmr/Build/Products/Debug-iphonesimulator/React/libReact.a"; sourceTree = "<group>"; };
+		801BD5611F1B4E6B00659039 /* libYoga.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYoga.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/Atongmu-bwmmkhksaltbxqcubigmecxkcrmr/Build/Products/Debug-iphonesimulator/Yoga/libYoga.a"; sourceTree = "<group>"; };
 		AD9B6326C5CA019A8EAE13C1 /* Pods-AtongmuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AtongmuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AtongmuTests/Pods-AtongmuTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801BD5621F1B4E6B00659039 /* libReact.a in Frameworks */,
+				801BD5631F1B4E6B00659039 /* libYoga.a in Frameworks */,
 				3CE301B98C0F8B7BBF3F71AE /* libPods-Atongmu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +112,16 @@
 		13B07FAE1A68108700A75B9A /* Atongmu */ = {
 			isa = PBXGroup;
 			children = (
+				801BD5441F1B461600659039 /* Entypo.ttf */,
+				801BD5451F1B461600659039 /* EvilIcons.ttf */,
+				801BD5461F1B461600659039 /* FontAwesome.ttf */,
+				801BD5471F1B461600659039 /* Foundation.ttf */,
+				801BD5481F1B461600659039 /* Ionicons.ttf */,
+				801BD5491F1B461600659039 /* MaterialCommunityIcons.ttf */,
+				801BD54A1F1B461600659039 /* MaterialIcons.ttf */,
+				801BD54B1F1B461600659039 /* Octicons.ttf */,
+				801BD54C1F1B461600659039 /* SimpleLineIcons.ttf */,
+				801BD54D1F1B461600659039 /* Zocial.ttf */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -116,6 +152,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				733F4A26F6FF56E2AA9EE89B /* Pods */,
 				C7BFAF3320A5EEAE9B4E48E2 /* Frameworks */,
+				D8692002F32D4828A057735D /* Libraries */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -133,10 +170,19 @@
 		C7BFAF3320A5EEAE9B4E48E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				801BD5601F1B4E6B00659039 /* libReact.a */,
+				801BD5611F1B4E6B00659039 /* libYoga.a */,
 				549139EFF3696B28441BD15B /* libPods-Atongmu.a */,
 				63E50DF253761E8903EFAA70 /* libPods-AtongmuTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8692002F32D4828A057735D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +236,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 610;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -230,7 +276,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801BD5551F1B461600659039 /* Octicons.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				801BD5501F1B461600659039 /* FontAwesome.ttf in Resources */,
+				801BD54F1F1B461600659039 /* EvilIcons.ttf in Resources */,
+				801BD5571F1B461600659039 /* Zocial.ttf in Resources */,
+				801BD5561F1B461600659039 /* SimpleLineIcons.ttf in Resources */,
+				801BD5521F1B461600659039 /* Ionicons.ttf in Resources */,
+				801BD5511F1B461600659039 /* Foundation.ttf in Resources */,
+				801BD5541F1B461600659039 /* MaterialIcons.ttf in Resources */,
+				801BD54E1F1B461600659039 /* Entypo.ttf in Resources */,
+				801BD5531F1B461600659039 /* MaterialCommunityIcons.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,9 +450,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AtongmuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -412,9 +470,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AtongmuTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -431,6 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Atongmu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -449,6 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Atongmu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

@@ -18,6 +18,7 @@ target 'Atongmu' do
     'RCTLinkingIOS',
     'RCTSettings',
     'RCTVibration',
+    'RCTAnimation',
     'RCTWebSocket',
     ]
 
