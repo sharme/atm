@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -16,14 +10,14 @@ import {
 
 var Dimensions = require('Dimensions');
 
-export default class HomeContainers extends Component {
+export default class AboutMe extends Component {
   // 初始化模拟数据
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
-        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+        '我的信息', '我的收藏', '设置', '退出登录'
       ])
     };
   }
@@ -33,7 +27,7 @@ export default class HomeContainers extends Component {
           <View>
             <View style={styles.row}>
               <Text style={{fontSize:16,color:'blue'}}>
-                {rowData + '我是测试行号哦~'}
+                {'> ' + rowData}
               </Text>
             </View>
           </View>

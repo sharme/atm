@@ -1,7 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
+ * @author Lewin
+ * 展览公司列表 
+ * @type {[type]}
  */
 
 import React, { Component } from 'react';
@@ -16,14 +16,14 @@ import {
 
 var Dimensions = require('Dimensions');
 
-export default class HomeContainers extends Component {
+export default class ExhibitionCompanyList extends Component {
   // 初始化模拟数据
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
-        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+        '展会列表1', '展会列表', '北京展会', '上海展会', '广州展会', '深圳展会', '哈哈哈', '你话好多疯狂减肥还是的空间划分空间上的空间发挥科技'
       ])
     };
   }
@@ -33,7 +33,7 @@ export default class HomeContainers extends Component {
           <View>
             <View style={styles.row}>
               <Text style={{fontSize:16,color:'blue'}}>
-                {rowData + '我是测试行号哦~'}
+                {rowData + '---展会活动'}
               </Text>
             </View>
           </View>
