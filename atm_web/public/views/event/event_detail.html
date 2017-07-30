@@ -1,0 +1,86 @@
+
+
+<div class="event_d" ng-controller="EventDController">
+    <div class="event_d_left">
+        <div>
+            {{event.e_name}}
+        </div>
+        <div>
+            开展日期 {{event.e_start_date | date: 'yyyy-MM-dd'}} - {{event.e_end_date | date: 'yyyy-MM-dd'}}
+        </div>
+        <div>
+            所在地: {{event.e_city}}
+        </div>
+        <div>
+            地址: {{event.e_address}}
+        </div>
+        <div>
+            已有49人围观
+        </div>
+    </div>
+
+    <div class="event_d_right">
+        <div class="event_d_right_logo" style="background-image: url({{event.e_logo}})">
+
+        </div>
+
+        <div class="event_d_right_main">
+            <div class="event_d_right_main_desc">
+                {{event.e_description}}
+            </div>
+            <div class="event_d_right_main_comment">
+                <!--<div class="event_d_right_main_comment_form">-->
+                    <!--<div class="event_d_right_main_comment_form_title">-->
+                        <!--【 展友点评 】-->
+                    <!--</div>-->
+                    <!--<textarea>-->
+                        <!--Put your comments-->
+                    <!--</textarea>-->
+                    <!--<div>-->
+                        <!--<input type="submit" value="提交">-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div>-->
+                    <!--<div>-->
+                        <!--最新评论-->
+                    <!--</div>-->
+                    <!--<hr>-->
+
+                <!--</div>-->
+                【 展友点评 】
+                <div class="topic_content_comment" ng-repeat="comment in comments">
+                    <div>
+                        回复于: {{comment.c_created_time | date: 'yyyy-MM-dd HH:mm'}}
+                        <div class="topic_content_comment_left">
+                            <img class="topic_content_comment_left_img" ng-src="{{comment.u_avatar}}"><br> {{comment.u_name}}
+                        </div>
+                        <hr>
+                        <div>
+                            <div class="topic_content_comment_right">
+                                <p data-ng-bind-html="renderHtml(comment.c_comment)"></p>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="topic_content_reply" style="margin-top: 10px;">
+
+                    <form method="POST" ng-submit="submit()" >
+                        <textarea name="editor1" id="editor1" rows="10" cols="80" ng-disabled="loginCheck()"></textarea>
+                        <button class="topic_content_reply_btn" type="submit">回复</button>
+                        <script>
+                            // Replace the <textarea id="editor1"> with a CKEditor
+                            // instance, using default configuration.
+                            CKEDITOR.replace( 'editor1' );
+                        </script>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

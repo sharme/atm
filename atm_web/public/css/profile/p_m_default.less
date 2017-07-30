@@ -1,0 +1,327 @@
+
+body{
+  display: block;
+}
+
+
+
+.profile {
+
+  .profile-left {
+    margin: 0px 5%;
+    width: 20%;
+    float: left;
+    .profile-left-item {
+      padding: 10px 0px;
+      text-align: center;
+      border-bottom: solid 1px silver;
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+  .profile-right {
+    width: 65%;
+    float: left;
+
+
+
+    .profile-right-stone {
+      .profile-right-stone-wrap {
+        .profile-right-stone-wrap-upgrade {
+          border-bottom: solid 1px silver;
+          padding: 10px;
+          width: 100%;
+        }
+        .profile-right-stone-wrap-pic {
+          float: left;
+          margin: 5px 5px;
+          border: solid 1px silver;
+          height: 258px;
+          .profile-right-stone-wrap-pic-img {
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .profile-right-stone-wrap-pic-description {
+            overflow-wrap: break-word;
+            font-size: 14px;
+            padding: 0px 10px;
+            width: 200px;
+            overflow: hidden;
+            height: 42px;
+          }
+        }
+      }
+    }
+
+
+
+
+    .profile-right-upload {
+      padding-bottom: 200px;
+      .profile-right-upload-title {
+        padding: 10px 0px;
+      }
+      .profile-right-upload-stone {
+        width: 400px;
+        margin: 20px 10px 80px 10px;
+        border: solid 1px silver;
+        min-height: 400px;
+        .profile-right-upload-stone-btn {
+
+          .fileUpload0, .fileUpload1, .fileUpload2 {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+
+            input.upload {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin: 0;
+              padding: 0;
+              font-size: 20px;
+              cursor: pointer;
+              opacity: 0;
+              left: 0px;
+              width: 50px;
+            }
+            span {
+              cursor: pointer;
+            }
+            .uploadBtn, .uploadedBtn {
+              display: inline-block;
+              vertical-align: top;
+              background: #47a447;
+              font-size: 16px;
+              padding: 3px 10px;
+              height: 30px;
+              line-height: 22px;
+              color: #fff;
+              border-radius: 4px;
+              border: 1px solid transparent;
+            }
+          }
+
+          .picture-present0, .picture-present1, .picture-present2 {
+            width: 100%;
+            min-height: 300px;
+          }
+
+          #myProgress0, #myProgress1, #myProgress2 {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            background-color: #ddd;
+            #myBar0, #myBar1, #myBar2 {
+              position: absolute;
+              width: 1%;
+              height: 100%;
+              background-color: #4CAF50;
+              text-align: center;
+              line-height: 2;
+            }
+          }
+
+        }
+      }
+      .profile-right-upload-description {
+        margin: 80px 10px 30px 10px;
+        .profile-right-upload-description-title {
+
+        }
+      }
+      .profile-right-upload-handle {
+        margin: 10px;
+      }
+    }
+
+
+
+    .profile-right-msg {
+      .profile-right-msg-title {
+        padding: 10px 0px;
+        border-bottom: solid 1px silver;
+      }
+      .profile-right-msg-wrap {
+        padding: 10px 0px;
+        border-bottom: solid 1px silver;
+        .profile-right-msg-wrap-msg-content {
+
+        }
+        .profile-right-msg-wrap-msg-handle {
+          margin: 10px 0px;
+        }
+      }
+    }
+
+
+
+
+    .profile-right-info {
+      .profile-right-info-wrap {
+        .profile-right-info-wrap-logout {
+          float: right;
+          font-size: 14px;
+          border: solid 1px sienna;
+          width: 80px;
+          text-align: center;
+          span {
+            cursor: pointer;
+          }
+        }
+
+        .profile-right-info-wrap-img {
+          padding: 10% 0px;
+          border-bottom: solid 1px silver;
+          img {
+            width: 100px;
+          }
+        }
+        .profile-right-info-wrap-name {
+          width: 100%;
+          margin: 15px 0px;
+          border-bottom: solid 1px silver;
+          .profile-right-info-wrap-name-title {
+            width: 30%;
+            float: left;
+          }
+          .profile-right-info-wrap-name-value {
+            margin: 10px 0px;
+            font-size: 16px;
+            width: 60%;
+          }
+
+        }
+        .profile-right-info-wrap-slogan {
+          width: 100%;
+          margin: 15px 0px;
+          border-bottom: solid 1px silver;
+          .profile-right-info-wrap-slogan-title {
+            width: 30%;
+            float: left;
+          }
+          .profile-right-info-wrap-slogan-value {
+            margin: 10px 0px;
+            font-size: 14px;
+            width: 60%;
+          }
+        }
+        .profile-right-info-wrap-description {
+          padding: 25px 0px;
+          margin: 10px 0px;
+          border-bottom: solid 1px silver;
+        }
+      }
+    }
+
+    .profile-right-info-edit{
+      .profile-right-info-edit-wrap {
+
+        .profile-right-info-edit-wrap-logout {
+          float: right;
+          font-size: 14px;
+          width: 80px;
+          text-align: center;
+        }
+
+        .profile-right-info-edit-wrap-upload {
+          width: 100%;
+          padding-top: 25px;
+          //float: left;
+
+          .fileUpload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 10px;
+
+            input.upload {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin: 0;
+              padding: 0;
+              font-size: 20px;
+              cursor: pointer;
+              opacity: 0;
+              left: 0px;
+              width: 50px;
+            }
+            span {
+              cursor: pointer;
+            }
+            .uploadBtn, .uploadedBtn {
+              display: inline-block;
+              vertical-align: top;
+              background: #47a447;
+              font-size: 16px;
+              padding: 3px 10px;
+              height: 30px;
+              line-height: 22px;
+              color: #fff;
+              border-radius: 4px;
+              border: 1px solid transparent;
+            }
+          }
+
+          .picture-present {
+            width: 128px;
+            height: 128px;
+          }
+
+          #myProgress{
+            position: relative;
+            width: 128px;
+            height: 25px;
+            background-color: #ddd;
+            #myBar {
+              position: absolute;
+              width: 1%;
+              height: 100%;
+              background-color: #4CAF50;
+              text-align: center;
+              line-height: 2;
+            }
+          }
+
+        }
+        .profile-right-info-edit-wrap-name, .profile-right-info-edit-wrap-slogan, .profile-right-info-edit-wrap-email, .profile-right-info-edit-wrap-phone {
+          margin: 10px 0px;
+          input {
+            width: 100%;
+          }
+        }
+
+        .profile-right-info-edit-wrap-description {
+          textarea {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.messenger {
+  position: fixed;
+  margin-left: 50%;
+  width: 50%;
+  background-color: white;
+  border: solid 1px silver;
+  padding: 5px;
+  display: none;
+}

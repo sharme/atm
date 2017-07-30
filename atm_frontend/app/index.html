@@ -1,37 +1,29 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html ng-app="atm">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>阿童木平台</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="front-css/index.css">
-  <link rel="stylesheet" href="front-css/company/company.css">
-  <script type="text/javascript" src="front-js/common/jquery.min.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="event_view/view1.js"></script>
-  <script src="exhibitor_view/view2.js"></script>
-  <script src="company_view/view3.js"></script>
-  <script src="designer_view/view4.js"></script>
-  <script src="personal_view/view5.js"></script>
-  <script src="account_view/account.js"></script>
+  <link rel="stylesheet" href="public/js/app.css">
+  <link rel="stylesheet" href="public/css/index.css">
+
+
+  <script src="public/js/common/jquery.min.js"></script>
+  <script src="public/js/common/angular.min.js"></script>
+  <script src="public/js/common/angular-route.min.js"></script>
+  <script src="public/js/common/angular-resource.min.js"></script>
+  <script src="public/js/common/angular-css.min.js"></script>
+  <script src="public/js/app.js"></script>
+  <script src="public/js/controllers/atmController.js"></script>
+
+
 
 
   <div class="header">
 
     <!-- Header title -->
     <div class="header_title">
-      <div class="header_title_left">嘿！欢迎&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="http://localhost:8000/account_view/login.html">登陆</a></span>&nbsp;|&nbsp;<span><a href="http://localhost:8000/account_view/register.html">注册</a></span></div>
-      <div class="header_title_right"><a href="#!/personal">个人中心</a></div>
+      <div class="header_title_left">嘿！欢迎&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="http://localhost:8000/public/views/account/login.html">登陆</a></span>&nbsp;|&nbsp;<span><a href="http://localhost:8000/public/views/account/register.html">注册</a></span></div>
+      <div class="header_title_right"><a href="#/personal">个人中心</a></div>
     </div>
 
     <!-- Header main -->
@@ -50,35 +42,28 @@
           </div>
           <div class="header_main_right_nav">
             <ul>
-              <li class="home"><a href="#!/index">首页</a></li>
-              <li><a href="#!/events">展会活动</a></li>
-              <li><a href="#!/exhibitors">参展商</a></li>
-              <li><a href="#!/companies">展台搭建/设计</a></li>
-              <li><a href="#!/designers">设计师</a></li>
+              <li class="home"><a href="#/index">首页</a></li>
+              <li><a href="#/events">展会活动</a></li>
+              <li><a href="#/exhibitors">参展商</a></li>
+              <li><a href="#/companies">展台搭建/设计</a></li>
+              <li><a href="#/designers">设计师</a></li>
             </ul>
           </div>
         </div>
     </div>
 
-
-
   </div>
-
-
-
 
 </head>
+
 <body>
-  <!--<ul class="menu">-->
-    <!--<li><a href="#!/event_view">event_view</a></li>-->
-    <!--<li><a href="#!/exhibitor_view">exhibitor_view</a></li>-->
-  <!--</ul>-->
 
-  <div ng-view>
+  <div ng-view class="view-frame"></div>
 
 
 
-  </div>
+
+
 
 
   <script>
@@ -91,18 +76,26 @@
         $(this).css("border-bottom", "solid 2px darkgrey");
       });
 
-
-
-
     });
 
 
   </script>
 
   <div class="foot" style="height: 200px; width: 100%; border-top: solid 1px lightgray;">
-    Foot
+    <div class="foot_info">
+      <li>关于我们</li>
+      <li>联系方式</li>
+      <li>新闻中心</li>
+      <li>加入我们</li>
+      <li>申请合作</li>
+    </div>
+    <div class="foot_copy">
+      Copyright xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    </div>
   </div>
 
 
 </body>
+
+
 </html>

@@ -1,0 +1,211 @@
+
+<div class="company" ng-controller="CompanyController">
+
+    <!-- Navigator of the platform -->
+    <div class="company_nav">
+        我的位置: 阿童木 >> 展台搭建/设计
+
+    </div>
+
+    <!-- Filters -->
+
+    <div class="company_filter">
+        <div class="company_filter_area">
+            <div class="company_filter_area_title">地区</div>
+            <div class="company_filter_area_val">
+                <div>所有</div>
+                <div>上海</div>
+                <div>北京</div>
+                <div>广州</div>
+                <div>深圳</div>
+                <div>南京</div>
+            </div>
+        </div>
+        <div class="company_filter_type">
+            <div class="company_filter_type_title">行业</div>
+            <div class="company_filter_type_val">
+                <div>文化</div>
+                <div>工业</div>
+                <div>食品</div>
+                <div>互联网</div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="company_main">
+        <div class="company_main_left">
+
+            <div class="company_main_left_info" ng-repeat="company in companies">
+                <div class="company_main_left_info_logo">
+                    <img ng-src="{{company.c_logo}}">
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">{{company.c_name}}</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company_main_left_info">
+                <div class="company_main_left_info_logo">
+                    Logo
+                </div>
+                <div class="company_main_left_info_desc">
+                    <div class="company_main_left_info_desc_name">展会活动名称</div>
+                    <div class="company_main_left_info_desc_date">开展日期 2017-06-28 - 2017-07-01</div>
+                    <div class="company_main_left_info_desc_type">行业: xxxx</div>
+                    <div class="company_main_left_info_desc_foot">
+                        <span>所在地: xxxxxxxx</span>
+                        <span>59人围观</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="company_main_nav">
+                <div class="company_main_nav_pages">
+                    <ul>
+                        <li>总共: 48</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>4</li>
+                        <li>99</li>
+                    </ul>
+                </div>
+                <div class="company_main_nav_go">
+                    <input type="text" size="4" value="页码">
+                    <input type="submit" value="GO">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="company_main_right">
+            Here is the newest!
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>

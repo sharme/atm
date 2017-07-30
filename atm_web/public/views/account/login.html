@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="atm_login">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/account/login.css">
+    <script src="../../js/common/jquery.min.js"></script>
+    <script src="../../js/common/angular.min.js"></script>
+    <script src="../../js/common/angular-route.min.js"></script>
+    <script src="../../js/common/angular-cookies.min.js"></script>
+    <script src="../../js/common/angular-resource.min.js"></script>
+    <script src="../../js/common/angular-css.min.js"></script>
+    <script src="../../js/controllers/loginController.js"></script>
+    <script src="../../js/app.js"></script>
+
+    <div class="header">
+
+        <div class="header_logo">
+            <a href="http://localhost:3000/#/events"><img src="../../images/logo.png"></a>
+        </div>
+        <div class="header_title">
+            欢迎登录
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+
+</head>
+
+<body>
+
+<div class="login" ng-controller="LoginController" style="background-image: url(../../images/login_bg.png)">
+
+    <div class="login_main">
+        <div class="login_main_tile">
+            <div class="login_main_title_pwd titleTab" ng-click="switchTab('pwd')">账号密码登录</div>
+            <div class="login_main_title_phone titleTab" ng-click="switchTab('phone')">手机动态登录</div>
+        </div>
+
+        <div class="login_main_form form_pwd login_form">
+            <form method="POST" ng-submit="login_submit()">
+            <div class="login_main_form_username">
+                <span><img src="../../images/icon/un_logo.png"></span>
+                <input type="text" placeholder="手机号/邮箱/用户名" ng-model="loginForm.u_name" style="font-size: 14px;">
+            </div>
+            <div class="login_main_form_pwd">
+                <span><img src="../../images/icon/pwd_logo.png"></span>
+                <input type="password" placeholder="密码" style="font-size: 14px;" ng-model="loginForm.u_pwd">
+            </div>
+            <div class="login_main_form_forget">
+                忘记密码
+            </div>
+             <div class="g-div validation_msg" style="font-size: 13px; color:red; float: left;"></div>
+            <div class="login_main_form_submit">
+                <input type="submit" id="pwd-submit" value="登录"/>
+            </div>
+            </form>
+        </div>
+
+
+        <div class="login_main_phone_form form_phone login_form">
+            <form id="register_form" name="register_form-div" ng-submit="register_submit()" method="POST">
+                <div class="login_main_phone_form_phone">
+                    <span><img src="../../images/icon/telephone_logo.png"></span>
+                    <input type="text" placeholder="手机号" style="font-size: 14px;" ng-model="registerForm.u_phone_num">
+                </div>
+                <div class="login_main_phone_form_sms">
+                    <span><img src="../../images/icon/sms_logo.png"></span>
+                    <input type="text" ng-model="registerForm.scCode" placeholder="验证码" id="register-form-scCode" />
+                    <button type="button" class="sendScCode" ng-click="sendVerifyCode()">获取验证码</button>
+                </div>
+                <div class="g-div validation_msg" style="font-size: 13px; color:red; float: left;"></div>
+                <div class="login_main_phone_form_submit">
+                    <input type="submit" id="phone-submit" value="登录"/>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="login_main_foot">
+            <div>使用第三方账号登录</div>
+            <div class="login_main_foot_third">
+                <div class="login_main_foot_third_wechat">微信</div>
+                <div class="login_main_foot_third_qq">QQ</div>
+            </div>
+            <div style="float: right; font-size: 14px;">
+                <a href="http://localhost:3000/views/account/register.html">注册新账号></a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<div class="foot" style="width: 100%; border-top: solid 1px lightgray;">
+    <div class="foot_info">
+        <li>关于我们</li>
+        <li>联系方式</li>
+        <li>新闻中心</li>
+        <li>加入我们</li>
+        <li>申请合作</li>
+    </div>
+    <div class="foot_copy">
+        Copyright xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
+
+

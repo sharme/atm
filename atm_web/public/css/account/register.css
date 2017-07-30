@@ -1,0 +1,159 @@
+.header {
+  height: 100px;
+  border-bottom: solid 1px darkgray;
+}
+.header .header_logo {
+  width: 160px;
+  border-right: solid 1px darkgrey;
+  float: left;
+}
+.header .header_title {
+  float: left;
+  font-size: 24px;
+  color: darkgrey;
+  line-height: 3;
+  padding: 0px 20px;
+}
+.register {
+  height: 400px;
+  padding-top: 60px;
+}
+.register .register_main {
+  height: 320px;
+  width: 320px;
+  float: right;
+  padding: 20px;
+  border: solid 1px darkgrey;
+  margin-right: 5%;
+  background-color: #fff;
+}
+.register .register_main .register_main_tile {
+  width: 100%;
+  height: 25px;
+}
+.register .register_main .register_main_tile div {
+  width: 100%;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: solid 2px forestgreen;
+}
+.register .register_main .register_main_tile .register_main_title_phone {
+  padding-bottom: 10px;
+}
+.register .register_main .register_main_phone_form {
+  height: 190px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_phone {
+  height: 35px;
+  padding: 5px 0px;
+  margin-top: 20px;
+  float: left;
+  width: 100%;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_phone input {
+  width: 75%;
+  height: 32px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_phone span {
+  float: left;
+  padding-right: 10px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_pwd {
+  height: 35px;
+  padding: 5px 0px;
+  margin-top: 20px;
+  float: left;
+  width: 100%;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_pwd input {
+  width: 75%;
+  height: 32px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_pwd span {
+  float: left;
+  padding-right: 10px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_sms {
+  height: 35px;
+  padding: 5px 0px;
+  margin-top: 20px;
+  float: left;
+  width: 100%;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_sms input {
+  width: 50%;
+  height: 32px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_sms span {
+  float: left;
+  padding-right: 10px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_sms button {
+  float: right;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 5px;
+  font-size: 0.9375em;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  border-image-width: 0;
+  border-radius: 3px;
+  background-color: #8ac249;
+  margin-right: 15px !important;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_submit {
+  margin-top: 10px;
+  border: solid 1px darkgrey;
+  height: 35px;
+  text-align: center;
+  line-height: 2;
+  float: left;
+  width: 100%;
+}
+.register .register_main .register_main_phone_form .register_main_phone_form_submit input {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 11px;
+  cursor: pointer;
+}
+.register .register_main .register_main_foot {
+  font-size: 12px;
+  width: 100%;
+  float: left;
+  height: 30px;
+}
+.register .register_main .register_main_foot .register_main_foot_terms {
+  padding-top: 5px;
+}
+.register .register_main .register_main_foot .register_main_foot_login {
+  float: right;
+}
+.foot {
+  height: 60px;
+  width: 100%;
+  border-top: solid 1px lightgray;
+  float: left;
+  margin-top: 100px;
+}
+.foot .foot_info {
+  height: 25px;
+}
+.foot .foot_info li {
+  list-style: none;
+  float: left;
+  font-size: 14px;
+  padding-right: 25px;
+}
+.foot .foot_copy {
+  font-size: 14px;
+}

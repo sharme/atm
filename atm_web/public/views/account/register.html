@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="atm_register">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../css/account/register.css">
+    <script src="../../js/common/jquery.min.js"></script>
+    <script src="../../js/common/angular.min.js"></script>
+    <script src="../../js/common/angular-route.min.js"></script>
+    <script src="../../js/common/angular-resource.min.js"></script>
+    <script src="../../js/common/angular-css.min.js"></script>
+    <script src="../../js/controllers/registerController.js"></script>
+
+    <div class="header">
+
+        <div class="header_logo">
+            <a href="http://localhost:3000/#/events"><img src="../../images/logo.png"></a>
+        </div>
+        <div class="header_title">
+            新用户注册
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+
+</head>
+
+<body>
+
+<div class="register" ng-controller="registerController" style="background-image: url(../../images/login_bg.png)">
+
+    <div class="register_main">
+        <div class="register_main_tile">
+            <div class="register_main_title_phone titleTab">手机注册</div>
+        </div>
+
+        <div class="register_main_phone_form">
+            <form id="register_form" name="register_form-div" ng-submit="submit()" method="POST">
+                <div class="register_main_phone_form_phone">
+                    <span><img src="../../images/icon/telephone_logo.png"></span>
+                    <input type="text" placeholder="手机号" style="font-size: 14px;" id="register-form-phoneNumber" ng-model="phoneForm.u_phone_num">
+                </div>
+                <div class="register_main_phone_form_pwd">
+                    <span><img src="../../images/icon/pwd_logo.png"></span>
+                    <input type="password" placeholder="密码(6-20位字母/数字/符号)" id="register-form-password" ng-model="phoneForm.u_pwd" style="font-size: 14px;">
+                </div>
+                <div class="register_main_phone_form_sms">
+                    <span><img src="../../images/icon/sms_logo.png"></span>
+                    <input type="text" ng-model="phoneForm.scCode" name="scCode" id="register-form-scCode"/>
+                    <button type="button" class="sendScCode" ng-click="sendVerifyCode()">获取验证码</button>
+                </div>
+                <div class="g-div validation_msg" style="color:red; float: left;"></div>
+                <div class="register_main_phone_form_submit">
+                    <input type="submit" id="phone-submit" value="同意协议并注册"/>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="register_main_foot">
+            <div class="register_main_foot_terms">58阿童木服务协议</div>
+            <div class="register_main_foot_login">
+                已经有账号? <span style="color: orange;"><a href="http://localhost:3000/views/account/login.html">登录</a></span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<div class="foot" style="width: 100%; border-top: solid 1px lightgray;">
+    <div class="foot_info">
+        <li>关于我们</li>
+        <li>联系方式</li>
+        <li>新闻中心</li>
+        <li>加入我们</li>
+        <li>申请合作</li>
+    </div>
+    <div class="foot_copy">
+        Copyright xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+

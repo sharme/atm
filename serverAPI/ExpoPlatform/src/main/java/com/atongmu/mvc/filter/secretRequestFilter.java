@@ -36,6 +36,7 @@ public class secretRequestFilter extends HttpServlet implements Filter {
 
             System.out.println("secret: " + secret + ", result: " + des.decrypt(secret));
 
+
             if (des.decrypt(secret).equals("atm"))
                 filterChain.doFilter(servletRequest, servletResponse);
             else

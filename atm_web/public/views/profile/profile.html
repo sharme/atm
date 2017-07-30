@@ -1,0 +1,131 @@
+
+
+<div class="profile" ng-controller="ProfileController">
+    <div class="profile_left">
+        <div class="profile_left_top">
+            <div class="profile_left_top_title">
+                个人中心
+            </div>
+            <div class="profile_left_top_item">
+                <li ng-click="selection('home')" style="border-bottom: solid 2px lightgreen;">我的主页</li>
+            </div>
+            <div class="profile_left_top_item">
+                <li ng-click="selection('info')">我的资料</li>
+            </div>
+            <div class="profile_left_top_item">
+                <li ng-click="selection('msg')">消息通知</li>
+            </div>
+            <div class="profile_left_top_item">
+                <li ng-click="selection('feedback')">反馈</li>
+            </div>
+        </div>
+        <div class="profile_left_bottom">
+            <div>最新动态</div>
+            <div class="profile_left_bottom_newest">
+                <li ng-repeat="news in newest">用户:{{news.u_name}}！ &nbsp;&nbsp;{{news.n_message}}</li>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="profile_right" ng-switch on="selectValue">
+
+        <div class="profile_right_home" ng-switch-default ng-controller="ProfileHController">
+            <div class="profile_right_home_top">
+                <div style="height: 40px;">Hey, {{user.u_name}}</div>
+                <div class="profile_right_home_top_profile">
+                    <div class="profile_right_home_top_profile_avatar">
+                        <img src="{{user.u_avatar}}">
+                    </div>
+                    <div class="profile_right_home_top_profile_info">
+                        <li>个人介绍: {{user.u_desc}}</li>
+                        <li>状态: {{user.u_status==1?'正常':'非正常'}} </li>
+                        <li>{{user.u_email}}</li>
+                        <li>{{user.u_address}}</li>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile_right_info" ng-switch-when="info" ng-controller="profileIController">
+
+            <div class="profile_right_info_btn">
+                <input type="button" value="修改" class="profile_right_info_btn_edit">
+                <input type="submit" value="保持" class="profile_right_info_btn_save">
+            </div>
+            <div>
+                <li>
+                    <div class="avatar"></div>
+                </li>
+                <li>
+                    用户名:
+                </li>
+                <li>
+                    联系电话:
+                </li>
+                <li>
+                    邮箱:
+                </li>
+                <li>
+
+                </li>
+            </div>
+
+
+        </div>
+
+        <div class="profile_right_msg" ng-switch-when="msg" ng-controller="profileMsgController">
+            <div class="profile_right_msg_title">
+                <span>平台消息</span>
+            </div>
+            <div class="profile_right_msg_list">
+                <div class="profile_right_msg_list_info">
+                    <div class="profile_right_msg_list_info_avatar"></div>
+                    <div class="profile_right_msg_list_info_desc">
+                        <li><span style="color: red">阿童木</span> 发来了站内通知:</li>
+                        <li>欢迎 miwangyao加入阿童木,  你的加入, 让我们相信 "我们可以创造奇迹, 贡献社会</li>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="profile_right_feedback" ng-switch-when="feedback" ng-controller="profileFeedbackController">
+            <div class="profile_right_feedback_title">
+                <span>平台消息</span>
+            </div>
+            <div class="profile_right_feedback_form">
+                <div>
+                    <textarea>
+                        有什么不满意的地方, 可以向我们提建议, 我们将会认真对待您的宝贵建议.
+                    </textarea>
+                </div>
+                <div>
+                    <input type="submit" value="提交">
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+
+
+<script>
+
+    $().ready(function () {
+
+        // Navigation
+        $("li").click(function () {
+            $("li").css("border-bottom", "none");
+            $(this).css("border-bottom", "solid 2px lightgreen");
+        });
+
+    });
+
+
+</script>
