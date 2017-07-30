@@ -41,31 +41,19 @@ import DesignList from './Containers/DesignList'
  export default class AppRouter extends Component {
    render() {
      return (
-         <Router>
-           <Scene key="lightbox" lightbox leftButtonTextStyle={{color: 'green'}} backButtonTextStyle={{color: 'red'}}>
-             <Scene key="modal" modal hideNavBar>
-                 <Scene key="tabbar" gestureEnabled={false} tabs activeBackgroundColor='#ddd' initial>
-                       <Scene key="home" component={HomeContainers} title="主页" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-                       <Scene key="exhibition" component={ExhibitionActivityList} title="展会" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-                       <Scene key="design" component={DesignList} title="设计师" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-                       <Scene key="me" component={AboutMe} title="我的" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-                 </Scene>
-                 <Scene key="other" component={OtherContainer}/>
-             </Scene>
-           </Scene>
-         </Router>
-      //  <View style={styles.container}>
-      //    <Text style={styles.welcome}>
-      //      Other
-      //    </Text>
-      //    <Text style={styles.instructions}>
-      //      To get started, edit index.ios.js
-      //    </Text>
-      //    <Text style={styles.instructions}>
-      //      Press Cmd+R to reload,{'\n'}
-      //      Cmd+D or shake for dev menu
-      //    </Text>
-      //  </View>
+       <Router>
+          <Scene key="root" hideNavBar modal>
+              <Scene key="tabbar" gestureEnabled={false} tabs activeBackgroundColor='#ddd' initial>
+                   <Scene key="home" component={HomeContainers} title="找展会" tabBarLabel="找展会" initial/>
+                   <Scene key="exhibition" component={ExhibitionActivityList} tabBarLabel="活动" title="活动"/>
+                   <Scene key="me" component={AboutMe} title="我的" tabBarLabel="我的"/>
+              </Scene>
+              <Scene key="login" component={AboutMe} title="Login"/>
+              <Scene key="register" component={OtherContainer} title="Register"/>
+              <Scene key="home" component={OtherContainer}/>
+          </Scene>
+      </Router>
+
      );
    }
  }
@@ -88,27 +76,6 @@ import DesignList from './Containers/DesignList'
      marginBottom: 5,
    },
  });
-// export default Root;
-// const AppRouter = () =>(
-//   <Router>
-//     <Scene key="lightbox" lightbox leftButtonTextStyle={{color: 'green'}} backButtonTextStyle={{color: 'red'}}>
-//       <Scene key="modal" modal hideNavBar>
-//           <Scene key="tabbar"
-//              gestureEnabled={false}
-//              tabs
-//              activeBackgroundColor='#ddd'
-//              initial
-//             >
-//                 <Scene key="home" component={HomeContainers} title="主页" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-//                 <Scene key="exhibition" component={ExhibitionActivityList} title="展会" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-//                 <Scene key="design" component={DesignList} title="设计师" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-//                 <Scene key="me" component={AboutMe} title="我的" icon={< Icon name = {'ios-home'} size = {30} color = {'gray'}/>}/>
-//           </Scene>
-//           <Scene key="other" component={OtherContainer}/>
-//       </Scene>
-//     </Scene>
-//   </Router>
-// );
-// export default AppRouter;
+
 
 //https://github.com/yongqianvip/RN-ListViewLoadMore

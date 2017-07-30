@@ -11,10 +11,22 @@ import {
   Text,
   ListView,
   TouchableOpacity,
+  Image,
+  Alert,
   View
 } from 'react-native';
 
+import BannerImages from '../Common/Components/BannerImages'
+
 var Dimensions = require('Dimensions');
+var deviceWidth = Dimensions.get('window').width;
+
+var IMGS = [
+  'http://img.showguide.cn/uploads/try/1478743652EXPOPARTES1111.jpg',
+  'http://h.hiphotos.baidu.com/image/h%3D220/sign=a67cd12f9582d158a4825eb3b00b19d5/aa18972bd40735fa91b8197897510fb30e2408a2.jpg',
+  'http://img.showguide.cn/uploads/try/1478743652EXPOPARTES1111.jpg',
+  'http://img.showguide.cn/uploads/try/1478743652EXPOPARTES1111.jpg',
+];
 
 export default class HomeContainers extends Component {
   // 初始化模拟数据
@@ -24,7 +36,7 @@ export default class HomeContainers extends Component {
     this.state = {
       dataSource: ds.cloneWithRows([
         'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
-      ])
+      ]),
     };
   }
   _renderRow(rowData: string,sectionID: number, rowID: number) {
@@ -40,17 +52,19 @@ export default class HomeContainers extends Component {
         </TouchableOpacity>
     );
   }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Home
-        </Text>
-        <ListView
-          style = {styles.listView}
-          dataSource={this.state.dataSource}
-          renderRow={this._renderRow}
-        />
+          <BannerImages images = {IMGS} itemClick = {(key) => Alert.alert(
+            'Alert Title',
+            key,
+          )}/>
+          <ListView
+            style = {styles.listView}
+            dataSource={this.state.dataSource}
+            renderRow={this._renderRow}
+          />
       </View>
     );
   }
@@ -83,5 +97,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  banner: {
+    width: deviceWidth,
+    height: 100,
   },
 });

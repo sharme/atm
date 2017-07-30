@@ -38,13 +38,9 @@ export default class AboutMe extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Home
+          jjjjjjjj
         </Text>
-        <ListView
-          style = {styles.listView}
-          dataSource={this.state.dataSource}
-          renderRow={this._renderRow}
-        />
+
       </View>
     );
   }
