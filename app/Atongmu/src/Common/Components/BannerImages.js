@@ -28,7 +28,7 @@ export default class BannerImages extends Component {
         var imageViews=[];
         for(var i=0;i<this.props.images.length;i++){
             imageViews.push(
-               <TouchableWithoutFeedback onPress = {() => this.props.itemClick(i+'a')}
+               <TouchableWithoutFeedback onPress = {() => this.props.itemClick(this.key+'a')}
                key={i} ref="swiper">
                   <Image
                       key={i}
@@ -43,7 +43,7 @@ export default class BannerImages extends Component {
     }
   render() {
     return (
-      <Swiper height={150}
+      <Swiper height={200}
 
             loop={true}
             autoplayDirection={true}

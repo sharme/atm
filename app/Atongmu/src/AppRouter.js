@@ -44,7 +44,7 @@ import DesignList from './Containers/DesignList'
        <Router>
           <Scene key="root" hideNavBar modal>
               <Scene key="tabbar" gestureEnabled={false} tabs activeBackgroundColor='#ddd' initial>
-                   <Scene key="home" component={HomeContainers} title="找展会" tabBarLabel="找展会" initial/>
+                   <Scene key="home" component={HomeContainers} title="找展会" tabBarLabel="找展会" initial hideNavBar/>
                    <Scene key="exhibition" component={ExhibitionActivityList} tabBarLabel="活动" title="活动"/>
                    <Scene key="me" component={AboutMe} title="我的" tabBarLabel="我的"/>
               </Scene>

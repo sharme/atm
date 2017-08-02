@@ -17,6 +17,8 @@ import {
 } from 'react-native';
 
 import BannerImages from '../Common/Components/BannerImages'
+import SearchBarView from '../Common/Components/SearchBarView'
+
 
 var Dimensions = require('Dimensions');
 var deviceWidth = Dimensions.get('window').width;
@@ -56,10 +58,12 @@ export default class HomeContainers extends Component {
   render() {
     return (
       <View style={styles.container}>
+
           <BannerImages images = {IMGS} itemClick = {(key) => Alert.alert(
             'Alert Title',
             key,
           )}/>
+          <SearchBarView/>
           <ListView
             style = {styles.listView}
             dataSource={this.state.dataSource}
@@ -71,6 +75,7 @@ export default class HomeContainers extends Component {
 }
 
 const styles = StyleSheet.create({
+  
   row: {
     flexDirection: 'row',
     justifyContent: 'center',
