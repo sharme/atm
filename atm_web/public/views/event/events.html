@@ -13,12 +13,12 @@
         <div class="company_filter_area">
             <div class="company_filter_area_title">地区</div>
             <div class="company_filter_area_val">
-                <div>所有</div>
-                <div>上海</div>
-                <div>北京</div>
-                <div>广州</div>
-                <div>深圳</div>
-                <div>南京</div>
+                <div class="event_1 event_filter" ng-click="filterByCity('所有',1)">所有</div>
+                <div class="event_2 event_filter" ng-click="filterByCity('上海',2)">上海</div>
+                <div class="event_3 event_filter" ng-click="filterByCity('北京',3)">北京</div>
+                <div class="event_4 event_filter" ng-click="filterByCity('广州',4)">广州</div>
+                <div class="event_5 event_filter" ng-click="filterByCity('深圳',5)">深圳</div>
+                <div class="event_6 event_filter" ng-click="filterByCity('南京',6)">南京</div>
             </div>
         </div>
         <!--<div class="company_filter_type">-->
@@ -33,42 +33,59 @@
 
     </div>
 
-
-
     <div class="company_main">
         <div class="company_main_left">
 
-            <div class="company_main_left_info" ng-repeat="event in events">
-                <div class="company_main_left_info_logo">
-                    <a href="#/events/{{event.e_id}}"><img ng-src="{{event.e_logo}}"></a>
-                </div>
-                <div class="company_main_left_info_desc">
-                    <div class="company_main_left_info_desc_name">{{event.e_name}}</div>
-                    <div class="company_main_left_info_desc_date">开展日期 {{event.e_start_date | date: 'yyyy-MM-dd'}} - {{event.e_end_date | date: 'yyyy-MM-dd'}}</div>
-                    <div class="company_main_left_info_desc_type">行业: {{event.e_type}}</div>
-                    <div class="company_main_left_info_desc_foot">
-                        <span>所在地: {{event.e_address}}</span>
-                        <span>59人围观</span>
+            <div style="min-height: 500px;">
+                <div class="company_main_left_info" ng-repeat="event in events">
+                    <div class="company_main_left_info_logo">
+                        <a href="#/events/{{event.e_id}}"><img ng-src="{{event.e_logo}}"></a>
+                    </div>
+                    <div class="company_main_left_info_desc">
+                        <div class="company_main_left_info_desc_name">{{event.e_name}}</div>
+                        <div class="company_main_left_info_desc_date">开展日期 {{event.e_start_date | date: 'yyyy-MM-dd'}} - {{event.e_end_date | date: 'yyyy-MM-dd'}}</div>
+                        <div class="company_main_left_info_desc_type">行业: {{event.e_type}}</div>
+                        <div class="company_main_left_info_desc_foot">
+                            <span>所在地: {{event.e_address}}</span>
+                            <span>59人围观</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="company_main_nav">
                 <div class="company_main_nav_pages">
-                    <ul>
-                        <li>总共: 48</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>4</li>
-                        <li>99</li>
-                    </ul>
+                    <!--<ul>-->
+                        <!--<li>总共: 48</li>-->
+                        <!--<li>1</li>-->
+                        <!--<li>2</li>-->
+                        <!--<li>3</li>-->
+                        <!--<li>4</li>-->
+                        <!--<li>4</li>-->
+                        <!--<li>99</li>-->
+                    <!--</ul>-->
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a ng-click="Previous()">
+                                    <span>上一页</span>
+                                </a>
+                            </li>
+                            <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+                                <a ng-click="selectPage(page)" >{{ page }}</a>
+                            </li>
+                            <li>
+                                <a ng-click="Next()">
+                                    <span>下一页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="company_main_nav_go">
-                    <input type="text" size="4" value="页码">
-                    <input type="submit" value="GO">
-                </div>
+                <!--<div class="company_main_nav_go">-->
+                    <!--<input type="text" size="4" value="页码">-->
+                    <!--<input type="submit" value="GO">-->
+                <!--</div>-->
 
             </div>
 

@@ -3,9 +3,10 @@
 // Declare app level module which depends on views, and components
 var atm = angular.module('atm', [
   'ngRoute',
+  'atmController',
   'angularCSS',
-  'atm_login',
-  'ngCookies'
+  'ngCookies',
+  'ngKookies'  
 ]).value("THROTTLE_MILLISECONDS", 3000);
 
 

@@ -11,6 +11,8 @@ var events = require('./backend/routes/events');
 var comments = require('./backend/routes/comments');
 var api = require('./backend/routes/api');
 var newest = require('./backend/routes/newest.js');
+var notifications = require('./backend/routes/notifications.js');
+var feedback = require('./backend/routes/feedbacks.js');
 
 var app = express();
 
@@ -40,6 +42,8 @@ app.use('/events', events);
 app.use('/comments', comments);
 app.use('/api', api);
 app.use('/newest', newest);
+app.use('/notifications', notifications);
+app.use('/feedback', feedback);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

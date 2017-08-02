@@ -44,11 +44,29 @@ router.get('/getEvents', function(req, res, next) {
 
 });
 
+router.get('/getTotal', function(req, res, next) {
+    var sql = "select e_id from atm_events";
+
+    if(req.param('e_city') != '所有') {
+        sql += " where e_city = '" + req.param('e_city') + "'";
+    }
+    
+    console.log(sql);
+    connection.query(sql, function (err, result) {
+        if(err) {
+            res.send("[{code: 500, err: "+ err +"}]");
+        } else {
+            res.send(result);
+        }
+    })
+
+});
+
+
 
 router.get('/getEventByEId', function(req, res, next) {
     var sql = "select * from atm_events";
-
-
+    
     if(req.param('e_id')) {
         sql += " where e_id = " + req.param('e_id');
     }
@@ -64,6 +82,35 @@ router.get('/getEventByEId', function(req, res, next) {
     })
 
 });
+
+
+router.get('/getEventsByCity', function(req, res, next) {
+    var sql = "select * from atm_events";
+
+    if(req.param('e_city') != '所有') {
+        sql += " where e_city = '" + req.param('e_city') + "'";
+    }
+
+    sql += " order by e_created_time desc";
+
+    if(req.param('start') && req.param('count')) {
+        sql += " limit " + req.param('start') + "," + req.param('count');
+    }
+
+    console.log(sql);
+
+    connection.query(sql, function (err, result) {
+        if(err) {
+            res.send("[{code: 500, err: "+ err +"}]");
+        } else {
+            res.send(result);
+        }
+    })
+
+});
+
+
+
 
 
 

@@ -4,11 +4,11 @@
 
 'use strict';
 
-var loginController = angular.module('atm_login', ['ngCookies', 'atm']);
+var loginController = angular.module('atmController');
 
 var ipAddress = 'http://127.0.0.1:3000';
 
-loginController.controller('LoginController', ['$scope', '$http', '$window', '$cookies', function($scope, $http, $window, $cookies){
+loginController.controller('LoginController', ['$scope', '$http', '$window', '$cookies', '$kookies', function($scope, $http, $window, $cookies, $kookies){
 
     
     $scope.switchTab = function(key){
@@ -81,12 +81,6 @@ loginController.controller('LoginController', ['$scope', '$http', '$window', '$c
 
 
 
-
-
-
-
-
-
     // Form submit for Login.
     $scope.loginForm = {
         u_name: '',
@@ -94,6 +88,9 @@ loginController.controller('LoginController', ['$scope', '$http', '$window', '$c
     };
 
     $scope.login_submit = function(){
+
+        console.log('coming');
+
         var req = {
             method: 'POST',
             url: ipAddress + '/users/login',
@@ -106,11 +103,10 @@ loginController.controller('LoginController', ['$scope', '$http', '$window', '$c
         $http(req).success(function(result){
             if(result.length > 0) {
                 console.log(JSON.stringify(result[0]));
-                $cookies.put('secret', result[0].secret);
-                $cookies.put('u_name', result[0].u_name);
-                $cookies.put('u_id', result[0].u_id);
-                $cookies.put('u_avatar', result[0].u_avatar);
-                console.log("u_name:" + $cookies.get('u_name'));
+                $kookies.set('secret', result[0].secret, {expires: 7, path: '/'});
+                $kookies.set('u_id', result[0].u_id, {expires: 7, path: '/'});
+                $kookies.set('u_avatar', result[0].u_avatar, {expires: 7, path: '/'});
+                $kookies.set('u_name', result[0].u_name, {expires: 7, path: '/'});
                 $window.location.href = 'http://localhost:3000/#/events';
             }else {
                 $('.validation_msg').html("用户名或者密码不正确, 请重新输入.");

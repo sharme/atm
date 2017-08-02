@@ -9,9 +9,9 @@
             <div class="profile_left_top_item">
                 <li ng-click="selection('home')" style="border-bottom: solid 2px lightgreen;">我的主页</li>
             </div>
-            <div class="profile_left_top_item">
-                <li ng-click="selection('info')">我的资料</li>
-            </div>
+            <!--<div class="profile_left_top_item">-->
+                <!--<li ng-click="selection('info')">我的资料</li>-->
+            <!--</div>-->
             <div class="profile_left_top_item">
                 <li ng-click="selection('msg')">消息通知</li>
             </div>
@@ -40,8 +40,17 @@
                     <div class="profile_right_home_top_profile_info">
                         <li>个人介绍: {{user.u_desc}}</li>
                         <li>状态: {{user.u_status==1?'正常':'非正常'}} </li>
-                        <li>{{user.u_email}}</li>
-                        <li>{{user.u_address}}</li>
+                        <li>
+                            <span style="float: left;">
+                                <img style="width: 25px; height: 25px;" src="images/icon/telephone_logo.png" alt="13917455041">
+                            </span>
+                            <div style="float: left;
+                                    line-height: 1.5;
+                                    margin-left: 10px;
+                                    width: 85%;">
+                                {{user.u_phone_num}}
+                            </div>
+                        </li>
                     </div>
                 </div>
             </div>
@@ -75,7 +84,7 @@
 
         </div>
 
-        <div class="profile_right_msg" ng-switch-when="msg" ng-controller="profileMsgController">
+        <div class="profile_right_msg" ng-switch-when="msg">
             <div class="profile_right_msg_title">
                 <span>平台消息</span>
             </div>
@@ -84,27 +93,31 @@
                     <div class="profile_right_msg_list_info_avatar"></div>
                     <div class="profile_right_msg_list_info_desc">
                         <li><span style="color: red">阿童木</span> 发来了站内通知:</li>
-                        <li>欢迎 miwangyao加入阿童木,  你的加入, 让我们相信 "我们可以创造奇迹, 贡献社会</li>
+                        <li class="msg" ng-repeat="noti in notifications">
+                            <span></span>{{noti.n_msg}}
+                        </li>
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <div class="profile_right_feedback" ng-switch-when="feedback" ng-controller="profileFeedbackController">
+        <div class="profile_right_feedback" ng-switch-when="feedback" ng-controller="ProfileFdController">
             <div class="profile_right_feedback_title">
-                <span>平台消息</span>
+                <span>反馈</span>
             </div>
-            <div class="profile_right_feedback_form">
-                <div>
-                    <textarea>
-                        有什么不满意的地方, 可以向我们提建议, 我们将会认真对待您的宝贵建议.
-                    </textarea>
+            <form method="POST" ng-submit="submit()">
+                <div class="profile_right_feedback_form">
+
+                        <div>
+                            <textarea ng-model="feedback.f_msg">
+                            </textarea>
+                        </div>
+                        <div>
+                            <input type="submit" value="提交">
+                        </div>
                 </div>
-                <div>
-                    <input type="submit" value="提交">
-                </div>
-            </div>
+            </form>
 
         </div>
 

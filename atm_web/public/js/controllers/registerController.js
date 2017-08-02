@@ -4,7 +4,7 @@
 
 'use strict';
 
-var registerController = angular.module('atm_register', []);
+var registerController = angular.module('atmController');
 
 var ipAddress = 'http://127.0.0.1:3000';
 
@@ -21,7 +21,7 @@ registerController.controller('registerController', ['$scope', '$http', '$window
     };
 
 
-
+    // SMS requesting
     $scope.sendVerifyCode = function() {
 
         $('.validation_msg').html("");
@@ -72,19 +72,16 @@ registerController.controller('registerController', ['$scope', '$http', '$window
         }
     };
     
-    
+
+
+
+
+    // Register an account with Phone Number
     $scope.phoneForm = {
         u_phone_num: '',
         scCode: '',
         u_pwd: ''
     };
-    
-    $scope.submit = function () {
-      
-        console.log($scope.phoneForm.u_phone_num + " , " + $scope.phoneForm.scCode + " , " + $scope.phoneForm.u_pwd)
-        
-    };
-
 
     $scope.submit = function(){
         if($('#register-form-phoneNumber').val().length != 11){
@@ -128,8 +125,10 @@ registerController.controller('registerController', ['$scope', '$http', '$window
                 };
 
                 $http(req).success(function (result) {
-                    console.log(JSON.stringify(result))
-                    if(result.errno){
+                    console.log(JSON.stringify(result));
+                    if(result.errno == '1062') {
+                        $('.validation_msg').html("该手机号已经被注册.");
+                    } else if(result.errno){
                         $('.validation_msg').html("注册失败, 请联系管理员.");
                     } else {
                         $('.validation_msg').html("注册成功, 进行登录.");
