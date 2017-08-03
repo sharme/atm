@@ -13,6 +13,7 @@ var api = require('./backend/routes/api');
 var newest = require('./backend/routes/newest.js');
 var notifications = require('./backend/routes/notifications.js');
 var feedback = require('./backend/routes/feedbacks.js');
+var pageView = require('./backend/routes/pageview.js');
 
 var app = express();
 
@@ -44,6 +45,8 @@ app.use('/api', api);
 app.use('/newest', newest);
 app.use('/notifications', notifications);
 app.use('/feedback', feedback);
+app.use('/pageView', pageView);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

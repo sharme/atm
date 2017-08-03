@@ -9,7 +9,7 @@ function pages($http, $scope, records){
     //数据源
     $scope.data = records;
     //分页总数
-    $scope.pageSize = 2;
+    $scope.pageSize = 5;
     $scope.pages = Math.ceil($scope.data.length / $scope.pageSize); //分页数
     $scope.newPages = $scope.pages > 5 ? 5 : $scope.pages;
     $scope.pageList = [];
@@ -67,15 +67,17 @@ function pages($http, $scope, records){
 
 
 
-atmController.controller('EventController', ['$scope', '$http', '$cookies', '$kookies', function($scope, $http, $cookies, $kookies){
+atmController.controller('EventController', ['$scope', '$http', '$cookies', '$kookies', '$window', function($scope, $http, $cookies, $kookies, $window){
 
     $scope.city = '所有';
 
     if($kookies.get('u_id')) {
         $('.header_title_right').html($kookies.get('u_name'));
+        $('.welcome').html('嘿! ' + $kookies.get('u_name'));
+        $('.account_entry').css("display", "none");
     }
 
-    $http({method: 'GET', url: ipAddress + '/events/getEvents', params:{start: 0, count: 2}})
+    $http({method: 'GET', url: ipAddress + '/events/getEvents', params:{start: 0, count: 5}})
         .success(function(data){
             $scope.events = data;
             
@@ -111,7 +113,7 @@ atmController.controller('EventController', ['$scope', '$http', '$cookies', '$ko
         $('.event_filter').css('background-color', 'white');
         $('.event_' + point).css('background-color', 'springgreen');
         $scope.city = city;
-        $http({method: 'GET', url: ipAddress + '/events/getEventsByCity', params:{e_city: city, start: 0, count: 2}})
+        $http({method: 'GET', url: ipAddress + '/events/getEventsByCity', params:{e_city: city, start: 0, count: 5}})
             .success(function(data){
                 $scope.events = data;
             },function(error){
@@ -125,9 +127,34 @@ atmController.controller('EventController', ['$scope', '$http', '$cookies', '$ko
                 $scope.error = error;
             });
 
-    }
-    
-    
+    };
+
+
+
+
+    $scope.pageView = function(e_id) {
+
+        var click = {
+            key_id: e_id,
+            u_id: $kookies.get('u_id')
+        };
+        var req = {
+            method: 'POST',
+            url: ipAddress + '/pageView/add',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(click)
+        };
+
+        $http(req).success(function(result){
+            $window.location.href = "#/events/" + e_id;
+        }, function(error){
+            console.log(error);
+        });
+
+        console.log("pageView" + e_id);
+    };
     
 
 }]);
@@ -273,7 +300,7 @@ atmController.controller('EventDController', ['$scope', '$http', '$routeParams',
 
     $http({method: 'GET', url: ipAddress + '/comments/getComments', params:{s_id: $routeParams.e_id, c_type: 1}})
         .success(function(data){
-            console.log(data);
+            // console.log(data);
             $scope.comments = data;
             $scope.commentNum = data.length;
         },function(error){
@@ -310,6 +337,7 @@ atmController.controller('EventDController', ['$scope', '$http', '$routeParams',
             $http({method: 'GET', url: ipAddress + '/comments/getComments', params:{s_id: $routeParams.e_id, c_type: 1}})
                 .success(function(data){
                     console.log(data);
+                    CKEDITOR.instances.editor1.setData('');
                     $scope.comments = data;
                     $scope.commentNum = data.length;
                 },function(error){

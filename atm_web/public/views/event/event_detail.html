@@ -2,7 +2,7 @@
 
 <div class="event_d" ng-controller="EventDController">
     <div class="event_d_left">
-        <div>
+        <div style="font-size: 20px; color: red;">
             {{event.e_name}}
         </div>
         <div>
@@ -15,7 +15,7 @@
             地址: {{event.e_address}}
         </div>
         <div>
-            已有49人围观
+            已有{{event.pageview}}人围观
         </div>
     </div>
 
@@ -29,26 +29,7 @@
                 {{event.e_description}}
             </div>
             <div class="event_d_right_main_comment">
-                <!--<div class="event_d_right_main_comment_form">-->
-                    <!--<div class="event_d_right_main_comment_form_title">-->
-                        <!--【 展友点评 】-->
-                    <!--</div>-->
-                    <!--<textarea>-->
-                        <!--Put your comments-->
-                    <!--</textarea>-->
-                    <!--<div>-->
-                        <!--<input type="submit" value="提交">-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div>-->
-                    <!--<div>-->
-                        <!--最新评论-->
-                    <!--</div>-->
-                    <!--<hr>-->
-
-                <!--</div>-->
-                【 展友点评 】
+                【 展友点评 】{{commentNum}}条
                 <div class="topic_content_comment" ng-repeat="comment in comments">
                     <div>
                         回复于: {{comment.c_created_time | date: 'yyyy-MM-dd HH:mm'}}

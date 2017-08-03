@@ -5,7 +5,6 @@
   width: 96%;
   margin: 45px 2%;
   min-height: 600px;
-  border-top: solid 1px lightgray;
 }
 .event_d .event_d_left {
   width: 30%;
@@ -14,11 +13,13 @@
 }
 .event_d .event_d_left div {
   margin: 8px 0px;
+  font-size: 14px;
 }
 .event_d .event_d_right {
   width: 70%;
   min-height: 600px;
   float: left;
+  font-size: 14px;
 }
 .event_d .event_d_right .event_d_right_logo {
   margin: 15px;

@@ -39,15 +39,21 @@
             <div style="min-height: 500px;">
                 <div class="company_main_left_info" ng-repeat="event in events">
                     <div class="company_main_left_info_logo">
-                        <a href="#/events/{{event.e_id}}"><img ng-src="{{event.e_logo}}"></a>
+                        <!--<a href="#/events/{{event.e_id}}">-->
+                            <img ng-src="{{event.e_logo}}" ng-click="pageView(event.e_id)">
+                        <!--</a>-->
                     </div>
                     <div class="company_main_left_info_desc">
-                        <div class="company_main_left_info_desc_name">{{event.e_name}}</div>
+                        <div class="company_main_left_info_desc_name" style="cursor: pointer;" ng-click="pageView(event.e_id)">
+                            <!--<a href="#/events/{{event.e_id}}" ng-click="pageView({{event.e_id}})">-->
+                                {{event.e_name}}
+                            <!--</a>-->
+                        </div>
                         <div class="company_main_left_info_desc_date">开展日期 {{event.e_start_date | date: 'yyyy-MM-dd'}} - {{event.e_end_date | date: 'yyyy-MM-dd'}}</div>
                         <div class="company_main_left_info_desc_type">行业: {{event.e_type}}</div>
                         <div class="company_main_left_info_desc_foot">
-                            <span>所在地: {{event.e_address}}</span>
-                            <span>59人围观</span>
+                            <span><span><img src="images/icon/location.jpeg"></span> {{event.e_address}}</span>
+                            <span class="pageView">{{event.pageview}}人围观</span>
                         </div>
                     </div>
                 </div>

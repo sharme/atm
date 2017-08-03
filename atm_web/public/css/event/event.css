@@ -87,6 +87,7 @@
   padding: 10px;
   height: 170px;
   width: 100%;
+  cursor: pointer;
 }
 .company .company_main .company_main_left .company_main_left_info .company_main_left_info_desc {
   width: 50%;
@@ -102,6 +103,16 @@
 }
 .company .company_main .company_main_left .company_main_left_info .company_main_left_info_desc .company_main_left_info_desc_foot {
   margin-top: 18px;
+}
+.company .company_main .company_main_left .company_main_left_info .company_main_left_info_desc .company_main_left_info_desc_foot img {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+  padding: 1px;
+}
+.company .company_main .company_main_left .company_main_left_info .company_main_left_info_desc .company_main_left_info_desc_foot .pageView {
+  float: right;
 }
 .company .company_main .company_main_right {
   width: 28%;
