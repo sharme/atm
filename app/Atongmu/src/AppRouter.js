@@ -34,6 +34,7 @@ import ExhibitionActivityList from './Containers/ExhibitionActivityList'
 import OtherContainer from './Containers/OtherContainer'
 import HomeContainers from './Containers/HomeContainers'
 import DesignList from './Containers/DesignList'
+import UserLoginPage from './Modules/User/UserLoginPage'
 /**
  * 界面对象 结束
  */
@@ -48,7 +49,7 @@ import DesignList from './Containers/DesignList'
                    <Scene key="exhibition" component={ExhibitionActivityList} tabBarLabel="活动" title="活动"/>
                    <Scene key="me" component={AboutMe} title="我的" tabBarLabel="我的"/>
               </Scene>
-              <Scene key="login" component={AboutMe} title="Login"/>
+              <Scene key="loginPage" component={UserLoginPage} title="Login"/>
               <Scene key="register" component={OtherContainer} title="Register"/>
               <Scene key="home" component={OtherContainer}/>
           </Scene>

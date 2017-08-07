@@ -15,6 +15,9 @@ import {
   Alert,
   View
 } from 'react-native';
+import {
+  Actions,
+} from 'react-native-router-flux';
 
 import BannerImages from '../Common/Components/BannerImages'
 import SearchBarView from '../Common/Components/SearchBarView'
@@ -43,7 +46,7 @@ export default class HomeContainers extends Component {
   }
   _renderRow(rowData: string,sectionID: number, rowID: number) {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress = {Actions.loginPage}>
           <View>
             <View style={styles.row}>
               <Text style={{fontSize:16,color:'blue'}}>
@@ -54,6 +57,8 @@ export default class HomeContainers extends Component {
         </TouchableOpacity>
     );
   }
+
+
 
   render() {
     return (
@@ -75,7 +80,7 @@ export default class HomeContainers extends Component {
 }
 
 const styles = StyleSheet.create({
-  
+
   row: {
     flexDirection: 'row',
     justifyContent: 'center',
