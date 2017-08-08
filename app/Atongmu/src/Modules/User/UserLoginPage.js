@@ -4,10 +4,15 @@ import {
   Image,
   Text,
   TouchableWithoutFeedback,
-  Button,
   TextInput,
   StyleSheet
 } from 'react-native';
+
+import Button from '../../Common/Components/Button'
+
+var Dimensions = require('Dimensions');
+var deviceWidth = Dimensions.get('window').width;
+var deviceHeight = Dimensions.get('window').height;
 
 export default class UserLoginPage extends Component {
 
@@ -16,9 +21,10 @@ export default class UserLoginPage extends Component {
   render() {
     return (
       <View style = {styles.view}>
+        <Image source={require('../../images/login_background.png')} style={styles.loginBackground}/>
         <View style = {styles.contentView}>
           <View style={styles.buttonsView}>
-            <Button title='密码登陆' style={styles.buttonSelect}/>
+            <Button title='密码登陆' buttonStyle={styles.buttonSelect}/>
             <Button title='密码登陆'/>
           </View>
           <View style={styles.inputView}>
@@ -29,6 +35,9 @@ export default class UserLoginPage extends Component {
           <View style={{alignItems:'flex-end',width:260}}>
             <Button title='找回密码' color='#ffffff'/>
           </View>
+            <View style={{marginTop:20,}}>
+                <Button title='' source={require('../../images/btn_login.png')} buttonStyle={styles.loginButton}/>
+            </View>
         </View>
       </View>
     );
@@ -63,5 +72,14 @@ const styles = StyleSheet.create({
   },
   inputIcon:{
     flexDirection: 'row',
-  }
+  },
+    loginBackground:{
+        position:'absolute',
+        width:deviceWidth,
+        height:deviceHeight,
+    },
+    loginButton:{
+        width:230,
+        height:45,
+    }
 })
