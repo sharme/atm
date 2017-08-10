@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
     Text,
-    TouchableOpacity,
+    TouchableHighlight,
     Image,
     View
 } from 'react-native';
@@ -11,33 +11,40 @@ import {
 /**
  * 自定义按钮
  */
-export default class Button extends Component{
+export default class Button extends Component {
     constructor(props) {
         super(props);
-
     }
-    buttonImage(){
-        var buttonImageView = [];
-        buttonImageView.push(
-        <TouchableOpacity>
-            <Image source={this.props.source} style={this.props.buttonStyle}>
-                {this.buttonText()}
-            </Image>
-        </TouchableOpacity>);
-        return buttonImageView;
-    }
-    buttonText(){
-        if(this.props.title != null && this.props.title.length > 0){
+    textView() {
+        if (this.props.title != null && this.props.title.length > 0) {
             return <Text style={this.props.textStyle}>{this.props.title}</Text>;
-        }else{
+        } else {
             return <View/>;
         }
     }
+
+    buttonText() {
+
+        if (this.props.source != null) {
+            var buttonImage = [];
+            buttonImage.push(<Image source={this.props.source} style={this.props.imageStyle}>
+                {this.textView()}
+            </Image>);
+            return buttonImage;
+        } else {
+            return this.textView();
+        }
+    }
+
     render() {
         return (
-        <View>
-            {this.buttonImage()}
-
-        </View>);
+            <TouchableHighlight style={this.props.buttonStyle} activeOpacity={0.8}
+                                underlayColor={'transparent'} onPress={this.props.onPress}>
+                <View style={[this.props.contentViewStyle, {flex: 1,alignItems: 'center',
+                    justifyContent: 'center'}]}>
+                    {this.buttonText()}
+                </View>
+            </TouchableHighlight>
+        );
     }
 }
