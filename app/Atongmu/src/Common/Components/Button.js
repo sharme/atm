@@ -27,7 +27,7 @@ export default class Button extends Component {
 
         if (this.props.source != null) {
             var buttonImage = [];
-            buttonImage.push(<Image source={this.props.source} style={this.props.imageStyle}>
+            buttonImage.push(<Image source={this.props.source} style={this.props.imageStyle} key="myButtonImage">
                 {this.textView()}
             </Image>);
             return buttonImage;
@@ -39,7 +39,7 @@ export default class Button extends Component {
     render() {
         return (
             <TouchableHighlight style={this.props.buttonStyle} activeOpacity={0.8}
-                                underlayColor={'transparent'} onPress={this.props.onPress}>
+                                underlayColor={'transparent'} onPress={this.props.onPress} key="myButton">
                 <View style={[this.props.contentViewStyle, {flex: 1,alignItems: 'center',
                     justifyContent: 'center'}]}>
                     {this.buttonText()}
