@@ -12,6 +12,10 @@ import {
     Alert,
 } from 'react-native';
 
+import {
+    Actions,
+} from 'react-native-router-flux';
+
 import Button from '../../Common/Components/Button'
 
 var Dimensions = require('Dimensions');
@@ -114,7 +118,7 @@ export default class UserLoginPage extends Component {
             <View style={styles.inputContent}>
                 <Image source={require('../../images/mobile_code_icon.png')}
                        style={[styles.inputIcon, {height: 16}]} resizeMode="stretch"/>
-                <TextInput style={[styles.input, {width: 134}]} placeholder="请输入密码" password={true}
+                <TextInput style={[styles.input, {width: 134}]} placeholder="请输入验证码"
                            placeholderTextColor="#adadad" onChangeText={(text) => this.setState({code: text})}/>
                 <Button title='获取验证码' textStyle={{color: '#5ea1fb', fontSize: 13}} onPress={() => console.log("")}/>
             </View>
@@ -153,10 +157,7 @@ export default class UserLoginPage extends Component {
                 )}/>
                 <Button title='' source={require('../../images/btn_register.png')}
                         imageStyle={styles.loginButton} buttonStyle={[styles.loginButton, {marginTop: 10}]}
-                        contentViewStyle={[styles.loginButton]} onPress={() => Alert.alert(
-                    'Alert Title',
-                    'aaa',
-                )}/>
+                        contentViewStyle={[styles.loginButton]} onPress={Actions.registerPage}/>
             </View>
         );
     }
@@ -226,6 +227,7 @@ const styles = StyleSheet.create({
         height: contentHeight,
         width: contentWidth,
         marginTop: 20,
+        borderRadius:2,
     },
     input: {
         width: 180,
