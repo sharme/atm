@@ -234,6 +234,7 @@ const styles = StyleSheet.create({
         height: contentHeight / 2,
         marginLeft: 10,
         fontSize: 14,
+        borderWidth:0,
     },
     inputIcon: {
         width: 12,

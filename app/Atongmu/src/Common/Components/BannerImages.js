@@ -43,7 +43,7 @@ export default class BannerImages extends Component {
     }
   render() {
     return (
-      <Swiper height={200}
+      <Swiper height={185}
 
             loop={true}
             autoplayDirection={true}

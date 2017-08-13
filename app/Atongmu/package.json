@@ -7,6 +7,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"@exponent/react-native-navigator": "^0.4.9",
 		"react": "^16.0.0-alpha.6",
 		"react-native": "^0.44.3",
 		"react-native-button": "^2.1.0",
@@ -14,7 +15,8 @@
 		"react-native-router-flux": "^4.0.0-beta.17",
 		"react-native-swiper": "^1.5.4",
 		"react-native-tab-navigator": "^0.3.3",
-		"react-native-vector-icons": "^4.2.0"
+		"react-native-vector-icons": "^4.2.0",
+		"react-navigation": "^1.0.0-beta.11"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",

@@ -48,7 +48,7 @@ export default class AppRouter extends Component {
             <Router>
                 <Scene key="modal" modal hideNavBar>
                     <Scene key="root" hideNavBar titleStyle={{color: 'white'}}>
-                        <Scene key="tabbar" gestureEnabled={false} tabs activeBackgroundColor='#ddd' initial>
+                        <Scene key="tabbar" gestureEnabled={false} switchnpm  duration={0} tabs activeBackgroundColor='#ddd' initial>
                             <Scene key="home" component={HomeContainers} title="找展会" tabBarLabel="找展会" initial
                                    hideNavBar modal
                             />
