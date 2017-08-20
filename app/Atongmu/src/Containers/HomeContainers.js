@@ -10,6 +10,7 @@ import {
     StyleSheet,
     Text,
     ListView,
+    RefreshControl,
     TouchableHighlight,
     Image,
     Alert,
@@ -23,6 +24,7 @@ import Button from '../Common/Components/Button'
 
 import BannerImages from '../Common/Components/BannerImages'
 import SearchBarView from '../Common/Components/SearchBarView'
+import Footer from '../Common/Components/Footer'
 import ColorUtils from '../Common/ColorUtils'
 
 var Dimensions = require('Dimensions');
@@ -48,6 +50,8 @@ export default class HomeContainers extends Component {
                 'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
             ]),
             swiperShow:false,
+            isrefreshing:true,
+            isLoadMore:false,
         };
     }
 
@@ -167,7 +171,14 @@ export default class HomeContainers extends Component {
     componentDidMount(){
         setTimeout(()=>{
             this.setState({swiperShow:true});
-        },0)
+        },0);
+        setTimeout(() => {
+            this.setState({isrefreshing:false});
+            Alert.alert(
+                'Alert Title',
+                'bbb',
+            )
+        }, 7000);
     }
 
     renderSwiper(){
@@ -196,6 +207,42 @@ export default class HomeContainers extends Component {
                     style={styles.listView}
                     dataSource={this.state.dataSource}
                     renderRow={this._renderRow}
+                    onEndReached={() => {
+                        this.setState({isLoadMore:true});
+                        setTimeout(() => {
+                            this.setState({isLoadMore:false});
+                            Alert.alert(
+                                'Alert Title',
+                                'cccc',
+                            )
+                        }, 5000);
+                    }}
+                    onEndReachedThreshold={10}
+                    renderFooter={()=>{
+                        return this.state.isLoadMore ? <Footer /> : <View />;
+                    } }
+                    refreshControl={
+                        <RefreshControl
+                            style={styles.refreshControlBase}
+                            refreshing={this.state.isrefreshing}
+                            onRefresh={() =>{
+                                Alert.alert(
+                                            'Alert Title',
+                                            'aaa',
+                                        )
+                                // setTimeout(() => {
+                                //     this.state.isrefreshing=true;
+                                //     Alert.alert(
+                                //         'Alert Title',
+                                //         'aaa',
+                                //     )
+                                // }, 3000);
+
+                            } }
+                            title="Loading..."
+                            colors={['#ffaa66cc', '#ff00ddff', '#ffffbb33', '#ffff4444']}
+                        />
+                    }
                 />
             </View>
         );
@@ -203,6 +250,10 @@ export default class HomeContainers extends Component {
 }
 
 const styles = StyleSheet.create({
+
+    refreshControlBase: {
+        backgroundColor: 'transparent'
+    },
 
     row: {
         flexDirection: 'row',
