@@ -80,10 +80,7 @@ export default class HomeContainers extends Component {
 
     _renderRow(rowData: string, sectionID: number, rowID: number) {
         return (
-            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>Alert.alert(
-                'Alert Title',
-                str,
-            )}/>
+            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>this.props.navigation.navigate('Login')}/>
         );
     }
 
