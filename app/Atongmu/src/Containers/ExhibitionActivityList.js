@@ -8,13 +8,34 @@ import {
   StyleSheet,
   Text,
   ListView,
+  Image,
+  Alert,
   TouchableOpacity,
   View
 } from 'react-native';
 
+import TabBarItem from '../Common/Components/TabBarItem'
+import HeaderTitleButton from '../Common/Components/HeaderTitleButton'
+import ActivityItemCell from '../Common/Components/ActivityItemCell'
+
+
 var Dimensions = require('Dimensions');
+var deviceWidth = Dimensions.get('window').width;
+var navBarHeight = (110/667)*Dimensions.get('window').height;
 
 export default class ExhibitionActivityList extends Component {
+  static navigationOptions = {
+    header:false,
+    tabBarLabel:'活动',  
+    tabBarIcon:({focused,tintColor}) => (  
+      <TabBarItem  
+        tintColor={tintColor}  
+        focused={focused}  
+        normalImage={require('../images/activity_tab_unselect.png')}  
+        selectedImage={require('../images/activity_tab_select.png')}  
+      />  
+    ),
+  }
   // 初始化模拟数据
   constructor(props) {
     super(props);
@@ -27,21 +48,23 @@ export default class ExhibitionActivityList extends Component {
   }
   _renderRow(rowData: string,sectionID: number, rowID: number) {
     return (
-        <TouchableOpacity>
-          <View>
-            <View style={styles.row}>
-              <Text style={{fontSize:16,color:'blue'}}>
-                {rowData}
-              </Text>
-            </View>
-          </View>
-        </TouchableOpacity>
+      <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>Alert.alert(
+                'Alert Title',
+                str,
+            )}/>
     );
   }
   render() {
     return (
       <View style={styles.container}>
+        <Image source={require('../images/activity_nav_background.png')} style={{width:deviceWidth,height:navBarHeight}} resizeMode='stretch'/>
+       <View style={styles.menuView}>
 
+       </View>
+       <HeaderTitleButton  title={'近期活动'} buttonTitle={'查看全部'} onPressHandler={(str)=>Alert.alert(
+                                            'Alert Title',
+                                            str,
+                                        )} />
         <ListView
           style = {styles.listView}
           dataSource={this.state.dataSource}
@@ -54,13 +77,7 @@ export default class ExhibitionActivityList extends Component {
 }
 
 const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-    height:44,
-    backgroundColor: '#F6F6F6',
-  },
+  
   listView:{
     flex:1,
     width:Dimensions.get('window').width,
@@ -69,7 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FFF',
   },
   welcome: {
     fontSize: 20,
@@ -81,4 +98,17 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  menuView:{
+    width:deviceWidth-40,
+    height:80,
+    marginTop:-40,
+    backgroundColor:'#fff',
+    borderColor: '#dddddd',
+    borderRadius: 8,
+    borderWidth:1,
+    shadowColor:'#dddddd',
+    shadowOffset:{h:5,w:5},
+    shadowRadius:8,
+    shadowOpacity:0.9,
+  }
 });

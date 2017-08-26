@@ -17,8 +17,8 @@ import {
     View
 } from 'react-native';
 import {
-    Actions,
-} from 'react-native-router-flux';
+    DrawerNavigator
+ } from 'react-navigation';
 
 import Button from '../Common/Components/Button'
 
@@ -26,6 +26,9 @@ import BannerImages from '../Common/Components/BannerImages'
 import SearchBarView from '../Common/Components/SearchBarView'
 import Footer from '../Common/Components/Footer'
 import ColorUtils from '../Common/ColorUtils'
+import TabBarItem from '../Common/Components/TabBarItem'
+import HeaderTitleButton from '../Common/Components/HeaderTitleButton'
+import ActivityItemCell from '../Common/Components/ActivityItemCell'
 
 var Dimensions = require('Dimensions');
 var deviceWidth = Dimensions.get('window').width;
@@ -41,6 +44,21 @@ var IMGS = [
 ];
 
 export default class HomeContainers extends Component {
+
+    static navigationOptions = {
+        header: false , // 覆盖预设中的此项
+        tabBarLabel:'首页',  
+        tabBarIcon:({focused,tintColor}) => (  
+          <TabBarItem  
+            tintColor={tintColor}  
+            focused={focused}  
+            normalImage={require('../images/home_tab_unselect.png')}  
+            selectedImage={require('../images/home_tab_select.png')}  
+          />  
+        ),
+      
+          
+    }
     // 初始化模拟数据
     constructor(props) {
         super(props);
@@ -53,43 +71,19 @@ export default class HomeContainers extends Component {
             isrefreshing:true,
             isLoadMore:false,
         };
+        this._renderRow=this._renderRow.bind(this);
+    }
+
+    onPress(){
+        this.props.navigation.navigate('Login',{ transition: 'forVertical' });
     }
 
     _renderRow(rowData: string, sectionID: number, rowID: number) {
         return (
-            <TouchableHighlight onPress={Actions.loginPage} style={{backgroundColor: 'white'}}>
-                <View>
-
-                    <View style={styles.row}>
-                        <Image source={require('../images/home_item_test.png')} style={{height:90,width:100,alignItems:'flex-start'}}/>
-                        <View style={{marginLeft:6,flex:1}}>
-                            <Text style={{fontSize: 15,height:38,marginRight:10}}>
-                                {rowData + '我是测试行号哦~我是测试行号哦~我是测试行号哦~我是测试行号哦~我是测试行号哦~'}
-                            </Text>
-                            <View style={{flexDirection:'row',alignItems:'center',marginTop:10,}}>
-                                <Image source={require('../images/position_icon.png')} style={{width:10,height:12}}/>
-                                <Text style={{marginLeft:4,fontSize:13}}>上海</Text>
-
-                            </View>
-                            <View style={{flexDirection:'row',alignItems:'center',flex:1,marginTop:4,width:deviceWidth-100}}>
-                               <View style={{flex:1,flexDirection:'row',alignItems:'center'}}>
-                                   <Image source={require('../images/time_icon.png')} style={{width:10,height:10}}/>
-                                   <Text style={{marginLeft:4,fontSize:13,}}>2017-08-11</Text>
-                               </View>
-
-                                <View style={{alignItems:'center',justifyContent:'flex-end',flex:1,flexDirection:'row',marginRight:30}}>
-
-                                    <Text style={{fontSize:13,marginRight:6}}>208</Text>
-                                    <Image source={require('../images/num_icon.png')} style={{width:10,height:6,marginRight:5}}/>
-
-                                </View>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={{width: deviceWidth, height: 0.7, backgroundColor: '#e4e5e6'}}/>
-                </View>
-
-            </TouchableHighlight>
+            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>Alert.alert(
+                'Alert Title',
+                str,
+            )}/>
         );
     }
 
@@ -133,40 +127,6 @@ export default class HomeContainers extends Component {
         );
     }
 
-    //近期会展 标题栏
-    homeListTitle() {
-        return (
-            <View>
-                <View style={{
-                    height: 35,
-                    width: deviceWidth,
-                    flexDirection: 'row',
-                    backgroundColor: 'white',
-                    marginTop: 10,
-                    // justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
-                    <View style={{
-                        height: 15,
-                        width: 3,
-                        marginLeft: 8,
-                        backgroundColor: '#0c83fe',
-
-                    }}/>
-                    <Text style={{
-                        width: deviceWidth - 96, marginLeft: 8, justifyContent: 'center',
-                        alignItems: 'center',fontSize:15,
-                    }}>
-                        近期展会
-                    </Text>
-                    <Button title="查看全部" buttonStyle={{alignItems: 'flex-end', height: 40, justifyContent: 'flex-end'}}
-                            onPress={() => console.log()} textStyle={{color: '#b5b6b7'}}/>
-
-                </View>
-                <View style={{width: deviceWidth, height: 0.7, backgroundColor: '#e4e5e6'}}/>
-            </View>
-        );
-    }
 
     componentDidMount(){
         setTimeout(()=>{
@@ -202,7 +162,11 @@ export default class HomeContainers extends Component {
 
                 <SearchBarView/>
                 {this.homeMenu()}
-                {this.homeListTitle()}
+                <HeaderTitleButton  title={'近期展会'} buttonTitle={'查看全部'} onPressHandler={(str)=>Alert.alert(
+                                            'Alert Title',
+                                            str,
+                                        )} />
+                {/* {this.homeListTitle()} */}
                 <ListView
                     style={styles.listView}
                     dataSource={this.state.dataSource}
@@ -253,14 +217,6 @@ const styles = StyleSheet.create({
 
     refreshControlBase: {
         backgroundColor: 'transparent'
-    },
-
-    row: {
-        flexDirection: 'row',
-        // justifyContent: 'center',
-        padding: 10,
-        height: 108,
-        backgroundColor: 'white',
     },
     listView: {
         flex: 1,

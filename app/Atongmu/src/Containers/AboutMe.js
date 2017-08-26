@@ -8,9 +8,24 @@ import {
   View
 } from 'react-native';
 
+import TabBarItem from '../Common/Components/TabBarItem'
+
 var Dimensions = require('Dimensions');
 
 export default class AboutMe extends Component {
+
+  static navigationOptions = {
+    tabBarLabel:'我的',  
+    tabBarIcon:({focused,tintColor}) => (  
+      <TabBarItem  
+        tintColor={tintColor}  
+        focused={focused}  
+        normalImage={require('../images/me_tab_unselect.png')}  
+        selectedImage={require('../images/me_tab_select.png')}  
+      />  
+    ),
+  }
+
   // 初始化模拟数据
   constructor(props) {
     super(props);

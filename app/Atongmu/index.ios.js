@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native';
 import App from './src/Containers/app';
-import AppRouter from './src/AppRouter';
+import AppRoot from './src/AppRoot';
 
 class IndexTest extends Component {
   render() {
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('Atongmu', () => AppRouter);
+AppRegistry.registerComponent('Atongmu', () => AppRoot);

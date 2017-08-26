@@ -16,8 +16,8 @@ import {
 } from 'react-native';
 
 import {
-    Actions,
-} from 'react-native-router-flux';
+    DrawerNavigator
+ } from 'react-navigation';
 
 import Button from '../../Common/Components/Button'
 import CheckBox from '../../Common/Components/CheckBox'
@@ -29,6 +29,13 @@ var contentWidth = 260;
 var contentHeight = 165;
 
 export default class UserRegisterPage extends Component {
+
+    static navigationOptions = {
+        title:'注册',
+        headerStyle: {
+            backgroundColor: 'transparent'
+          }
+    };
 
     constructor(props) {
         super(props);
@@ -83,7 +90,7 @@ export default class UserRegisterPage extends Component {
 
                 <Button title='注册并登录'
                         textStyle={{color:'white',fontSize:16}} buttonStyle={[styles.loginButton, {marginTop: 10}]}
-                        contentViewStyle={[styles.loginButton]} onPress={Actions.registerPage}/>
+                        contentViewStyle={[styles.loginButton]} />
             </View>
         );
     }
@@ -109,6 +116,7 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         alignItems: 'center',
+        marginTop:-66,
     },
     contentView: {
         // justifyContent: 'center',

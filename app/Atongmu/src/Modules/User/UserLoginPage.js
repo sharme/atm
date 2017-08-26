@@ -11,10 +11,9 @@ import {
     ScrollView,
     Alert,
 } from 'react-native';
-
 import {
-    Actions,
-} from 'react-native-router-flux';
+    DrawerNavigator
+ } from 'react-navigation';
 
 import Button from '../../Common/Components/Button'
 
@@ -26,6 +25,10 @@ var contentHeight = 110;
 var buttonMenuHeight = 40;
 
 export default class UserLoginPage extends Component {
+
+    static navigationOptions = {
+        header:false
+    };
 
     constructor(props) {
         super(props);
@@ -87,7 +90,7 @@ export default class UserLoginPage extends Component {
         return (<View style={styles.inputView}>
             <View style={styles.inputContent}>
                 {this.mobileIconView()}
-                <TextInput style={styles.input} placeholder="请输入手机号" keyboardType='phone-pad'
+                <TextInput style={styles.input} placeholder="请输入手机号" keyboardType='phone-pad' underlineColorAndroid='transparent'
                            placeholderTextColor="#adadad" ref={(input) => {
                     this.passMobile = input;
                 }} onChangeText={(text) => this.setState({passMobile: text})}/>
@@ -97,7 +100,7 @@ export default class UserLoginPage extends Component {
             <View style={styles.inputContent}>
                 <Image source={require('../../images/password_icon.png')}
                        style={[styles.inputIcon, {height: 16}]} resizeMode="stretch"/>
-                <TextInput style={styles.input} placeholder="请输入密码" password={true}
+                <TextInput style={styles.input} placeholder="请输入密码" password={true} underlineColorAndroid='transparent'
                            placeholderTextColor="#adadad" onChangeText={(text) => this.setState({password: text})}/>
             </View>
         </View>);
@@ -108,7 +111,7 @@ export default class UserLoginPage extends Component {
         return (<View style={styles.inputView}>
             <View style={styles.inputContent}>
                 {this.mobileIconView()}
-                <TextInput style={styles.input} placeholder="请输入手机号" keyboardType='phone-pad'
+                <TextInput style={styles.input} placeholder="请输入手机号" keyboardType='phone-pad' underlineColorAndroid='transparent'
                            placeholderTextColor="#adadad" ref={(input) => {
                     this.codeMobile = input;
                 }} onChangeText={(text) => this.setState({codeMobile: text})}/>
@@ -118,7 +121,7 @@ export default class UserLoginPage extends Component {
             <View style={styles.inputContent}>
                 <Image source={require('../../images/mobile_code_icon.png')}
                        style={[styles.inputIcon, {height: 16}]} resizeMode="stretch"/>
-                <TextInput style={[styles.input, {width: 134}]} placeholder="请输入验证码"
+                <TextInput style={[styles.input, {width: 134}]} placeholder="请输入验证码" underlineColorAndroid='transparent'
                            placeholderTextColor="#adadad" onChangeText={(text) => this.setState({code: text})}/>
                 <Button title='获取验证码' textStyle={{color: '#5ea1fb', fontSize: 13}} onPress={() => console.log("")}/>
             </View>
@@ -157,7 +160,7 @@ export default class UserLoginPage extends Component {
                 )}/>
                 <Button title='' source={require('../../images/btn_register.png')}
                         imageStyle={styles.loginButton} buttonStyle={[styles.loginButton, {marginTop: 10}]}
-                        contentViewStyle={[styles.loginButton]} onPress={Actions.registerPage}/>
+                        contentViewStyle={[styles.loginButton]} onPress={()=>this.props.navigation.navigate('Register')}/>
             </View>
         );
     }
@@ -181,6 +184,7 @@ export default class UserLoginPage extends Component {
         return (//Keyboard.dismiss
             <TouchableWithoutFeedback onPressIn={Keyboard.dismiss}>
                 <View style={styles.view}>
+                
                     <Image source={require('../../images/login_background.png')} style={styles.loginBackground}/>
                     <View style={styles.contentView}>
                         {this.buttonMenuTop()}
@@ -203,6 +207,10 @@ export default class UserLoginPage extends Component {
                         {this.buttonFindPass()}
                         {this.buttonLoginRegister()}
                     </View>
+                    <Button title='' source={require('../../images/btn_close.png')}
+                        imageStyle={styles.closeBtn} buttonStyle={{position: 'absolute',top: 40,left: 20,}}
+                        contentViewStyle={styles.closeBtn} onPress={()=>this.props.navigation.goBack()}/>
+
                 </View>
             </TouchableWithoutFeedback>
         );
@@ -219,6 +227,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 180,
         width: contentWidth,
+    },
+    closeBtn:{
+        width:15,
+        height:15,
     },
     inputView: {
         // justifyContent: 'center',
