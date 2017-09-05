@@ -40,7 +40,7 @@ export default class SearchBarView extends Component {
                     </View>
                 </TouchableHighlight>
                 <View style={styles.line}/>
-                <TextInput style={styles.input} placeholder="请输入关键字" placeholderTextColor="#adadad"/>
+                <TextInput style={styles.input} placeholder="请输入关键字" underlineColorAndroid='transparent' placeholderTextColor="#adadad"/>
                 <Image source={require('../../images/search_icon.png')}
                        style={{alignItems: 'flex-end', width: 16, height: 16,marginRight:8}}/>
             </View>

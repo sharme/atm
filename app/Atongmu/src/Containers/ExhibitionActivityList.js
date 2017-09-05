@@ -17,11 +17,16 @@ import {
 import TabBarItem from '../Common/Components/TabBarItem'
 import HeaderTitleButton from '../Common/Components/HeaderTitleButton'
 import ActivityItemCell from '../Common/Components/ActivityItemCell'
+import Button from '../Common/Components/Button'
 
 
 var Dimensions = require('Dimensions');
 var deviceWidth = Dimensions.get('window').width;
 var navBarHeight = (110/667)*Dimensions.get('window').height;
+
+var menuHeight = 80;
+var menuWidth = deviceWidth-40;
+var menuItemW = menuWidth/3.0;
 
 export default class ExhibitionActivityList extends Component {
   static navigationOptions = {
@@ -54,17 +59,42 @@ export default class ExhibitionActivityList extends Component {
             )}/>
     );
   }
+
+  /*
+  *顶部菜单
+  */
+  menuItemView(){
+    var itemDataSource=[
+      {icon:require('../images/activity/activity_menu_my.png'),title:'我的活动'},
+      {icon:require('../images/activity/activity_menu_line.png'),title:'线下'},
+      {icon:require('../images/activity/activity_menu_sign.png'),title:'签到赢奖'},
+      {icon:require('../images/activity/activity_menu_other.png'),title:'其他'}
+    ];
+    menuItemW = menuWidth/itemDataSource.length;
+    var itemViews = [];
+    for(var i = 0; i < itemDataSource.length; i++){  
+      var titleStr = itemDataSource[i].title;
+      var icon = itemDataSource[i].icon;
+      var keyStr = 'menuItem'+i;
+      itemViews.push(<Button key={keyStr} keyId={keyStr} onPress={(str)=>Alert.alert(
+        'Alert Title',
+        str,
+    )} title={titleStr} iconSource={icon} iconStyle={{width:40,height:40,marginBottom:6}} textStyle={{color:'#333435',fontSize:14,}} contentViewStyle={{height:menuHeight,width:menuItemW}} buttonStyle={{height:menuHeight,width:menuItemW}}/>);  
+    }  
+    return itemViews;
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Image source={require('../images/activity_nav_background.png')} style={{width:deviceWidth,height:navBarHeight}} resizeMode='stretch'/>
        <View style={styles.menuView}>
-
+         {this.menuItemView()}
        </View>
        <HeaderTitleButton  title={'近期活动'} buttonTitle={'查看全部'} onPressHandler={(str)=>Alert.alert(
                                             'Alert Title',
                                             str,
-                                        )} />
+                                        )} viewStyle={{marginTop:24,}}/>
         <ListView
           style = {styles.listView}
           dataSource={this.state.dataSource}
@@ -99,9 +129,10 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   menuView:{
-    width:deviceWidth-40,
-    height:80,
-    marginTop:-40,
+    flexDirection:'row',
+    width:menuWidth,
+    height:menuHeight,
+    marginTop:-35,
     backgroundColor:'#fff',
     borderColor: '#dddddd',
     borderRadius: 8,

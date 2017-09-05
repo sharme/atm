@@ -25,7 +25,7 @@ import Button from '../Common/Components/Button'
 import BannerImages from '../Common/Components/BannerImages'
 import SearchBarView from '../Common/Components/SearchBarView'
 import Footer from '../Common/Components/Footer'
-import ColorUtils from '../Common/ColorUtils'
+import ColorUtils from '../Util/ColorUtils'
 import TabBarItem from '../Common/Components/TabBarItem'
 import HeaderTitleButton from '../Common/Components/HeaderTitleButton'
 import ActivityItemCell from '../Common/Components/ActivityItemCell'
@@ -80,7 +80,7 @@ export default class HomeContainers extends Component {
 
     _renderRow(rowData: string, sectionID: number, rowID: number) {
         return (
-            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>this.props.navigation.navigate('Login')}/>
+            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>this.props.navigation.navigate('Login',{transition: 'forVertical'})}/>
         );
     }
 
@@ -178,6 +178,7 @@ export default class HomeContainers extends Component {
                             )
                         }, 5000);
                     }}
+                    removeClippedSubviews={false}
                     onEndReachedThreshold={10}
                     renderFooter={()=>{
                         return this.state.isLoadMore ? <Footer /> : <View />;

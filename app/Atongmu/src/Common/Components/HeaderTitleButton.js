@@ -17,10 +17,10 @@ import Button from './Button'
 var Dimensions = require('Dimensions');
 var deviceWidth = Dimensions.get('window').width;
 
-const HeaderTitleButton = ({ title, buttonTitle, onPressHandler }) =>
+const HeaderTitleButton = ({ title, buttonTitle, onPressHandler,viewStyle }) =>
 (
     <View>
-    <View style={{
+    <View style={[{
         height: 35,
         width: deviceWidth,
         flexDirection: 'row',
@@ -28,7 +28,7 @@ const HeaderTitleButton = ({ title, buttonTitle, onPressHandler }) =>
         marginTop: 10,
         // justifyContent: 'center',
         alignItems: 'center',
-    }}>
+    },viewStyle]}>
         <View style={{
             height: 15,
             width: 3,
