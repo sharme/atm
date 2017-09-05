@@ -13,6 +13,7 @@ import {
     RefreshControl,
     TouchableHighlight,
     Image,
+    StatusBar,
     Alert,
     View
 } from 'react-native';
@@ -29,6 +30,7 @@ import ColorUtils from '../Util/ColorUtils'
 import TabBarItem from '../Common/Components/TabBarItem'
 import HeaderTitleButton from '../Common/Components/HeaderTitleButton'
 import ActivityItemCell from '../Common/Components/ActivityItemCell'
+import BasePage from './BasePage'
 
 var Dimensions = require('Dimensions');
 var deviceWidth = Dimensions.get('window').width;
@@ -43,7 +45,7 @@ var IMGS = [
     'http://img.showguide.cn/uploads/try/1478743652EXPOPARTES1111.jpg',
 ];
 
-export default class HomeContainers extends Component {
+export default class HomeContainers extends BasePage {
 
     static navigationOptions = {
         header: false , // 覆盖预设中的此项
@@ -70,6 +72,7 @@ export default class HomeContainers extends Component {
             swiperShow:false,
             isrefreshing:true,
             isLoadMore:false,
+            statusBGC:'red',
         };
         this._renderRow=this._renderRow.bind(this);
     }
@@ -90,6 +93,7 @@ export default class HomeContainers extends Component {
                 flexDirection: 'row', alignItems: 'center',
                 justifyContent: 'center',
             }}>
+            
                 {this.homeMenuButton('城市', require('../images/home_menu_two.png'))}
                 {this.homeMenuButtonLine()}
                 {this.homeMenuButton('行业', require('../images/home_menu_two.png'))}
@@ -155,6 +159,9 @@ export default class HomeContainers extends Component {
     render() {
         return (
             <View style={styles.container}>
+            <StatusBar barStyle={'light-content'} backgroundColor={'#0e8bff'} />
+
+
                 {this.renderSwiper()}
 
                 <SearchBarView/>
