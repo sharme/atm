@@ -41,10 +41,22 @@ export default class Button extends Component {
         }
     }
 
+    pressHandler(){
+        if(this.props.onPress === undefined){
+            return;
+        }
+        if(this.props.keyId !== undefined){
+            this.props.onPress(this.props.keyId);
+        }else{
+            this.props.onPress();
+        }
+        
+    }
+
     render() {
         return (
             <TouchableHighlight style={this.props.buttonStyle} activeOpacity={0.8}
-                                underlayColor={'transparent'} onPress={()=>this.props.onPress(this.props.keyId)} key={this.props.keyId}>
+                                underlayColor={'transparent'} onPress={()=>this.pressHandler()} key={this.props.keyId}>
                 <View style={[this.props.contentViewStyle, {flex:1,alignItems: 'center',
                     justifyContent: 'center'}]}>
                     {this.buttonText()}

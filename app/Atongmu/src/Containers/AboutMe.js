@@ -63,7 +63,7 @@ export default class AboutMe extends Component {
         <Text style={{marginTop:topContentMarginTop,marginLeft:10,backgroundColor:'transparent',color:'white',fontSize:16,}}>
           一道美丽的风景
         </Text>
-        <Button keyId='edit' onPress={(str)=>console.log(str)} source={require('../images/me/me_white_edit.png')} buttonStyle={{width:100,height:50,marginTop:topContentMarginTop}} imageStyle={{width:20,height:15,marginRight:70}}/>
+        <Button keyId='edit' onPress={(str)=>this.props.navigation.navigate('Login',{ transition: 'forVertical' })} source={require('../images/me/me_white_edit.png')} buttonStyle={{width:100,height:50,marginTop:topContentMarginTop}} imageStyle={{width:20,height:15,marginRight:70}}/>
       </View>
     </View>);
   }
