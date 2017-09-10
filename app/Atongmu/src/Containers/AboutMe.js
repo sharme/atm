@@ -15,7 +15,7 @@ import TabBarItem from '../Common/Components/TabBarItem'
 import Button from '../Common/Components/Button'
 import DeviceUtil from '../Util/DeviceUtil'
 
-var deviceWidth = DeviceUtil.deviceWH().width;
+var deviceWidth = DeviceUtil.deviceWH.width;
 var topHeight = 134;
 var topContentMarginTop=22;
 

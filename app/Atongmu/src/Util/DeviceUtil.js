@@ -12,9 +12,8 @@ var Dimensions = require('Dimensions');
 var deviceWidth = Dimensions.get('window').width;
 var deviceHeight = Dimensions.get('window').height;
 const DeviceUtil = {
-    deviceWH:()=>{
-        var dwh = {width:deviceWidth,height:deviceHeight};
-        return dwh
+    deviceWH:{
+        width:deviceWidth,height:deviceHeight
     },
 
 }

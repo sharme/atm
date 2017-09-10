@@ -83,7 +83,7 @@ export default class HomeContainers extends BasePage {
 
     _renderRow(rowData: string, sectionID: number, rowID: number) {
         return (
-            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>this.props.navigation.navigate('Login',{transition: 'forVertical'})}/>
+            <ActivityItemCell dataSource={rowData}  onPressHandler={(str)=>this.props.navigation.navigate('ExDetail')}/>
         );
     }
 
@@ -135,10 +135,10 @@ export default class HomeContainers extends BasePage {
         },0);
         setTimeout(() => {
             this.setState({isrefreshing:false});
-            Alert.alert(
-                'Alert Title',
-                'bbb',
-            )
+            // Alert.alert(
+            //     'Alert Title',
+            //     'bbb',
+            // )
         }, 7000);
     }
 
@@ -159,7 +159,8 @@ export default class HomeContainers extends BasePage {
     render() {
         return (
             <View style={styles.container}>
-            <StatusBar barStyle={'light-content'} backgroundColor={'#0e8bff'} />
+                {/* //transparent #0e8bff*/}
+            <StatusBar barStyle={'light-content'} backgroundColor={'#009DF0'} />
 
 
                 {this.renderSwiper()}
@@ -179,10 +180,10 @@ export default class HomeContainers extends BasePage {
                         this.setState({isLoadMore:true});
                         setTimeout(() => {
                             this.setState({isLoadMore:false});
-                            Alert.alert(
+                            {/* Alert.alert(
                                 'Alert Title',
                                 'cccc',
-                            )
+                            ) */}
                         }, 5000);
                     }}
                     removeClippedSubviews={false}
@@ -195,10 +196,10 @@ export default class HomeContainers extends BasePage {
                             style={styles.refreshControlBase}
                             refreshing={this.state.isrefreshing}
                             onRefresh={() =>{
-                                Alert.alert(
+                                {/* Alert.alert(
                                             'Alert Title',
                                             'aaa',
-                                        )
+                                        ) */}
                                 // setTimeout(() => {
                                 //     this.state.isrefreshing=true;
                                 //     Alert.alert(

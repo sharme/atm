@@ -21,6 +21,7 @@ import HomeContainers from './Containers/HomeContainers'
 import DesignList from './Containers/DesignList'
 import UserLoginPage from './Modules/User/UserLoginPage'
 import UserRegisterPage from './Modules/User/UserRegisterPage'
+import ExhibitionDetail from './Modules/Exhibition/ExhibitionDetail'
 import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator';
 const TransitionConfiguration = () => ({
   screenInterpolator: (sceneProps) => {
@@ -67,7 +68,7 @@ const TabContainer = TabNavigator(
             }
           },
       Login: { screen: UserLoginPage },
-      
+      ExDetail:{screen: ExhibitionDetail},
       Register: { screen: UserRegisterPage }
     },
     {
