@@ -317,70 +317,75 @@ var whitelist = [];
 
 router.get('/sendCode', function (req, res, next) {
 
-    var to = req.param('to');
-    var ipAddress = req.connection.remoteAddress;
-    if(req.header['x-forwarded-for']){
-        ipAddress = req.header['x-forwarded-for'];
-        console.log("x-forward-for ip: " + ipAddress)
-    }
-    var send = true;
-    console.log('IP: ' + ipAddress);
+    if(req.param('secret') != "q1w3e5r7t8y"){
+        res.send("[{code: 404, err: access denied}]");
+    } else {
 
-    console.log("tempList: " + JSON.stringify(tempCodeList));
-    console.log("codeList: " + JSON.stringify(codeList));
-
-    tempCodeList.forEach(function(item, index){
-        for (key in item){
-            console.log(key + " ; " + item[key]);
-            if(key === "to" && item[key] === to || key === 'ip' && item[key] === ipAddress){
-                console.log("too many sending");
-                send = false;
-                res.send("02");
-                return;
-            }
+        var to = req.param('to');
+        var ipAddress = req.connection.remoteAddress;
+        if (req.header['x-forwarded-for']) {
+            ipAddress = req.header['x-forwarded-for'];
+            console.log("x-forward-for ip: " + ipAddress)
         }
-    });
-    var checkCount = 0;
-    codeList.forEach(function(item, index){
-        for (key in item){
-            console.log(key + " ; " + item[key]);
-            if(key === 'ip' && item[key] === ipAddress){
-               checkCount++;
+        var send = true;
+        console.log('IP: ' + ipAddress);
+
+        console.log("tempList: " + JSON.stringify(tempCodeList));
+        console.log("codeList: " + JSON.stringify(codeList));
+
+        tempCodeList.forEach(function (item, index) {
+            for (key in item) {
+                console.log(key + " ; " + item[key]);
+                if (key === "to" && item[key] === to || key === 'ip' && item[key] === ipAddress) {
+                    console.log("too many sending");
+                    send = false;
+                    res.send("02");
+                    return;
+                }
             }
-        }
-    });
-
-    if(checkCount > 3) {
-        blacklist.push({ip: ipAddress});
-
-    }
-
-
-    blacklist.forEach(function(item, index){
-        for (key in item){
-            console.log(key + " ; " + item[key]);
-            if(key === 'ip' && item[key] === ipAddress){
-                send = false;
-                res.send('03');
-                return;
+        });
+        var checkCount = 0;
+        codeList.forEach(function (item, index) {
+            for (key in item) {
+                console.log(key + " ; " + item[key]);
+                if (key === 'ip' && item[key] === ipAddress) {
+                    checkCount++;
+                }
             }
-        }
-    });
+        });
 
-    whitelist.forEach(function(item, index){
-        for (key in item){
-            console.log(key + " ; " + item[key]);
-            if(key === 'ip' && item[key] === ipAddress){
-                send = true;
-                return;
+        if (checkCount > 3) {
+            blacklist.push({ip: ipAddress});
+
+        }
+
+
+        blacklist.forEach(function (item, index) {
+            for (key in item) {
+                console.log(key + " ; " + item[key]);
+                if (key === 'ip' && item[key] === ipAddress) {
+                    send = false;
+                    res.send('03');
+                    return;
+                }
             }
-        }
-    });
-    
-    console.log("Blacklist: " + JSON.stringify(blacklist));
+        });
 
-    if(send) {
-        sendSMS(res, to, ipAddress);
+        whitelist.forEach(function (item, index) {
+            for (key in item) {
+                console.log(key + " ; " + item[key]);
+                if (key === 'ip' && item[key] === ipAddress) {
+                    send = true;
+                    return;
+                }
+            }
+        });
+
+        console.log("Blacklist: " + JSON.stringify(blacklist));
+
+        if (send) {
+            sendSMS(res, to, ipAddress);
+        }
     }
 
 
