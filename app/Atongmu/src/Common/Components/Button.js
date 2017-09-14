@@ -10,11 +10,23 @@ import {
 
 /**
  * 自定义按钮
+ * props 参数说明
+ * iconSource 按钮图标image source
+ * iconStyle icon 样式 style
+ * textStyle 按钮文字样式 style
+ * source 按钮背景图片 image source
+ * imageStyle 按钮背景图片image样式 style
+ * onPress 点击事件回调 
+ * title 按钮标题 string
+ * buttonStyle button TouchableHighlight的样式 style
+ * contentViewStyle button内部主View的样式 style
+ * keyId button的 key 可以区分点击了哪个按钮起到标记作用 string
  */
 export default class Button extends Component {
     constructor(props) {
         super(props);
     }
+    //
     textView() {
         var buttonText = [];
         if(this.props.iconSource !== null){

@@ -79,7 +79,7 @@ export default class ExhibitionActivityList extends Component {
       itemViews.push(<Button key={keyStr} keyId={keyStr} onPress={(str)=>Alert.alert(
         'Alert Title',
         str,
-    )} title={titleStr} iconSource={icon} iconStyle={{width:40,height:40,marginBottom:6}} textStyle={{color:'#333435',fontSize:14,}} contentViewStyle={{height:menuHeight,width:menuItemW}} buttonStyle={{height:menuHeight,width:menuItemW}}/>);  
+    )} title={titleStr} iconSource={icon} iconStyle={{width:40,height:40,marginBottom:6}} textStyle={{color:'#333435',fontSize:14,}}  buttonStyle={{height:menuHeight,width:menuItemW}}/>);  
     }  
     return itemViews;
   }

@@ -67,7 +67,7 @@ export default class AboutMe extends Component {
       </View>
     </View>);
   }
-  _renderItemComponent (item){  
+  _renderItemComponent (item,section){  
     console.log(item);  
     
     return(  
