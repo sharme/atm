@@ -27,29 +27,48 @@ var deviceHeight = Dimensions.get('window').height;
 var detailImgWidth = DeviceUtil.deviceWH.width - 20;
 var detailImgHeight = (detailImgWidth / 355) * 220;
 
+
+var this_ = undefined;
+
 export default class ExhibitionDetail extends Component {
 
     static navigationOptions = {
         title: '展会详情',
     }
 
+    
+
     // 初始化模拟数据
     constructor(props) {
         super(props);
+
+        this_ = this;
+
         this.state = {
+            titleContent:{ title: '最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加', time: '2017-09-08 13:00', section: 0 },
+            
             dataSource: [
-                { key: 'k1', data: [{ title: '最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加', time: '2017-09-08 13:00', section: 0 }] },
+                {
+                    key: 'k1', data: [
+                        { title: '最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加123', icon: require('../../images/home_item_test.png'), section: 0 },
+                        { title: '最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456.最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456', icon: require('../../images/home_item_test.png'), section: 0}]
+                },
                 {
                     key: 'k2', data: [
-                        { title: '最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加123', icon: require('../../images/home_item_test.png'), section: 1 },
-                        { title: '最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456.最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456', icon: require('../../images/home_item_test.png'), section: 1 }]
-                },
-                { key: 'k3', data: [{ title: '退出', content: '很好的展会', section: 2 }] }
+                        { title: '退出', content: '很好的展会,最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456.最近的展会，北京很精彩，世界', section: 1 },
+                        { title: '退出', content: '很好的展会,最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456.最近的展会，北京很精彩，世界', section: 1 }
+                        ,
+                        { title: '退出', content: '很好的展会,最近的展会，北京很精彩，世界奢侈品展览，更多精彩欢迎参加456.最近的展会，北京很精彩，世界', section: 1 }
+                        ,
+
+                    ]
+                }
             ]
         }
     }
 
     detailView(item) {
+        
         return (
             <View style={styles.content}>
                 <View style={{}}>
@@ -71,13 +90,24 @@ export default class ExhibitionDetail extends Component {
         );
     }
     _sectionHeader(section) {
-        if (section.section.key === 'k3') {
+        
+        if (section.section.key === 'k1') {
+            return (
+                <View style={styles.content}>
+                <View style={{}}>
+                    <Text style={{ height: 40, width: DeviceUtil.deviceWH.width - 20, marginTop: 20, fontSize: 18 }}>{this_.state.titleContent.title}</Text>
+                    <Text style={{ height: 25, width: DeviceUtil.deviceWH.width - 20, marginTop: 10 }}>{this_.state.titleContent.time}</Text>
+                </View>
+                <ViewLine/>
+            </View>
+            )
+        }else if (section.section.key === 'k2') {
             return (
                 <View>
                     <View style={{ height: 10, backgroundColor: '#EAF3FD' }} />
-                    <View style={{height:44}}>
-                        <Text style={{ height: 44, width: deviceWidth / 2.0 }}>评论</Text><View style={{ width: 1, height: 44 }} />
-                        <Text style={{ height: 44, width: deviceWidth / 2.0 }}>评论</Text>
+                    <View style={{ height: 30, flexDirection: 'row' }}>
+                        <Text style={{ width: deviceWidth / 2.0 }}>评论</Text><View style={{ width: 1, height: 30, backgroundColor: 'red' }} />
+                        <Text style={{ width: deviceWidth / 2.0 }}>评论</Text>
                     </View>
                     <ViewLine lineStyle={{ marginBottom: 0 }} />
                 </View>
@@ -94,15 +124,6 @@ export default class ExhibitionDetail extends Component {
     _renderItemComponent(item) {
         if (item.item.section === 0) {
             return (
-                <View style={styles.content}>
-                    <View style={{flexDirection:'row'}}>
-                        <Text style={{ height: 40, width: DeviceUtil.deviceWH.width - 20, marginTop: 20, fontSize: 18 }}>{item.item.title}</Text>
-                        <Text style={{ height: 25, width: DeviceUtil.deviceWH.width - 20, marginTop: 10 }}>{item.item.time}</Text>
-                    </View>
-                </View>
-            )
-        } else if (item.item.section === 1) {
-            return (
                 <View style={[styles.content, { marginTop: 10, }]}>
                     <Image source={item.item.icon} resizeMode='cover' style={
                         { width: detailImgWidth, height: detailImgHeight }
@@ -114,7 +135,7 @@ export default class ExhibitionDetail extends Component {
         } else {
             return (
                 <View style={styles.content}>
-                    <Text style={{ width: DeviceUtil.deviceWH.width - 20, marginTop: 20, fontSize: 14 }}>{item.item.title}</Text>
+                    <Text style={{ width: DeviceUtil.deviceWH.width - 20, marginTop: 20, fontSize: 14,height:200 }}>{item.item.title}</Text>
                 </View>
             )
         }
@@ -124,7 +145,7 @@ export default class ExhibitionDetail extends Component {
     }
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <View style={{ flex: 1, backgroundColor: 'white'}}>
                 {/* {this.detailView()}
                 <ViewLine lineStyle={{ marginBottom: 12 }} />
                 {this.imageView()} */}
@@ -137,6 +158,11 @@ export default class ExhibitionDetail extends Component {
                     sections={this.state.dataSource}
                     keyExtractor={this._extraUniqueKey}// 每个item的key
                 />
+                <ViewLine/>
+                <View style={{height:40,width:deviceWidth,flexDirection:'row',}}>
+                    
+                    <TextInput style={{marginTop:5,marginLeft:20,borderRadius: 10,width:deviceWidth-120,height:30,backgroundColor:'#EEEEEE',justifyContent:'center'}} placeHolder/>
+                </View>
 
             </View>
         )
@@ -148,7 +174,8 @@ const styles = StyleSheet.create({
     content: {
         alignItems: 'center',
         paddingLeft: 10,
-        paddingRight: 10
+        paddingRight: 10,
+        backgroundColor:'white'
     }
 });
 
